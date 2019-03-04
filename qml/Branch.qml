@@ -1,10 +1,11 @@
 import QtQuick 2.9
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Rectangle {
     id: imageBranch
-    width: 30
-    height: 30
+    width: UtilScript.pt(30)
+    height: UtilScript.pt(30)
     property int posI: 0
     property int posJ: 0
     property int posLeft: 0

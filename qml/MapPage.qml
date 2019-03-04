@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
     id: mapPage
@@ -44,12 +45,12 @@ Item {
     Image {
         id: backButton
         source: "qrc:/resources/images/back.png"
-        width: 60
-        height: 60
+        width: UtilScript.pt(60)
+        height: UtilScript.pt(60)
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.leftMargin: 15
-        anchors.bottomMargin: 16
+        anchors.leftMargin: UtilScript.pt(15)
+        anchors.bottomMargin: UtilScript.pt(16)
         z: 1
         MouseArea {
             id: mouseAreaBackButton
@@ -65,10 +66,10 @@ Item {
         source: "qrc:/resources/images/button_play_last_location.png"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        width: 60
-        height: 60
+        width: UtilScript.pt(60)
+        height: UtilScript.pt(60)
         z: 1
-        anchors.bottomMargin: 16
+        anchors.bottomMargin: UtilScript.pt(16)
 
         MouseArea {
             id: mouseAreaPlayLastLocationButton

@@ -3,6 +3,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Particles 2.0
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
     id: cardPage
@@ -260,7 +261,7 @@ Item {
                 id: backgroundTextCard
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: imageBackgroundMainMap.height
-                width: parent.width - 100
+                width: parent.width - UtilScript.pt(100)
                 height: sourceSize.height * (width / sourceSize.width)
                 source: "qrc:/resources/images/background_card.png"
                 fillMode: Image.PreserveAspectFit
@@ -268,7 +269,7 @@ Item {
                 Flickable {
                     id: flick
                     anchors.fill: parent
-                    anchors.margins: 15
+                    anchors.margins: UtilScript.pt(15)
                     contentWidth: textAreaCard.paintedWidth
                     contentHeight: textAreaCard.paintedHeight
                     clip: true
@@ -309,7 +310,7 @@ Item {
                     target: backgroundTextCard
                     properties: "y"
                     easing.type: Easing.InQuad
-                    to: imageBackgroundMainMap.height - backgroundTextCard.height - 15
+                    to: imageBackgroundMainMap.height - backgroundTextCard.height - UtilScript.pt(15)
                     onStopped: {
                         textAreaCard.focus = true
                     }
@@ -348,16 +349,16 @@ Item {
     Column {
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.topMargin: 40
-        anchors.leftMargin: 10
+        anchors.topMargin: UtilScript.pt(40)
+        anchors.leftMargin: UtilScript.pt(10)
         z: 1
-        spacing: 15
+        spacing: UtilScript.pt(15)
 
         Image {
             id: backButton
             source: "qrc:/resources/images/back.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
             z: 1
             MouseArea {
                 id: mouseAreaBackButton
@@ -371,8 +372,8 @@ Item {
         Image {
             id: imageButton
             source: "qrc:/resources/images/button_image.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaTextButtonImage
@@ -386,8 +387,8 @@ Item {
         Image {
             id: gifButton
             source: "qrc:/resources/images/button_gif.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaTextButtonGif
@@ -402,16 +403,16 @@ Item {
     Column {
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.topMargin: 40
-        anchors.rightMargin: 10
+        anchors.topMargin: UtilScript.pt(40)
+        anchors.rightMargin: UtilScript.pt(10)
         z: 1
-        spacing: 15
+        spacing: UtilScript.pt(15)
 
         Image {
             id: petalsButton
             source: "qrc:/resources/images/button_petals.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaPetalsButton
@@ -425,8 +426,8 @@ Item {
         Image {
             id: rectButton
             source: "qrc:/resources/images/button_rect.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaRectButton
@@ -439,8 +440,8 @@ Item {
         Image {
             id: textEnableButton
             source: "qrc:/resources/images/button_text_enable.png"
-            width: 40
-            height: 40
+            width: UtilScript.pt(40)
+            height: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaTextButtonEnable

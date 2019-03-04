@@ -3,6 +3,8 @@ import QtQuick.Window 2.3
 import QtQuick.Controls 2.2
 import QtPurchasing 1.0
 
+import "Util.js" as UtilScript
+
 Item {
     id: storePage
 
@@ -300,7 +302,7 @@ Item {
             height: Math.min(
                         buttonsColumn.height,
                         parent.height - (backButton.height
-                                         + backButton.anchors.bottomMargin) * 2 - 8)
+                                         + backButton.anchors.bottomMargin) * 2 - UtilScript.pt(8))
             contentWidth: buttonsColumn.width
             contentHeight: buttonsColumn.height
             clip: true
@@ -316,18 +318,18 @@ Item {
                     id: purchase1
                     source: "qrc:/resources/images/rectangle-hi.png"
 
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
 
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -341,7 +343,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "5"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -352,22 +354,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_quick_tip.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(gameTipX5Product.status,
                                                      gameTipX5Product.price)
                             color: "white"
@@ -394,17 +396,17 @@ Item {
                 Image {
                     id: purchase2
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -418,7 +420,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "5"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -429,22 +431,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/lantern_step_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(stepPauseX5Product.status,
                                                      stepPauseX5Product.price)
                             color: "white"
@@ -470,17 +472,17 @@ Item {
                 Image {
                     id: purchase3
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -494,7 +496,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "5"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -505,22 +507,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/lantern_time_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(timePauseX5Product.status,
                                                      timePauseX5Product.price)
                             color: "white"
@@ -547,17 +549,17 @@ Item {
                 Image {
                     id: purchase4
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -571,7 +573,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "20"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -582,22 +584,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_quick_tip.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(gameTipX20Product.status,
                                                      gameTipX20Product.price)
                             color: "white"
@@ -624,17 +626,17 @@ Item {
                 Image {
                     id: purchase5
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -648,7 +650,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "20"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -659,22 +661,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/lantern_step_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(
                                       stepPauseX20Product.status,
                                       stepPauseX20Product.price)
@@ -702,17 +704,17 @@ Item {
                 Image {
                     id: purchase6
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -726,7 +728,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "20"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -737,22 +739,22 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/lantern_time_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(
                                       timePauseX20Product.status,
                                       timePauseX20Product.price)
@@ -780,17 +782,17 @@ Item {
                 Image {
                     id: purchase7
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 35
-                        radius: 20
-                        width: 80
-                        height: 30
+                        anchors.leftMargin: UtilScript.pt(35)
+                        radius: UtilScript.pt(20)
+                        width: UtilScript.pt(80)
+                        height: UtilScript.pt(30)
                         border.color: "#C5007F"
-                        border.width: 3
+                        border.width: UtilScript.pt(3)
                         gradient: Gradient {
                             GradientStop {
                                 position: 0.0
@@ -804,7 +806,7 @@ Item {
                         Text {
                             anchors.right: parent.right
                             anchors.verticalCenter: parent.verticalCenter
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: UtilScript.pt(10)
                             text: "20"
                             font.pointSize: 20
                             font.family: "Helvetica"
@@ -814,40 +816,40 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/lantern_time_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 30
+                        anchors.leftMargin: UtilScript.pt(30)
 
                         source: "qrc:/resources/images/lantern_step_ice_booster.png"
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                     }
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
-                        anchors.leftMargin: 45
+                        anchors.leftMargin: UtilScript.pt(45)
 
                         source: "qrc:/resources/images/button_quick_tip.png"
-                        width: 35
-                        height: 35
+                        width: UtilScript.pt(35)
+                        height: UtilScript.pt(35)
                     }
 
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(
                                       boosterPackageX20Product.status,
                                       boosterPackageX20Product.price)
@@ -875,14 +877,14 @@ Item {
                 Image {
                     id: purchase8
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
                     visible: !mainWindow.disableAds
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         text: qsTr("Remove Ads")
                         font.pointSize: 12
                         font.family: "Helvetica"
@@ -893,13 +895,13 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: storePage.getPrice(removeAdsProduct.status,
                                                      removeAdsProduct.price)
                             color: "white"
@@ -926,13 +928,13 @@ Item {
                 Image {
                     id: purchase9
                     source: "qrc:/resources/images/rectangle-md.png"
-                    width: 300
-                    height: 60
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(60)
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         text: qsTr("Restore purchases")
                         font.pointSize: 12
                         font.family: "Helvetica"
@@ -943,13 +945,13 @@ Item {
                     Image {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 20
+                        anchors.rightMargin: UtilScript.pt(20)
                         source: "qrc:/resources/images/button_store.png"
-                        width: 100
-                        height: 30
+                        width: UtilScript.pt(100)
+                        height: UtilScript.pt(30)
                         Text {
                             anchors.fill: parent
-                            anchors.margins: 4
+                            anchors.margins: UtilScript.pt(4)
                             text: qsTr("OK")
                             color: "white"
                             font.pointSize: 14
@@ -978,11 +980,11 @@ Item {
             id: backButton
             source: "qrc:/resources/images/back.png"
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 16
+            anchors.bottomMargin: UtilScript.pt(16)
             anchors.left: parent.left
-            anchors.leftMargin: 15
-            height: 40
-            width: 40
+            anchors.leftMargin: UtilScript.pt(15)
+            height: UtilScript.pt(40)
+            width: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaBackAwardsButton

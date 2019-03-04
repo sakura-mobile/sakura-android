@@ -1,4 +1,5 @@
 import QtQuick 2.9
+import "Util.js" as UtilScript
 
 Rectangle {
     id: rectangleLevel
@@ -35,32 +36,32 @@ Rectangle {
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         z: 15
-        height: 10
-        spacing: 1
+        height: UtilScript.pt(10)
+        spacing: UtilScript.pt(1)
 
         Image {
             id: firstStarImage
-            width: 10
-            height: 10
+            width: UtilScript.pt(10)
+            height: UtilScript.pt(10)
             source: "qrc:/resources/images/star.png"
         }
         Image {
             id: secondStarImage
-            width: 10
-            height: 10
+            width: UtilScript.pt(10)
+            height: UtilScript.pt(10)
             source: "qrc:/resources/images/star.png"
         }
         Image {
             id: thirdStarImage
-            width: 10
-            height: 10
+            width: UtilScript.pt(10)
+            height: UtilScript.pt(10)
             source: "qrc:/resources/images/star.png"
         }
     }
     Image {
         id: lanternImage
-        width: 50
-        height: 50
+        width: UtilScript.pt(50)
+        height: UtilScript.pt(50)
         anchors.top: buttonImageRow.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         source: rectangleLevel.sourceImgLantern
@@ -69,7 +70,7 @@ Rectangle {
             id: textName
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 5
+            anchors.bottomMargin: UtilScript.pt(5)
             text: (currentLevel + 1).toString()
             font.pointSize: 18
             font.bold: true

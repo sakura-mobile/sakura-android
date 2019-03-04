@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
 
@@ -20,20 +21,20 @@ Item {
             id: gridLevelsRelax
             anchors.centerIn: parent
             columns: 5
-            spacing: 10
+            spacing: UtilScript.pt(10)
         }
 
         Row {
             id: rowButtonGame
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 80
+            anchors.bottomMargin: UtilScript.pt(80)
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 15
+            spacing: UtilScript.pt(15)
             Image {
                 id: leftButton
                 source: "qrc:/resources/images/button_triple_left_disabled.png"
-                width: 80
-                height: 80
+                width: UtilScript.pt(80)
+                height: UtilScript.pt(80)
                 visible: true
                 MouseArea {
                     id: mouseAreaLeftButton
@@ -47,8 +48,8 @@ Item {
             Image {
                 id: rightButton
                 source: "qrc:/resources/images/button_triple_right_disabled.png"
-                width: 80
-                height: 80
+                width: UtilScript.pt(80)
+                height: UtilScript.pt(80)
                 MouseArea {
                     id: mouseAreaRightButton
                     anchors.fill: parent
@@ -62,12 +63,12 @@ Item {
         Image {
             id: backButton
             source: "qrc:/resources/images/back.png"
-            width: 50
-            height: 50
+            width: UtilScript.pt(50)
+            height: UtilScript.pt(50)
             anchors.left: parent.left
             anchors.bottom: parent.bottom
-            anchors.leftMargin: 15
-            anchors.bottomMargin: 16
+            anchors.leftMargin: UtilScript.pt(15)
+            anchors.bottomMargin: UtilScript.pt(16)
             MouseArea {
                 id: mouseAreaBackButton
                 anchors.fill: parent
@@ -133,8 +134,8 @@ Item {
                 }
             }
             object.color = "transparent"
-            object.width = 50
-            object.height = 50
+            object.width = UtilScript.pt(50)
+            object.height = UtilScript.pt(50)
             object.isRelax = true
             object.currentLevel = i
             object.changeImgRatingLevel()
@@ -214,8 +215,8 @@ Item {
                 }
             }
             object.color = "transparent"
-            object.width = 50
-            object.height = 50
+            object.width = UtilScript.pt(50)
+            object.height = UtilScript.pt(50)
             object.isRelax = true
             object.currentLevel = i
             object.changeImgRatingLevel()

@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
     id: singleLevelsPage
@@ -21,11 +22,11 @@ Item {
             Image {
                 id: awardButton
                 anchors.top: parent.top
-                anchors.topMargin: 30
+                anchors.topMargin: UtilScript.pt(30)
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "qrc:/resources/images/button_award.png"
-                width: 80
-                height: 80
+                width: UtilScript.pt(80)
+                height: UtilScript.pt(80)
 
                 MouseArea {
                     id: mouseAreaAwardButton
@@ -46,16 +47,16 @@ Item {
             }
             Rectangle {
                 anchors.top: parent.top
-                anchors.topMargin: 30
+                anchors.topMargin: UtilScript.pt(30)
                 anchors.left: parent.left
-                anchors.leftMargin: 15
+                anchors.leftMargin: UtilScript.pt(15)
                 color: "transparent"
-                width: 100
-                height: 40
+                width: UtilScript.pt(100)
+                height: UtilScript.pt(40)
                 Rectangle {
                     anchors.fill: parent
                     color: "black"
-                    radius: 20
+                    radius: UtilScript.pt(20)
                     opacity: 0.3
                 }
 
@@ -91,14 +92,14 @@ Item {
             Row {
                 id: rowButtonGame
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 80
+                anchors.bottomMargin: UtilScript.pt(80)
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 15
+                spacing: UtilScript.pt(15)
                 Image {
                     id: leftButton
                     source: "qrc:/resources/images/button_triple_left.png"
-                    width: 80
-                    height: 80
+                    width: UtilScript.pt(80)
+                    height: UtilScript.pt(80)
                     visible: true
                     MouseArea {
                         id: mouseAreaLeftButton
@@ -112,8 +113,8 @@ Item {
                 Image {
                     id: playButton
                     source: "qrc:/resources/images/button_play_last_location.png"
-                    width: 80
-                    height: 80
+                    width: UtilScript.pt(80)
+                    height: UtilScript.pt(80)
                     MouseArea {
                         id: mouseAreaPlayButton
                         anchors.fill: parent
@@ -126,8 +127,8 @@ Item {
                 Image {
                     id: rightButton
                     source: "qrc:/resources/images/button_triple_right.png"
-                    width: 80
-                    height: 80
+                    width: UtilScript.pt(80)
+                    height: UtilScript.pt(80)
                     MouseArea {
                         id: mouseAreaRightButton
                         anchors.fill: parent
@@ -141,11 +142,11 @@ Item {
             Image {
                 id: backButton
                 source: "qrc:/resources/images/back.png"
-                width: 60
-                height: 60
+                width: UtilScript.pt(60)
+                height: UtilScript.pt(60)
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 16
-                anchors.leftMargin: 15
+                anchors.bottomMargin: UtilScript.pt(16)
+                anchors.leftMargin: UtilScript.pt(15)
                 anchors.left: parent.left
 
                 MouseArea {
@@ -160,7 +161,7 @@ Item {
             Text {
                 anchors.bottom: parent.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.bottomMargin: 16
+                anchors.bottomMargin: UtilScript.pt(16)
                 id: textLevel
                 font.pointSize: 35
                 font.bold: true
@@ -173,8 +174,8 @@ Item {
             id: rectAwardsGame
             anchors.horizontalCenter: parent.horizontalCenter
             y: imageBackgroundMainLevel.height
-            width: 300
-            height: 200
+            width: UtilScript.pt(300)
+            height: UtilScript.pt(200)
             color: "transparent"
             Image {
                 id: backgroundAwardsGame
@@ -184,11 +185,11 @@ Item {
 
                 Column {
                     anchors.centerIn: parent
-                    spacing: 3
+                    spacing: UtilScript.pt(3)
 
                     Text {
                         id: textRewardUser
-                        anchors.topMargin: 15
+                        anchors.topMargin: UtilScript.pt(15)
                         text: qsTr("Your reward:")
                         font.pointSize: 25
                         font.bold: true
@@ -199,14 +200,14 @@ Item {
                     Row {
                         id: rowQuickTip
                         z: 15
-                        spacing: 15
+                        spacing: UtilScript.pt(15)
                         visible: false
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Image {
                             id: imageQuickTip
-                            width: 40
-                            height: 40
+                            width: UtilScript.pt(40)
+                            height: UtilScript.pt(40)
                             source: "qrc:/resources/images/button_quick_tip.png"
                         }
                         Text {
@@ -230,14 +231,14 @@ Item {
                     Row {
                         id: rowStepIce
                         z: 15
-                        spacing: 15
+                        spacing: UtilScript.pt(15)
                         visible: false
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Image {
                             id: imageStepIce
-                            width: 40
-                            height: 40
+                            width: UtilScript.pt(40)
+                            height: UtilScript.pt(40)
                             source: "qrc:/resources/images/lantern_step_ice_booster.png"
                         }
                         Text {
@@ -261,14 +262,14 @@ Item {
                     Row {
                         id: rowTimeIce
                         z: 15
-                        spacing: 15
+                        spacing: UtilScript.pt(15)
                         visible: false
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Image {
                             id: imageTimeIce
-                            width: 40
-                            height: 40
+                            width: UtilScript.pt(40)
+                            height: UtilScript.pt(40)
                             source: "qrc:/resources/images/lantern_time_ice_booster.png"
                         }
                         Text {
@@ -292,13 +293,13 @@ Item {
                     Row {
                         id: rowOk
                         z: 15
-                        spacing: 15
+                        spacing: UtilScript.pt(15)
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Image {
                             id: imageOk
-                            width: 50
-                            height: 50
+                            width: UtilScript.pt(50)
+                            height: UtilScript.pt(50)
                             source: "qrc:/resources/images/button_ok.png"
 
                             MouseArea {
@@ -343,8 +344,8 @@ Item {
             id: rectNameUser
             y: imageBackgroundMainLevel.height
             anchors.horizontalCenter: imageBackgroundMainLevel.horizontalCenter
-            width: 300
-            height: 200
+            width: UtilScript.pt(300)
+            height: UtilScript.pt(200)
             visible: false
             color: "transparent"
             Image {
@@ -357,9 +358,9 @@ Item {
                     id: rowTextNameUser
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.topMargin: 30
+                    anchors.topMargin: UtilScript.pt(30)
                     z: 15
-                    spacing: 5
+                    spacing: UtilScript.pt(5)
                     visible: true
                     Text {
                         id: textNameUser
@@ -372,31 +373,27 @@ Item {
                     }
                     TextInput {
                         id: textInputName
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.left: parent.left
+                        anchors.right: parent.right
                         text: mainWindow.getSetting("nameUser", "NONAME")
-                        focus: true
-                        font.pointSize: 30
+                        font.pointSize: 15
                         color: "white"
                         maximumLength: 10
                         inputMethodHints: Qt.ImhNoPredictiveText
                         font.family: "Helvetica"
+                        horizontalAlignment: TextInput.AlignHCenter
 
-                        MouseArea {
-                            id: mouseAreaTextInputName
-                            anchors.fill: parent
-                            onClicked: {
-                                if (textInputName.text == "NONAME")
-                                    textInputName.text = ""
-                            }
+                        onEditingFinished: {
+                            focus = false;
                         }
                     }
                 }
                 Image {
                     id: imageOkName
-                    width: 50
-                    height: 50
+                    width: UtilScript.pt(50)
+                    height: UtilScript.pt(50)
                     anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 16
+                    anchors.bottomMargin: UtilScript.pt(16)
                     anchors.horizontalCenter: parent.horizontalCenter
                     source: "qrc:/resources/images/button_ok.png"
                     MouseArea {
@@ -456,11 +453,11 @@ Item {
                 id: rectHint
                 anchors.centerIn: parent
                 color: "black"
-                radius: 20
-                width: 250
-                height: 200
+                radius: UtilScript.pt(20)
+                width: UtilScript.pt(250)
+                height: UtilScript.pt(200)
                 border.color: "#C5007F"
-                border.width: 10
+                border.width: UtilScript.pt(10)
                 gradient: Gradient {
                     GradientStop {
                         position: 0.0
@@ -489,11 +486,11 @@ Item {
                 }
                 Image {
                     anchors.bottom: rectHint.bottom
-                    anchors.bottomMargin: 10
+                    anchors.bottomMargin: UtilScript.pt(10)
                     anchors.horizontalCenter: parent.horizontalCenter
                     id: imageHintOk
-                    width: 50
-                    height: 50
+                    width: UtilScript.pt(50)
+                    height: UtilScript.pt(50)
                     source: "qrc:/resources/images/button_ok.png"
 
                     MouseArea {

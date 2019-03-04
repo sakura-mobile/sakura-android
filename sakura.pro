@@ -68,5 +68,11 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
         $$PWD/android
 }
 
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+    ANDROID_EXTRA_LIBS = \
+        $$PWD/android/lib/armeabi-v7a/libcrypto.so \
+        $$PWD/android/lib/armeabi-v7a/libssl.so
+}
+
 HEADERS += \
     src/uuidcreator.h

@@ -3,6 +3,8 @@ import QtQuick.Window 2.3
 import QtQuick.Controls 2.2
 import QtPurchasing 1.0
 
+import "Util.js" as UtilScript
+
 Item {
     id: settingsPage
 
@@ -24,7 +26,7 @@ Item {
             height: Math.min(
                         buttonsColumn.height,
                         parent.height - (backButton.height
-                                         + backButton.anchors.bottomMargin) * 2 - 8)
+                                         + backButton.anchors.bottomMargin) * 2 - UtilScript.pt(8))
             contentWidth: buttonsColumn.width
             contentHeight: buttonsColumn.height
             clip: true
@@ -40,13 +42,13 @@ Item {
                     id: settingsMusic
                     source: "qrc:/resources/images/rectangle-hi.png"
 
-                    width: 300
-                    height: 75
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(75)
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         text: qsTr("MUSIC")
                         font.pointSize: 20
                         font.family: "Helvetica"
@@ -58,9 +60,9 @@ Item {
                         id: imageCheckMusic
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 40
-                        width: 30
-                        height: 30
+                        anchors.rightMargin: UtilScript.pt(40)
+                        width: UtilScript.pt(30)
+                        height: UtilScript.pt(30)
                     }
 
                     MouseArea {
@@ -85,13 +87,13 @@ Item {
                     id: settingsSounds
                     source: "qrc:/resources/images/rectangle-hi.png"
 
-                    width: 300
-                    height: 75
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(75)
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: UtilScript.pt(20)
                         text: qsTr("SOUNDS")
                         font.pointSize: 20
                         font.family: "Helvetica"
@@ -103,9 +105,9 @@ Item {
                         id: imageCheckSounds
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: 40
-                        width: 30
-                        height: 30
+                        anchors.rightMargin: UtilScript.pt(40)
+                        width: UtilScript.pt(30)
+                        height: UtilScript.pt(30)
                     }
 
                     MouseArea {
@@ -132,11 +134,11 @@ Item {
             id: backButton
             source: "qrc:/resources/images/back.png"
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 16
+            anchors.bottomMargin: UtilScript.pt(16)
             anchors.left: parent.left
-            anchors.leftMargin: 15
-            height: 40
-            width: 40
+            anchors.leftMargin: UtilScript.pt(15)
+            height: UtilScript.pt(40)
+            width: UtilScript.pt(40)
 
             MouseArea {
                 id: mouseAreaBackAwardsButton

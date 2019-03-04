@@ -4,6 +4,7 @@ import QtQuick.Controls 2.2
 import QtQuick.LocalStorage 2.0
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
     id: ratingsListPage
@@ -24,15 +25,15 @@ Item {
             id: imageLanternTime
             source: "qrc:/resources/images/tape.png"
             anchors.horizontalCenter: parent.horizontalCenter
-            width: 300
-            height: 100
+            width: UtilScript.pt(300)
+            height: UtilScript.pt(100)
             y: imageLanternTime.height * -1
 
             Column {
-                spacing: 1
+                spacing: UtilScript.pt(1)
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 40
+                anchors.bottomMargin: UtilScript.pt(40)
 
                 Text {
                     id: textTimeLantern
@@ -46,7 +47,7 @@ Item {
 
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    spacing: 3
+                    spacing: UtilScript.pt(3)
 
                     Text {
                         id: textHours
@@ -83,7 +84,7 @@ Item {
                 target: imageLanternTime
                 properties: "y"
                 easing.type: Easing.OutBack
-                to: 16
+                to: UtilScript.pt(16)
             }
 
             PropertyAnimation {
@@ -100,8 +101,8 @@ Item {
         Image {
             id: listAward
             anchors.centerIn: parent
-            scale: width < parent.width
-                   * 0.7 ? 1.0 : (width > 0.0 ? (parent.width / width) * 0.7 : 1.0)
+            width: parent.width * 0.7
+            height: sourceSize.width > 0 ? sourceSize.height * (width / sourceSize.width) : 0
             source: "qrc:/resources/images/background_awards.jpg"
             opacity: 0.9
 
@@ -110,7 +111,9 @@ Item {
                 width: parent.width
                 height: parent.height
                 anchors.fill: parent
-                anchors.margins: 30
+                anchors.margins: UtilScript.pt(15)
+//                scale: UtilScript.pt(listAward.sourceSize.width) < listAward.parent.width * 0.7 ? 1.0 :
+//                      (UtilScript.pt(listAward.sourceSize.width) > 0.0 ? (listAward.parent.width / UtilScript.pt(listAward.sourceSize.width)) * 0.7 : 1.0)
                 color: "transparent"
                 clip: true
 
@@ -129,16 +132,16 @@ Item {
                         id: delegateRectangle
                         color: "transparent"
                         width: scoreListView.width
-                        height: 60
+                        height: UtilScript.pt(15)
 
                         property var listView: ListView.view
 
                         Row {
                             anchors.fill: parent
-                            spacing: 20
+                            spacing: UtilScript.pt(5)
 
                             Rectangle {
-                                width: 30
+                                width: UtilScript.pt(10)
                                 height: parent.height
                                 color: "transparent"
 
@@ -149,13 +152,13 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 30
+                                    font.pointSize: 10
                                     font.family: "Helvetica"
                                 }
                             }
 
                             Rectangle {
-                                width: 200
+                                width: UtilScript.pt(100)
                                 height: parent.height
                                 color: "transparent"
 
@@ -166,12 +169,12 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 30
+                                    font.pointSize: 10
                                     font.family: "Helvetica"
                                 }
                             }
                             Rectangle {
-                                width: 130
+                                width: UtilScript.pt(60)
                                 height: parent.height
                                 color: "transparent"
 
@@ -182,14 +185,14 @@ Item {
                                     horizontalAlignment: Text.AlignRight
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 30
+                                    font.pointSize: 10
                                     font.family: "Helvetica"
                                 }
                             }
 
                             Row {
                                 id: rowGifts
-                                width: 100
+                                width: UtilScript.pt(50)
                                 height: parent.height
                                 anchors.verticalCenter: parent.verticalCenter
                                 visible: delegateRectangle.listView.viewGifts
@@ -198,8 +201,8 @@ Item {
                                     id: quickTipButton
                                     anchors.verticalCenter: parent.verticalCenter
                                     source: getGift(giftType)
-                                    width: 30
-                                    height: 30
+                                    width: UtilScript.pt(10)
+                                    height: UtilScript.pt(10)
 
                                     function getGift(giftType) {
                                         if (giftType === 1) {
@@ -219,7 +222,7 @@ Item {
                                     text: "x" + countGift
                                     color: "black"
                                     clip: true
-                                    font.pointSize: 30
+                                    font.pointSize: 10
                                     font.family: "Helvetica"
                                 }
                             }
@@ -229,13 +232,13 @@ Item {
                     header: Rectangle {
                         color: "transparent"
                         width: scoreListView.width
-                        height: 60
+                        height: UtilScript.pt(15)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             text: "<b>" + qsTr("TOP SCORE") + "</b>"
                             color: "black"
-                            font.pointSize: 35
+                            font.pointSize: 15
                             font.bold: true
                             font.family: "Helvetica"
                         }
@@ -255,11 +258,11 @@ Item {
             id: backAwardsButton
             source: "qrc:/resources/images/back.png"
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 16
+            anchors.bottomMargin: UtilScript.pt(16)
             anchors.left: parent.left
-            anchors.leftMargin: 15
-            height: 60
-            width: 60
+            anchors.leftMargin: UtilScript.pt(15)
+            height: UtilScript.pt(60)
+            width: UtilScript.pt(60)
 
             MouseArea {
                 id: mouseAreaBackAwardsButton
@@ -273,14 +276,14 @@ Item {
         Row {
             anchors.bottom: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottomMargin: 16
-            spacing: 10
+            anchors.bottomMargin: UtilScript.pt(16)
+            spacing: UtilScript.pt(10)
 
             Image {
                 id: tournamentRatingButton
                 source: "qrc:/resources/images/button_tournament_rating_off.png"
-                height: 60
-                width: 60
+                height: UtilScript.pt(60)
+                width: UtilScript.pt(60)
 
                 MouseArea {
                     id: mouseAreaTournamentRatingButton
@@ -304,8 +307,8 @@ Item {
             Image {
                 id: userRatingButton
                 source: "qrc:/resources/images/button_user_ratings_on.png"
-                height: 60
-                width: 60
+                height: UtilScript.pt(60)
+                width: UtilScript.pt(60)
 
                 MouseArea {
                     id: mouseAreaUserRatingButton
@@ -324,92 +327,6 @@ Item {
                         userScores()
                     }
                 }
-            }
-        }
-        Rectangle {
-            id: rectNameUser
-            y: imageBackgroundRatingsPage.height
-            anchors.horizontalCenter: imageBackgroundRatingsPage.horizontalCenter
-            width: 300
-            height: 200
-            color: "transparent"
-            visible: false
-            Image {
-                id: backgroundRectNameUser
-                source: "qrc:/resources/images/background_rect_score.png"
-                width: parent.width
-                height: parent.height
-
-                Column {
-                    id: rowTextNameUser
-                    anchors.top: parent.top
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.topMargin: 30
-                    z: 15
-                    spacing: 5
-                    visible: true
-                    Text {
-                        id: textName
-                        anchors.horizontalCenter: parent.horizontalCenter
-
-                        text: qsTr("Your nickname:")
-                        font.pointSize: 25
-                        font.bold: true
-                        color: "white"
-                        font.family: "Helvetica"
-                    }
-                    TextInput {
-                        id: textInputName
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: "NONAME"
-                        focus: true
-                        font.pointSize: 30
-                        color: "white"
-                        maximumLength: 10
-                        inputMethodHints: Qt.ImhNoPredictiveText
-                        font.family: "Helvetica"
-                    }
-                }
-                Image {
-                    id: imageOkName
-                    width: 50
-                    height: 50
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 16
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    source: "qrc:/resources/images/button_ok.png"
-                    MouseArea {
-                        id: mouseAreaImageOkName
-                        anchors.fill: parent
-                        onClicked: {
-                            mainWindow.setSetting("nameUser",
-                                                  textInputName.text)
-                            nameUser = textInputName.text
-                            animationRectNameUserDown.running = true
-                        }
-                    }
-                }
-            }
-
-            PropertyAnimation {
-                id: animationRectNameUserUp
-                duration: 500
-                easing.overshoot: 4.5
-                from: imageBackgroundRatingsPage.height
-                target: rectNameUser
-                properties: "y"
-                easing.type: Easing.InQuad
-                to: imageBackgroundRatingsPage.height / 2 - rectNameUser.height / 2
-            }
-
-            PropertyAnimation {
-                id: animationRectNameUserDown
-                duration: 200
-                from: rectNameUser.y
-                target: rectNameUser
-                properties: "y"
-                easing.type: Easing.InQuad
-                to: imageBackgroundRatingsPage.height
             }
         }
     }

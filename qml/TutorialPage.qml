@@ -4,6 +4,7 @@ import QtQuick.Particles 2.0
 import QtMultimedia 5.9
 
 import "GenerationBranch.js" as GenerationBranchScript
+import "Util.js" as UtilScript
 
 Item {
     id: tutorialPage
@@ -266,12 +267,12 @@ Item {
         Image {
             id: backButton
             source: "qrc:/resources/images/back.png"
-            width: 60
-            height: 60
+            width: UtilScript.pt(60)
+            height: UtilScript.pt(60)
             anchors.left: parent.left
             anchors.bottom: parent.bottom
-            anchors.leftMargin: 40
-            anchors.bottomMargin: 16
+            anchors.leftMargin: UtilScript.pt(40)
+            anchors.bottomMargin: UtilScript.pt(16)
             MouseArea {
                 id: mouseAreaBackButton
                 anchors.fill: parent
@@ -286,10 +287,10 @@ Item {
             source: "qrc:/resources/images/refresh.png"
             anchors.right: parent.right
             anchors.bottom: parent.bottom
-            anchors.rightMargin: 40
-            anchors.bottomMargin: 16
-            width: 60
-            height: 60
+            anchors.rightMargin: UtilScript.pt(40)
+            anchors.bottomMargin: UtilScript.pt(16)
+            width: UtilScript.pt(60)
+            height: UtilScript.pt(60)
             MouseArea {
                 id: mouseAreaRefreshButton
                 anchors.fill: parent
@@ -303,8 +304,8 @@ Item {
             id: rectCompletedGame
             anchors.horizontalCenter: parent.horizontalCenter
             y: imageBackgroundMainLevel.height
-            width: 300
-            height: 200
+            width: UtilScript.pt(300)
+            height: UtilScript.pt(200)
             color: "transparent"
             Image {
                 id: backgroundCompletedGame
@@ -316,9 +317,9 @@ Item {
                     id: rowTextCompletedGame
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.topMargin: 50
+                    anchors.topMargin: UtilScript.pt(50)
                     z: 15
-                    spacing: 5
+                    spacing: UtilScript.pt(5)
                     Text {
                         id: textCompletedGame
                         text: qsTr("Excellent!")
@@ -333,15 +334,15 @@ Item {
                     id: rowRectCompletedGame
                     anchors.bottom: parent.bottom
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.bottomMargin: 30
+                    anchors.bottomMargin: UtilScript.pt(30)
                     z: 15
-                    height: 50
-                    spacing: 15
+                    height: UtilScript.pt(50)
+                    spacing: UtilScript.pt(15)
 
                     Image {
                         id: imageRepeatGame
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                         source: "qrc:/resources/images/button_repeat_game.png"
                         MouseArea {
                             id: mouseAreaPlayRepeatGame
@@ -353,8 +354,8 @@ Item {
                     }
                     Image {
                         id: imageSeachLevel
-                        width: 50
-                        height: 50
+                        width: UtilScript.pt(50)
+                        height: UtilScript.pt(50)
                         source: "qrc:/resources/images/button_seach_levels.png"
                         MouseArea {
                             id: mouseAreaSeachLevel
@@ -375,7 +376,7 @@ Item {
                 target: rectCompletedGame
                 properties: "y"
                 easing.type: Easing.InQuad
-                to: imageBackgroundMainLevel.height - rectCompletedGame.height - 15
+                to: imageBackgroundMainLevel.height - rectCompletedGame.height - UtilScript.pt(15)
             }
             PropertyAnimation {
                 id: animationRectCompletedGameDown
@@ -396,13 +397,13 @@ Item {
             id: rectTutorialGame
             anchors.horizontalCenter: parent.horizontalCenter
             y: imageBackgroundMainLevel.height * -1
-            height: 100
+            height: UtilScript.pt(100)
             color: "transparent"
             width: parent.width
 
             Rectangle {
                 anchors.fill: parent
-                height: 100
+                height: UtilScript.pt(100)
                 color: "black"
                 opacity: 0.5
                 width: parent.width
@@ -411,7 +412,7 @@ Item {
             Text {
                 id: textPinchMap
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: true
                 text: qsTr("Try to resize playground area with pinch gesture")
@@ -430,7 +431,7 @@ Item {
             Text {
                 id: textFlickMap
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
                 text: qsTr("Try to move playground area with your finger")
@@ -448,7 +449,7 @@ Item {
             Text {
                 id: textDoubleTapBranch
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
                 text: qsTr("Double tap on playground area to restore its default position")
@@ -466,7 +467,7 @@ Item {
             Text {
                 id: textDisassembleBranch
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
                 text: qsTr("Disassembling puzzle...")
@@ -484,7 +485,7 @@ Item {
             Text {
                 id: textPressedBranch
                 anchors.fill: parent
-                anchors.margins: 4
+                anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
                 text: qsTr("Tap on highlighted fragments to solve the puzzle")
