@@ -679,6 +679,7 @@ Item {
                     object.onStopRotationTime.connect(stopRotationBranch)
                     object.onStopRotationTimeGame.connect(
                                 stopRotationBranchGame)
+                    object.setEnabledMouseArea();
                     GenerationBranchScript.listGameBranchObject[i][j] = object
                 } else {
                     component = Qt.createQmlObject(

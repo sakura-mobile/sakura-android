@@ -35,6 +35,10 @@ Item {
     property real lastMouseX: 0
     property real lastMouseY: 0
 
+    property double lastPressTime: 0.0
+
+    property int countAnimationRotationBranch: 0
+
     property int bannerViewHeight: AdMobHelper.bannerViewHeight
     property bool endedAvailableLevels: false
     property bool isPushStore: false
@@ -301,21 +305,18 @@ Item {
                         anchors.fill: parent
                         propagateComposedEvents: true
 
-                        onClicked: {
-                            lastMouseX = mouse.x
-                            lastMouseY = mouse.y
+                        onPressed: {
+                            if ((new Date()).getTime() - lastPressTime < 250 &&
+                                Math.abs(mouse.x - lastMouseX) * scale < UtilScript.pt(16) &&
+                                Math.abs(mouse.y - lastMouseY) * scale < UtilScript.pt(16)) {
+                                backgroundFlickable.initialResize(gridMapRelax.width, gridMapRelax.height);
+                            } else {
+                                lastMouseX    = mouse.x
+                                lastMouseY    = mouse.y
+                                lastPressTime = (new Date()).getTime()
+                            }
 
                             mouse.accepted = false
-                        }
-
-                        onDoubleClicked: {
-                            if (Math.abs(mouse.x - lastMouseX) * scale < 16
-                                    && Math.abs(
-                                        mouse.y - lastMouseY) * scale < 16) {
-                                backgroundFlickable.initialResize(
-                                            gridMapRelax.width,
-                                            gridMapRelax.height)
-                            }
                         }
                     }
                 }
@@ -913,30 +914,30 @@ Item {
                                               "countQuickTip", 0))
         if (countQuickTipLantern <= 0)
             return
-
         for (var i = 0; i < GenerationBranchScript.heightGame; i++) {
             for (var j = 0; j < GenerationBranchScript.widthGame; j++) {
                 if (GenerationBranchScript.listGameBranchObject[i][j] !== null) {
-                    if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch
+                    if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent
                             != GenerationBranchScript.listGameBranch[i][j].rotation) {
+
                         if (GenerationBranchScript.listGameBranchObject[i][j].nameItem
                                 == 'branch_05')
                             continue
                         if (GenerationBranchScript.listGameBranchObject[i][j].nameItem
                                 == 'branch_01'
-                                && ((GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 0
+                                && ((GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 0
                                      && GenerationBranchScript.listGameBranch[i][j].rotation
                                      === 180)
-                                    || (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 90
+                                    || (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 90
                                         && GenerationBranchScript.listGameBranch[i][j].rotation
                                         === 270))) {
                             continue
                         } else if (GenerationBranchScript.listGameBranchObject[i][j].nameItem
                                    == 'branch_01'
-                                   && ((GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 180
+                                   && ((GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 180
                                         && GenerationBranchScript.listGameBranch[i][j].rotation
                                         === 0)
-                                       || (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 270
+                                       || (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 270
                                            && GenerationBranchScript.listGameBranch[i][j].rotation
                                            === 90))) {
                             continue
@@ -948,6 +949,7 @@ Item {
                         setInfoQuickTip()
 
                         GenerationBranchScript.listGameBranchObject[i][j].startAnimationQuickTip()
+                        GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent = GenerationBranchScript.listGameBranch[i][j].rotation
                         if (GenerationBranchScript.listGameBranch[i][j].rotation == 0) {
                             GenerationBranchScript.listGameBranchObject[i][j].toRotationBranch = 360
                         } else {
@@ -955,8 +957,10 @@ Item {
                                     = GenerationBranchScript.listGameBranch[i][j].rotation
                         }
                         GenerationBranchScript.listGameBranchObject[i][j].fromRotationBranch
-                                = GenerationBranchScript.listGameBranchObject[i][j].rotationBranch
+                                = GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent
+                        countAnimationRotationBranch++;
                         GenerationBranchScript.listGameBranchObject[i][j].startAnimationRotationGame()
+
                         audioClickBranch.playAudio()
                         GenerationBranchScript.listGameBranchObject[i][j].posLeft
                                 = GenerationBranchScript.listGameBranch[i][j].left
@@ -1008,11 +1012,12 @@ Item {
     function stopRotationBranchGame(ii, jj) {
         if (isLockedQuickTip == 1)
             isLockedQuickTip = 0
+        countAnimationRotationBranch--
         GenerationBranchScript.revivalBranchStart()
         setScoreUserRotation()
         textStepGameLantern.text
                 = GenerationBranchScript.listObjectRelaxLevels[currentLevel].stepCurrent
-        if (GenerationBranchScript.isCompletedGame() === true) {
+        if (countAnimationRotationBranch <=0 && GenerationBranchScript.isCompletedGame() === true) {
             GenerationBranchScript.isCompleted = 1
             setRatingUser()
             gridMapRelax.spacing = 0
@@ -1023,11 +1028,12 @@ Item {
     }
 
     function rotationBranch(i, j) {
+        GenerationBranchScript.listGameBranchObject[i][j].stopAnimationRotationBranch()
 
         if (!GenerationBranchScript.isPlayGame
                 || GenerationBranchScript.isCompleted)
             return
-        var paramRotation = GenerationBranchScript.listGameBranchObject[i][j].rotationBranch
+        var paramRotation = GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent
         var paramRotation2 = 0
 
         if (GenerationBranchScript.listGameBranchObject[i][j].nameItem == 'branch_05') {
@@ -1048,9 +1054,11 @@ Item {
             }
         }
 
+        GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent = paramRotation
         GenerationBranchScript.listGameBranchObject[i][j].fromRotationBranch
                 = GenerationBranchScript.listGameBranchObject[i][j].rotationBranch
         GenerationBranchScript.listGameBranchObject[i][j].toRotationBranch = paramRotation2
+        countAnimationRotationBranch++;
         GenerationBranchScript.listGameBranchObject[i][j].startAnimationRotationGame()
         audioClickBranch.playAudio()
 
@@ -1166,6 +1174,7 @@ Item {
 
         resetParticleSystems()
         isLockedQuickTip = 1
+        countAnimationRotationBranch = 0
         var arrBranch = []
         for (var i = 0; i < GenerationBranchScript.heightGame; i++) {
             for (var j = 0; j < GenerationBranchScript.widthGame; j++) {
@@ -1194,7 +1203,7 @@ Item {
             j = arrBranch[startPoint].posJ
 
             if (GenerationBranchScript.listGameBranchObject[i][j].nameItem !== 'branch_05') {
-                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 270) {
+                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 270) {
                     if (GenerationBranchScript.listGameBranchObject[i][j].nameItem == 'branch_01') {
                         arrRotation = [270, 180]
                     } else {
@@ -1202,14 +1211,14 @@ Item {
                     }
                 }
 
-                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 0) {
+                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 0) {
                     if (GenerationBranchScript.listGameBranchObject[i][j].nameItem == 'branch_01') {
                         arrRotation = [0, 270]
                     } else {
                         arrRotation = [0, 270, 180, 90]
                     }
                 }
-                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 180) {
+                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 180) {
                     if (GenerationBranchScript.listGameBranchObject[i][j].nameItem == 'branch_01') {
                         arrRotation = [180, 90]
                     } else {
@@ -1217,7 +1226,7 @@ Item {
                     }
                 }
 
-                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranch === 90) {
+                if (GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent === 90) {
                     if (GenerationBranchScript.listGameBranchObject[i][j].nameItem == 'branch_01') {
                         arrRotation = [90, 0]
                     } else {
@@ -1231,10 +1240,11 @@ Item {
                     typeRotation = 1
 
                 GenerationBranchScript.listGameBranchObject[i][j].fromRotationBranch
-                        = GenerationBranchScript.listGameBranchObject[i][j].rotationBranch
+                        = GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent
                 GenerationBranchScript.listGameBranchObject[i][j].toRotationBranch
                         = arrRotation[typeRotation]
                 GenerationBranchScript.listGameBranchObject[i][j].stopRotation = 0
+                GenerationBranchScript.listGameBranchObject[i][j].rotationBranchCurrent = arrRotation[typeRotation]
                 GenerationBranchScript.listGameBranchObject[i][j].startAnimationRotation()
 
                 for (var n = 0; n < GenerationBranchScript.listImageBranchFull.length; n++) {
@@ -1330,6 +1340,7 @@ Item {
                     object = component.createObject(gridMapRelax)
                     object.source = GenerationBranchScript.listGameBranch[i][j].source
                     object.rotationBranch = GenerationBranchScript.listGameBranch[i][j].rotation
+                    object.rotationBranchCurrent = GenerationBranchScript.listGameBranch[i][j].rotation
                     object.posLeft = GenerationBranchScript.listGameBranch[i][j].left
                     object.posRight = GenerationBranchScript.listGameBranch[i][j].right
                     object.posTop = GenerationBranchScript.listGameBranch[i][j].top
@@ -1346,6 +1357,7 @@ Item {
                                 stopRotationBranchGame)
 
                     object.onClickedBranch.connect(rotationBranch)
+                    //object.onPressedBranch.connect(rotationBranch)
                     GenerationBranchScript.listGameBranchObject[i][j] = object
                 } else {
 
