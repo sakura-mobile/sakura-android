@@ -4,9 +4,7 @@
         <file>qml/ButtonLocation.qml</file>
         <file>qml/CampaignPage.qml</file>
         <file>qml/CardPage.qml</file>
-        <file>qml/GamePage.qml</file>
         <file>qml/GenerationBranch.js</file>
-        <file>qml/LevelPage.qml</file>
         <file>qml/LevelsMapPage.qml</file>
         <file>qml/main.qml</file>
         <file>qml/MainPage.qml</file>
@@ -15,13 +13,12 @@
         <file>qml/RectangleLevel.qml</file>
         <file>qml/RelaxGamePage.qml</file>
         <file>qml/RelaxPage.qml</file>
-        <file>qml/ScoresPage.qml</file>
-        <file>qml/Settings.js</file>
         <file>qml/SettingsPage.qml</file>
         <file>qml/SingleGamePage.qml</file>
         <file>qml/SingleLevelsPage.qml</file>
         <file>qml/StorePage.qml</file>
         <file>qml/TutorialPage.qml</file>
+        <file>qml/Util.js</file>
         <file>resources/images/branch/branch_01_00.png</file>
         <file>resources/images/branch/branch_01_1.png</file>
         <file>resources/images/branch/branch_01_2.png</file>
@@ -264,6 +261,5 @@
         <file>resources/sound/game_complete.wav</file>
         <file>resources/sound/game_music.mp3</file>
         <file>resources/sound/game_over.wav</file>
-        <file>qml/Util.js</file>
     </qresource>
 </RCC>
