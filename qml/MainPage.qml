@@ -237,23 +237,6 @@ Item {
                     anchors.fill: parent
 
                     onClicked: {
-
-
-                        rectFacebookGifts.visible = true
-                        rowOk.visible = true
-                        animationRectGiftsGameUp.running = true
-
-                            textCountQuickTip.text = "1"
-                            rowQuickTip.visible = true
-
-                            textCountTimeIce.text = "1"
-                            rowTimeIce.visible = true
-
-                            textCountStepIce.text = "1"
-                            rowStepIce.visible = true
-
-
-
                         FBHelper.showGameRequest(
                                     qsTr("Sakura Puzzle"), qsTr(
                                         "Help me to solve a puzzle and enjoy the fanciful pictures of blooming flowers!"))

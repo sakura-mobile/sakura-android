@@ -491,7 +491,7 @@ Item {
                             if ((new Date()).getTime() - lastPressTime < 250 &&
                                 Math.abs(mouse.x - lastMouseX) * scale < UtilScript.pt(16) &&
                                 Math.abs(mouse.y - lastMouseY) * scale < UtilScript.pt(16)) {
-                                backgroundFlickable.initialResize(gridMapRelax.width, gridMapRelax.height);
+                                backgroundFlickable.initialResize(gridMapSingleGame.width, gridMapSingleGame.height);
                             } else {
                                 lastMouseX    = mouse.x
                                 lastMouseY    = mouse.y

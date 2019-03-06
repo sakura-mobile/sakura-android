@@ -289,7 +289,6 @@ Item {
                         id: textAreaCard
                         width: flick.width
                         height: Math.max(flick.height, contentHeight)
-                        focus: true
                         font.pointSize: 20
                         font.bold: true
                         color: "black"
@@ -312,7 +311,7 @@ Item {
                     easing.type: Easing.InQuad
                     to: imageBackgroundMainMap.height - backgroundTextCard.height - UtilScript.pt(15)
                     onStopped: {
-                        textAreaCard.focus = true
+                        textAreaCard.forceActiveFocus();
                     }
                 }
                 PropertyAnimation {

@@ -1357,7 +1357,6 @@ Item {
                                 stopRotationBranchGame)
 
                     object.onClickedBranch.connect(rotationBranch)
-                    //object.onPressedBranch.connect(rotationBranch)
                     GenerationBranchScript.listGameBranchObject[i][j] = object
                 } else {
 
