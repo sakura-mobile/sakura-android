@@ -8,7 +8,9 @@
 #include "androidgw.h"
 #include "admobhelper.h"
 #include "uihelper.h"
+#include "sharehelper.h"
 #include "uuidcreator.h"
+#include "gifcreator.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,13 +30,13 @@ int main(int argc, char *argv[])
 
     /*
     engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), new FBHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), new ShareHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("StoreHelper"), new StoreHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), new GIFCreator(&app));
     */
     engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), admob_helper);
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), new UIHelper(&app));
+    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), new ShareHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), new UuidCreator(&app));
+    engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), new GIFCreator(&app));
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 

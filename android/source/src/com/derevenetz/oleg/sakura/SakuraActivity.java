@@ -5,7 +5,6 @@ import java.io.File;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.content.FileProvider;
 import android.util.DisplayMetrics;
@@ -73,17 +72,6 @@ public class SakuraActivity extends QtActivity
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
         return metrics.densityDpi;
-    }
-
-    public String getSaveDirectory()
-    {
-        File save_dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/Sakura");
-
-        if (save_dir.mkdirs() || save_dir.isDirectory()) {
-            return save_dir.getAbsolutePath();
-        } else {
-            return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath();
-        }
     }
 
     public void shareImage(String image_file)

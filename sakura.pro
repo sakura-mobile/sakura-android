@@ -6,30 +6,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += src/main.cpp \
     src/admobhelper.cpp \
     src/androidgw.cpp \
-#    src/gifcreator.cpp \
+    src/gifcreator.cpp \
+    src/sharehelper.cpp \
     src/uihelper.cpp \
     src/uuidcreator.cpp
-#    src/sakuraapplicationdelegate.mm \
-#    src/sharehelper.mm \
-#    src/admobhelper.mm \
-#    src/fbhelper.mm \
-#    src/storehelper.mm \
-#    src/audiohelper.mm \
-#    src/reachabilityhelper.mm
 
 HEADERS += \
     src/admobhelper.h \
     src/androidgw.h \
+    src/gif.h \
+    src/gifcreator.h \
+    src/sharehelper.h \
     src/uihelper.h \
     src/uuidcreator.h
-#    src/gif.h \
-#    src/gifcreator.h
-#    src/sharehelper.h \
-#    src/admobhelper.h \
-#    src/fbhelper.h \
-#    src/storehelper.h \
-#    src/audiohelper.h \
-#    src/reachabilityhelper.h
 
 RESOURCES += \
     qml.qrc \

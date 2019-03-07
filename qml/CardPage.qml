@@ -471,7 +471,7 @@ Item {
             } else if (!running && lastRunning) {
                 if (frameNumber >= framesCount) {
                     if (GIFCreator.createGIF(framesCount, interval / 10)) {
-                        ShareHelper.showShareToView(GIFCreator.gifFilePath)
+                        ShareHelper.shareImage(GIFCreator.gifFilePath)
                     } else {
                         console.log("createGIF() failed")
                     }
@@ -519,7 +519,7 @@ Item {
         if (!imageBackgroundMainMap.grabToImage(function (result) {
             result.saveToFile(ShareHelper.imageFilePath)
 
-            ShareHelper.showShareToView(ShareHelper.imageFilePath)
+            ShareHelper.shareImage(ShareHelper.imageFilePath)
 
             waitRectangle.visible = false
         })) {
