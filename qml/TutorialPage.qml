@@ -533,7 +533,7 @@ Item {
         volume: 1.0
         source: "qrc:/resources/sound/click.wav"
 
-        property bool playbackEnabled: !AudioHelper.silenceAudio
+        property bool playbackEnabled: true
 
         onError: {
             console.log(errorString)
@@ -551,7 +551,7 @@ Item {
         volume: 1.0
         source: "qrc:/resources/sound/game_complete.wav"
 
-        property bool playbackEnabled: !AudioHelper.silenceAudio
+        property bool playbackEnabled: true
 
         onError: {
             console.log(errorString)

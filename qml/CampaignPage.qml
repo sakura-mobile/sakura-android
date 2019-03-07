@@ -1146,7 +1146,6 @@ Item {
         loops: Audio.Infinite
 
         property bool playbackEnabled: Qt.application.active
-                                       && !AudioHelper.silenceAudio
                                        && campaignPage.StackView.status === StackView.Active
 
         onPlaybackEnabledChanged: {
@@ -1170,7 +1169,7 @@ Item {
         volume: 1.0
         source: "qrc:/resources/sound/click.wav"
 
-        property bool playbackEnabled: !AudioHelper.silenceAudio
+        property bool playbackEnabled: true
 
         onError: {
             console.log(errorString)
@@ -1190,7 +1189,7 @@ Item {
         volume: 1.0
         source: "qrc:/resources/sound/game_complete.wav"
 
-        property bool playbackEnabled: !AudioHelper.silenceAudio
+        property bool playbackEnabled: true
 
         onError: {
             console.log(errorString)
@@ -1210,7 +1209,7 @@ Item {
         volume: 1.0
         source: "qrc:/resources/sound/game_over.wav"
 
-        property bool playbackEnabled: !AudioHelper.silenceAudio
+        property bool playbackEnabled: true
 
         onError: {
             console.log(errorString)

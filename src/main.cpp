@@ -27,12 +27,9 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     /*
-    engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), new AdMobHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), new FBHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), new ShareHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("StoreHelper"), new StoreHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("AudioHelper"), new AudioHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("ReachabilityHelper"), new ReachabilityHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), new GIFCreator(&app));
     */
     engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), admob_helper);

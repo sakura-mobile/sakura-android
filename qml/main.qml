@@ -9,12 +9,7 @@ Window {
     visibility: Window.FullScreen
     visible:    true
 
-    property bool appInForeground: Qt.application.active
-    property bool disableAds:      false
-
-    onAppInForegroundChanged: {
-        AudioHelper.refresh();
-    }
+    property bool disableAds: false
 
     onDisableAdsChanged: {
         setSetting("DisableAds", disableAds ? "true" : "false");
