@@ -112,8 +112,6 @@ Item {
                 height: parent.height
                 anchors.fill: parent
                 anchors.margins: UtilScript.pt(15)
-//                scale: UtilScript.pt(listAward.sourceSize.width) < listAward.parent.width * 0.7 ? 1.0 :
-//                      (UtilScript.pt(listAward.sourceSize.width) > 0.0 ? (listAward.parent.width / UtilScript.pt(listAward.sourceSize.width)) * 0.7 : 1.0)
                 color: "transparent"
                 clip: true
 
@@ -132,7 +130,7 @@ Item {
                         id: delegateRectangle
                         color: "transparent"
                         width: scoreListView.width
-                        height: UtilScript.pt(15)
+                        height: rectangleScores.width * 0.25 * 0.3
 
                         property var listView: ListView.view
 
@@ -141,7 +139,7 @@ Item {
                             spacing: UtilScript.pt(5)
 
                             Rectangle {
-                                width: UtilScript.pt(10)
+                                width: rectangleScores.width * 0.1
                                 height: parent.height
                                 color: "transparent"
 
@@ -152,13 +150,15 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 10
+                                    font.pointSize: 20
                                     font.family: "Helvetica"
+                                    fontSizeMode: Text.Fit
+                                    minimumPointSize: 6
                                 }
                             }
 
                             Rectangle {
-                                width: UtilScript.pt(100)
+                                width:  rectangleScores.width * 0.4
                                 height: parent.height
                                 color: "transparent"
 
@@ -169,12 +169,14 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 10
+                                    font.pointSize: 20
                                     font.family: "Helvetica"
+                                    fontSizeMode: Text.Fit
+                                    minimumPointSize: 6
                                 }
                             }
                             Rectangle {
-                                width: UtilScript.pt(60)
+                                width:  rectangleScores.width * 0.20
                                 height: parent.height
                                 color: "transparent"
 
@@ -185,14 +187,17 @@ Item {
                                     horizontalAlignment: Text.AlignRight
                                     verticalAlignment: Text.AlignVCenter
                                     clip: true
-                                    font.pointSize: 10
+                                    font.pointSize: 20
                                     font.family: "Helvetica"
+                                    fontSizeMode: Text.Fit
+                                    minimumPointSize: 6
+
                                 }
                             }
 
                             Row {
                                 id: rowGifts
-                                width: UtilScript.pt(50)
+                                width:  rectangleScores.width * 0.25
                                 height: parent.height
                                 anchors.verticalCenter: parent.verticalCenter
                                 visible: delegateRectangle.listView.viewGifts
@@ -201,8 +206,8 @@ Item {
                                     id: quickTipButton
                                     anchors.verticalCenter: parent.verticalCenter
                                     source: getGift(giftType)
-                                    width: UtilScript.pt(10)
-                                    height: UtilScript.pt(10)
+                                    width: rowGifts.width * 0.3
+                                    height: rowGifts.width * 0.3
 
                                     function getGift(giftType) {
                                         if (giftType === 1) {
@@ -218,12 +223,17 @@ Item {
                                 }
 
                                 Text {
-                                    anchors.verticalCenter: parent.verticalCenter
+                                    width:  rowGifts.width * 0.6
+                                    height: parent.height
                                     text: "x" + countGift
                                     color: "black"
                                     clip: true
-                                    font.pointSize: 10
+                                    font.pointSize: 20
                                     font.family: "Helvetica"
+                                    fontSizeMode: Text.Fit
+                                    minimumPointSize: 6
+                                    verticalAlignment: Text.AlignVCenter
+                                    horizontalAlignment: Text.AlignLeft
                                 }
                             }
                         }
