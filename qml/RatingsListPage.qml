@@ -449,7 +449,7 @@ Item {
 
             var rowScore = res.rows.length
             var name
-            var minScore
+            var minScore = 0;
 
             for (var i = 0; i < res.rows.length; i++) {
                 if (res.rows.item(i).NAME === 'NONAME'
