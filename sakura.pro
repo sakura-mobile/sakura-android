@@ -1,24 +1,14 @@
-QT += quick androidextras
+QT += quick quickcontrols2 sql multimedia purchasing
 CONFIG += c++11
 
-# The following define makes your compiler emit warnings if you use
-# any Qt feature that has been marked deprecated (the exact warnings
-# depend on your compiler). Refer to the documentation for the
-# deprecated API to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
-# You can also make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-# You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
 SOURCES += src/main.cpp \
-    src/uuidcreator.cpp \
-    src/uihelper.cpp
+    src/admobhelper.cpp \
+    src/androidgw.cpp \
 #    src/gifcreator.cpp \
-#    src/uuidcreator.cpp
-
-#OBJECTIVE_SOURCES += \
+    src/uihelper.cpp \
+    src/uuidcreator.cpp
 #    src/sakuraapplicationdelegate.mm \
 #    src/sharehelper.mm \
 #    src/admobhelper.mm \
@@ -28,11 +18,12 @@ SOURCES += src/main.cpp \
 #    src/reachabilityhelper.mm
 
 HEADERS += \
-    src/uuidcreator.h \
-    src/uihelper.h
-#    src/sakuraapplicationdelegate.h \
+    src/admobhelper.h \
+    src/androidgw.h \
+    src/uihelper.h \
+    src/uuidcreator.h
 #    src/gif.h \
-#    src/gifcreator.h \
+#    src/gifcreator.h
 #    src/sharehelper.h \
 #    src/admobhelper.h \
 #    src/fbhelper.h \
@@ -40,7 +31,20 @@ HEADERS += \
 #    src/audiohelper.h \
 #    src/reachabilityhelper.h
 
-RESOURCES += qml.qrc
+RESOURCES += \
+    qml.qrc \
+    resources.qrc \
+    translations.qrc
+
+TRANSLATIONS += \
+    translations/sakura_ru.ts \
+    translations/sakura_de.ts \
+    translations/sakura_fr.ts \
+    translations/sakura_it.ts \
+    translations/sakura_es.ts \
+    translations/sakura_zh.ts \
+    translations/sakura_ja.ts \
+    translations/sakura_ko.ts
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -48,31 +52,55 @@ QML_IMPORT_PATH =
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
 
+android {
+    QT += androidextras
+
+    OTHER_FILES += \
+        android/source/AndroidManifest.xml \
+        android/source/build.gradle \
+        android/source/gradlew \
+        android/source/gradlew.bat \
+        android/source/gradle/wrapper/gradle-wrapper.jar \
+        android/source/gradle/wrapper/gradle-wrapper.properties \
+        android/source/res/drawable/splash_qt.xml \
+        android/source/res/drawable/splash_theme.xml \
+        android/source/res/drawable-hdpi/ic_splash_qt.png \
+        android/source/res/drawable-hdpi/ic_splash_theme.png \
+        android/source/res/drawable-mdpi/ic_splash_qt.png \
+        android/source/res/drawable-mdpi/ic_splash_theme.png \
+        android/source/res/drawable-xhdpi/ic_splash_qt.png \
+        android/source/res/drawable-xhdpi/ic_splash_theme.png \
+        android/source/res/drawable-xxhdpi/ic_splash_qt.png \
+        android/source/res/drawable-xxhdpi/ic_splash_theme.png \
+        android/source/res/drawable-xxxhdpi/ic_splash_qt.png \
+        android/source/res/drawable-xxxhdpi/ic_splash_theme.png \
+        android/source/res/mipmap-hdpi/ic_launcher.png \
+        android/source/res/mipmap-mdpi/ic_launcher.png \
+        android/source/res/mipmap-xhdpi/ic_launcher.png \
+        android/source/res/mipmap-xxhdpi/ic_launcher.png \
+        android/source/res/mipmap-xxxhdpi/ic_launcher.png \
+        android/source/res/values/colors.xml \
+        android/source/res/values/libs.xml \
+        android/source/res/values/strings.xml \
+        android/source/res/values/themes.xml \
+        android/source/res/values-ru/strings.xml \
+        android/source/res/values-de/strings.xml \
+        android/source/res/values-fr/strings.xml \
+        android/source/res/xml/provider_paths.xml \
+        android/source/src/com/derevenetz/oleg/sakura/SakuraActivity.java
+
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android/source
+
+    contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+        ANDROID_EXTRA_LIBS = \
+            $$PWD/android/source/lib/armeabi-v7a/libcrypto.so \
+            $$PWD/android/source/lib/armeabi-v7a/libssl.so
+    }
+}
+
+CONFIG(release, debug|release) {
+    CONFIG += qtquickcompiler
+}
+
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
-DISTFILES += \
-    android/src/com/derevenetz/oleg/sakura/SakuraActivity.java \
-    android/AndroidManifest.xml \
-    android/gradle/wrapper/gradle-wrapper.jar \
-    android/gradlew \
-    android/res/values/libs.xml \
-    android/build.gradle \
-    android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew.bat
-
-contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
-    ANDROID_PACKAGE_SOURCE_DIR = \
-        $$PWD/android
-}
-
-contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
-    ANDROID_EXTRA_LIBS = \
-        $$PWD/android/lib/armeabi-v7a/libcrypto.so \
-        $$PWD/android/lib/armeabi-v7a/libssl.so
-}
-
-HEADERS += \
-    src/uuidcreator.h
+include(deployment.pri)

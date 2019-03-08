@@ -3,17 +3,10 @@
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
+#include <QtAndroidExtras/QtAndroid>
 
-/*
-#include "sakuraapplicationdelegate.h"
+#include "androidgw.h"
 #include "admobhelper.h"
-#include "fbhelper.h"
-#include "sharehelper.h"
-#include "storehelper.h"
-#include "audiohelper.h"
-#include "reachabilityhelper.h"
-#include "gifcreator.h"
-*/
 #include "uihelper.h"
 #include "uuidcreator.h"
 
@@ -26,6 +19,11 @@ int main(int argc, char *argv[])
         app.installTranslator(&translator);
     }
 
+    AndroidGW   *android_gw   = new AndroidGW(&app);
+    AdMobHelper *admob_helper = new AdMobHelper(&app);
+
+    QObject::connect(android_gw, &AndroidGW::setBannerViewHeight, admob_helper, &AdMobHelper::setBannerViewHeight);
+
     QQmlApplicationEngine engine;
 
     /*
@@ -37,11 +35,13 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("ReachabilityHelper"), new ReachabilityHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), new GIFCreator(&app));
     */
+    engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), admob_helper);
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), new UIHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), new UuidCreator(&app));
 
-
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+
+    QtAndroid::hideSplashScreen();
 
     if (engine.rootObjects().isEmpty())
         return -1;
