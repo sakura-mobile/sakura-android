@@ -8,6 +8,14 @@ import "Util.js" as UtilScript
 Item {
     id: storePage
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     function getPrice(status, price) {
         if (status === Product.Registered) {
             var result = /([\d \.,]+)/.exec(price)

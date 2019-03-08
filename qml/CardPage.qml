@@ -32,6 +32,14 @@ Item {
     property int isPetals: 1
     property int isTextCard: 0
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Rectangle {
         id: backgroundRectangle
         anchors.fill: parent

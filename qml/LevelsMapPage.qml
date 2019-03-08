@@ -10,6 +10,14 @@ Item {
     property int currentLocation: 0
     property var listRectanglesLevel: []
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundMainLevelsMap
         anchors.centerIn: parent

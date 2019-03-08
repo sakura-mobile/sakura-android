@@ -7,6 +7,14 @@ import "Util.js" as UtilScript
 Item {
     id: settingsPage
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundSettingsPage
         source: "qrc:/resources/images/background_main.png"

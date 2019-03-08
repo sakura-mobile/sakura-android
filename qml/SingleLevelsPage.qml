@@ -9,6 +9,14 @@ Item {
     property int currentLevel: 0
     property var arrRectTrasparent: []
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundMainLevel
         source: "qrc:/resources/images/background_main.png"

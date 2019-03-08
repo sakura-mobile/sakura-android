@@ -43,6 +43,14 @@ Item {
     property bool endedAvailableLevels: false
     property bool isPushStore: false
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundMainMap
         anchors.centerIn: parent

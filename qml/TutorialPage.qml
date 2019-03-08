@@ -26,6 +26,14 @@ Item {
     property real lastMouseX: 0
     property real lastMouseY: 0
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundMainLevel
         source: "qrc:/resources/images/background_main.png"

@@ -15,6 +15,14 @@ Item {
     property var listTopUsers: []
     property var xhr: ""
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundRatingsPage
         source: "qrc:/resources/images/background_main.png"

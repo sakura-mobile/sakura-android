@@ -11,6 +11,14 @@ Item {
     property int currentLocation: 0
     property var listButtonsLocation: []
 
+    Keys.onReleased: {
+        if (event.key === Qt.Key_Back) {
+            mainStackView.pop();
+
+            event.accepted = true;
+        }
+    }
+
     Image {
         id: imageBackgroundMainMap
         anchors.centerIn: parent
