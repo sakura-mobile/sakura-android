@@ -491,12 +491,12 @@ Item {
                         }
                     }
                     Image {
-                        id: imageSeachLevel
+                        id: imageSearchLevel
                         width: UtilScript.pt(50)
                         height: UtilScript.pt(50)
-                        source: "qrc:/resources/images/button_seach_levels.png"
+                        source: "qrc:/resources/images/button_search_levels.png"
                         MouseArea {
-                            id: mouseAreaSeachLevel
+                            id: mouseAreaSearchLevel
                             anchors.fill: parent
                             onClicked: {
                                 mainStackView.pop()

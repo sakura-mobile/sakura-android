@@ -119,10 +119,10 @@ Item {
             if (maxLevelLocation >= keyLocation
                     && maxLevelCampaign >= currentCampaign) {
 
-                object.source = listLocations[keyLocation].imageLabelAvaible
+                object.source = listLocations[keyLocation].imageLabelAvailable
                 object.isAvailable = true
             } else {
-                object.source = listLocations[keyLocation].imageLabelNotAvaible
+                object.source = listLocations[keyLocation].imageLabelNotAvailable
                 object.isAvailable = false
             }
             object.currentLocation = keyLocation

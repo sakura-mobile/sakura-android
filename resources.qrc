@@ -78,7 +78,7 @@
         <file>resources/images/star.png</file>
         <file>resources/images/button_play_game.png</file>
         <file>resources/images/button_repeat_game.png</file>
-        <file>resources/images/button_seach_levels.png</file>
+        <file>resources/images/button_search_levels.png</file>
         <file>resources/images/button_share.png</file>
         <file>resources/images/star_disable.png</file>
         <file>resources/images/lantern_score.png</file>
@@ -123,26 +123,26 @@
         <file>resources/images/petal_small_4.png</file>
         <file>resources/images/petal_small_5.png</file>
         <file>resources/images/background_map_campaign_1.png</file>
-        <file>resources/images/button_avaible_location_1.png</file>
-        <file>resources/images/button_avaible_location_2.png</file>
-        <file>resources/images/button_avaible_location_3.png</file>
-        <file>resources/images/button_avaible_location_4.png</file>
-        <file>resources/images/button_avaible_location_5.png</file>
-        <file>resources/images/button_avaible_location_6.png</file>
-        <file>resources/images/button_avaible_location_7.png</file>
-        <file>resources/images/button_avaible_location_8.png</file>
-        <file>resources/images/button_avaible_location_9.png</file>
-        <file>resources/images/button_avaible_location_10.png</file>
-        <file>resources/images/button_not_avaible_location_2.png</file>
-        <file>resources/images/button_not_avaible_location_3.png</file>
-        <file>resources/images/button_not_avaible_location_4.png</file>
-        <file>resources/images/button_not_avaible_location_5.png</file>
-        <file>resources/images/button_not_avaible_location_6.png</file>
-        <file>resources/images/button_not_avaible_location_7.png</file>
-        <file>resources/images/button_not_avaible_location_8.png</file>
-        <file>resources/images/button_not_avaible_location_9.png</file>
-        <file>resources/images/button_not_avaible_location_10.png</file>
-        <file>resources/images/button_not_avaible_location_1.png</file>
+        <file>resources/images/button_available_location_1.png</file>
+        <file>resources/images/button_available_location_2.png</file>
+        <file>resources/images/button_available_location_3.png</file>
+        <file>resources/images/button_available_location_4.png</file>
+        <file>resources/images/button_available_location_5.png</file>
+        <file>resources/images/button_available_location_6.png</file>
+        <file>resources/images/button_available_location_7.png</file>
+        <file>resources/images/button_available_location_8.png</file>
+        <file>resources/images/button_available_location_9.png</file>
+        <file>resources/images/button_available_location_10.png</file>
+        <file>resources/images/button_not_available_location_2.png</file>
+        <file>resources/images/button_not_available_location_3.png</file>
+        <file>resources/images/button_not_available_location_4.png</file>
+        <file>resources/images/button_not_available_location_5.png</file>
+        <file>resources/images/button_not_available_location_6.png</file>
+        <file>resources/images/button_not_available_location_7.png</file>
+        <file>resources/images/button_not_available_location_8.png</file>
+        <file>resources/images/button_not_available_location_9.png</file>
+        <file>resources/images/button_not_available_location_10.png</file>
+        <file>resources/images/button_not_available_location_1.png</file>
         <file>resources/images/background_location_2.jpg</file>
         <file>resources/images/background_location_4.jpg</file>
         <file>resources/images/button_text_enable.png</file>

@@ -361,12 +361,12 @@ Item {
                         }
                     }
                     Image {
-                        id: imageSeachLevel
+                        id: imageSearchLevel
                         width: UtilScript.pt(50)
                         height: UtilScript.pt(50)
-                        source: "qrc:/resources/images/button_seach_levels.png"
+                        source: "qrc:/resources/images/button_search_levels.png"
                         MouseArea {
-                            id: mouseAreaSeachLevel
+                            id: mouseAreaSearchLevel
                             anchors.fill: parent
                             onClicked: {
                                 mainStackView.pop()
@@ -736,8 +736,8 @@ Item {
             GenerationBranchScript.setStartBranch()
             GenerationBranchScript.revivalBranchStart()
 
-            var seachBranch = 0
-            while (!seachBranch && arrBranchRotation.length > 0) {
+            var searchBranch = 0
+            while (!searchBranch && arrBranchRotation.length > 0) {
                 var startPoint = GenerationBranchScript.getRandomInt(
                             0, arrBranchRotation.length - 1)
                 var iFlickering = arrBranchRotation[startPoint].posI
@@ -747,7 +747,7 @@ Item {
                         "posI": iFlickering,
                         "posJ": jFlickering
                     }
-                    seachBranch = 1
+                    searchBranch = 1
                     GenerationBranchScript.listGameBranchObject[iFlickering][jFlickering].startAnimationFlickering()
                 }
             }
@@ -904,8 +904,8 @@ Item {
                     GenerationBranchScript.listGameBranchObject[i][j].startAnimationFlickering()
                 } else {
 
-                    var seachBranch = 0
-                    while (!seachBranch && arrBranchRotation.length > 0) {
+                    var searchBranch = 0
+                    while (!searchBranch && arrBranchRotation.length > 0) {
                         var startPoint = GenerationBranchScript.getRandomInt(
                                     0, arrBranchRotation.length - 1)
                         var iFlickering = arrBranchRotation[startPoint].posI
@@ -915,7 +915,7 @@ Item {
                                 "posI": iFlickering,
                                 "posJ": jFlickering
                             }
-                            seachBranch = 1
+                            searchBranch = 1
                             GenerationBranchScript.listGameBranchObject[iFlickering][jFlickering].startAnimationFlickering()
                         }
                         arrBranchRotation.splice(startPoint, 1)

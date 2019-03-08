@@ -7050,8 +7050,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_1.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_1.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_1.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_1.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_1.png"
     objectLocation.labelX = 362 //210
     objectLocation.labelY = 925
     objectLocation.width = 130
@@ -7066,8 +7066,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_2.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_2.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_2.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_2.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_2.png"
     objectLocation.labelX = 232 //80
     objectLocation.labelY = 935
     objectLocation.width = 143
@@ -7082,8 +7082,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_3.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_3.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_3.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_3.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_3.png"
     objectLocation.labelX = 272 //120
     objectLocation.labelY = 800
     objectLocation.width = 90
@@ -7098,8 +7098,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_4.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_4.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_4.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_4.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_4.png"
     objectLocation.labelX = 392 //240
     objectLocation.labelY = 810
     objectLocation.width = 136
@@ -7114,8 +7114,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_5.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_5.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_5.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_5.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_5.png"
     objectLocation.labelX = 402 //250
     objectLocation.labelY = 610
     objectLocation.width = 194
@@ -7130,8 +7130,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_6.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_6.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_6.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_6.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_6.png"
     objectLocation.labelX = 572 //420
     objectLocation.labelY = 560
     objectLocation.width = 176
@@ -7146,8 +7146,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_7.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_8.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_8.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_8.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_8.png"
     objectLocation.labelX = 722 //570
     objectLocation.labelY = 425
     objectLocation.width = 89
@@ -7162,8 +7162,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_8.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_7.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_7.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_7.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_7.png"
     objectLocation.labelX = 622 //470
     objectLocation.labelY = 465
     objectLocation.width = 92
@@ -7178,8 +7178,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_9.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_9.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_9.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_9.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_9.png"
     objectLocation.labelX = 622 //470
     objectLocation.labelY = 315
     objectLocation.width = 151
@@ -7194,8 +7194,8 @@ function initObjectLocations() {
     objectLocation.background = "qrc:/resources/images/background_location_10.jpg"
     objectLocation.backgroundLevels = "qrc:/resources/images/background_levels_location_1.jpg"
     objectLocation.listLevels = []
-    objectLocation.imageLabelAvaible = "qrc:/resources/images/button_avaible_location_10.png"
-    objectLocation.imageLabelNotAvaible = "qrc:/resources/images/button_not_avaible_location_10.png"
+    objectLocation.imageLabelAvailable = "qrc:/resources/images/button_available_location_10.png"
+    objectLocation.imageLabelNotAvailable = "qrc:/resources/images/button_not_available_location_10.png"
     objectLocation.labelX = 577 //425
     objectLocation.labelY = 120
     objectLocation.width = 174
@@ -7336,7 +7336,7 @@ function isCompletedGame() {
 function getAllNeighborsClosedBranch() {
 
     var ii, jj
-    var arrAvaibleNeighbors = []
+    var arrAvailableNeighbors = []
     var n
     for (var keyI in arrBranchClosed) {
         for (var keyJ in arrBranchClosed[keyI]) {
