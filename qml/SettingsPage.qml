@@ -1,7 +1,6 @@
-import QtQuick 2.9
-import QtQuick.Window 2.3
-import QtQuick.Controls 2.2
-import QtPurchasing 1.0
+import QtQuick 2.12
+import QtQuick.Window 2.12
+import QtQuick.Controls 2.5
 
 import "Util.js" as UtilScript
 
@@ -9,7 +8,7 @@ Item {
     id: settingsPage
 
     Image {
-        id: imageBackgroundStorePage
+        id: imageBackgroundSettingsPage
         source: "qrc:/resources/images/background_main.png"
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop

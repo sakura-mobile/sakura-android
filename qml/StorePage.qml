@@ -1,6 +1,6 @@
-import QtQuick 2.9
-import QtQuick.Window 2.3
-import QtQuick.Controls 2.2
+import QtQuick 2.12
+import QtQuick.Window 2.12
+import QtQuick.Controls 2.5
 import QtPurchasing 1.0
 
 import "Util.js" as UtilScript
