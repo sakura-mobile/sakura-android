@@ -711,7 +711,7 @@ Item {
                         onClicked: {
                             animationRectNotAvailableLevelsUp.running = true
 
-                            mainStackView.pop(mainStackView.get(0))
+                            mainStackView.pop(mainStackView.get(0, StackView.ForceLoad))
                         }
                     }
                 }

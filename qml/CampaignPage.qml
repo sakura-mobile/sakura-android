@@ -892,7 +892,7 @@ Item {
                                 }
 
                                 if (currentLocation !== nextLocation) {
-                                    var map_page = mainStackView.get(1)
+                                    var map_page = mainStackView.get(1, StackView.ForceLoad)
 
                                     map_page.currentCampaign = nextCampaign
                                     map_page.currentLocation = nextLocation
@@ -1040,7 +1040,7 @@ Item {
                         onClicked: {
                             animationRectNotAvailableLevelsUp.running = true
 
-                            mainStackView.pop(mainStackView.get(0))
+                            mainStackView.pop(mainStackView.get(0, StackView.ForceLoad))
                         }
                     }
                 }
