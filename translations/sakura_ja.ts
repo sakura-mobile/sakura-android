@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>トップスコア</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>あなたのニックネーム：</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>

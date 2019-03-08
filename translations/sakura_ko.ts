@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>최고 점수</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>닉네임 :</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>

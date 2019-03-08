@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>最高分</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>您的昵称：</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>

@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>ЛУЧШИЕ РЕЗУЛЬТАТЫ</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>Ваш псевдоним:</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>

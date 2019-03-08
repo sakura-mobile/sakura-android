@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>MEJOR PUNTUACIÓN</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>Tu apodo:</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>

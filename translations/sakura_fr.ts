@@ -73,10 +73,6 @@
         <source>TOP SCORE</source>
         <translation>MEILLEUR SCORE</translation>
     </message>
-    <message>
-        <source>Your nickname:</source>
-        <translation>Ton surnom:</translation>
-    </message>
 </context>
 <context>
     <name>RelaxGamePage</name>
