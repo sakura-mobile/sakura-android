@@ -378,7 +378,9 @@ Item {
                 id: mouseAreaTextButtonImage
                 anchors.fill: parent
                 onClicked: {
-                    captureImage()
+                    textAreaCard.focus = false;
+
+                    captureImage();
                 }
             }
         }
@@ -393,7 +395,9 @@ Item {
                 id: mouseAreaTextButtonGif
                 anchors.fill: parent
                 onClicked: {
-                    captureGIFTimer.start()
+                    textAreaCard.focus = false;
+
+                    captureGIFTimer.start();
                 }
             }
         }
