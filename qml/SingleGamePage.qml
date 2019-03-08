@@ -1732,9 +1732,8 @@ Item {
                         singleGamePage.emitRatePetals = singleGamePage.emitRatePetalsMax
                     }
 
-                    if (Math.random() < 0.10
-                            && ReachabilityHelper.internetConnected) {
-                        StoreHelper.requestReview()
+                    if (Math.random() < 0.10) {
+                        // TODO: StoreHelper.requestReview()
                     }
                 } else {
                     console.log(res)

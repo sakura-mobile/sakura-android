@@ -965,9 +965,8 @@ Item {
                         campaignPage.bannerViewHeight + UtilScript.pt(8), UtilScript.pt(20))
                 onStopped: {
                     if (!textFailedGame.visible) {
-                        if (Math.random() < 0.10
-                                && ReachabilityHelper.internetConnected) {
-                            StoreHelper.requestReview()
+                        if (Math.random() < 0.10) {
+                            // TODO: StoreHelper.requestReview()
                         }
 
                         if (Number(mainWindow.getSetting("ShareTooltip",

@@ -641,9 +641,8 @@ Item {
                         imageShareTooltip.visible = true
                         timerTooltipShare.start()
                     }
-                    if (Math.random() < 0.10
-                            && ReachabilityHelper.internetConnected) {
-                        StoreHelper.requestReview()
+                    if (Math.random() < 0.10) {
+                        // TODO: StoreHelper.requestReview()
                     }
                 }
             }
