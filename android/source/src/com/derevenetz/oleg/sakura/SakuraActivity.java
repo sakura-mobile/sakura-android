@@ -311,7 +311,9 @@ public class SakuraActivity extends QtActivity
                         gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
                             @Override
                             public void onSuccess(GameRequestDialog.Result result) {
-                                fbGameRequestCompleted(result.getRequestRecipients().size());
+                                if (result != null && result.getRequestRecipients() != null) {
+                                    fbGameRequestCompleted(result.getRequestRecipients().size());
+                                }
                             }
 
                             @Override
@@ -320,7 +322,13 @@ public class SakuraActivity extends QtActivity
 
                             @Override
                             public void onError(FacebookException exception) {
-                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                                String exception_str = "";
+
+                                if (exception != null) {
+                                    exception_str = exception.toString();
+                                }
+
+                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
                             }
                         });
 
@@ -339,7 +347,9 @@ public class SakuraActivity extends QtActivity
                                 gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
                                     @Override
                                     public void onSuccess(GameRequestDialog.Result result) {
-                                        fbGameRequestCompleted(result.getRequestRecipients().size());
+                                        if (result != null && result.getRequestRecipients() != null) {
+                                            fbGameRequestCompleted(result.getRequestRecipients().size());
+                                        }
                                     }
 
                                     @Override
@@ -348,7 +358,13 @@ public class SakuraActivity extends QtActivity
 
                                     @Override
                                     public void onError(FacebookException exception) {
-                                        Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                                        String exception_str = "";
+
+                                        if (exception != null) {
+                                            exception_str = exception.toString();
+                                        }
+
+                                        Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
                                     }
                                 });
 
@@ -364,7 +380,13 @@ public class SakuraActivity extends QtActivity
 
                             @Override
                             public void onError(FacebookException exception) {
-                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                                String exception_str = "";
+
+                                if (exception != null) {
+                                    exception_str = exception.toString();
+                                }
+
+                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
                             }
                         });
 
