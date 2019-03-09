@@ -305,33 +305,34 @@ public class SakuraActivity extends QtActivity
             public void run()
             {
                 if (callbackManager != null) {
+                    final FacebookCallback<GameRequestDialog.Result> game_request_callback = new FacebookCallback<GameRequestDialog.Result>() {
+                        @Override
+                        public void onSuccess(GameRequestDialog.Result result) {
+                            if (result != null && result.getRequestRecipients() != null) {
+                                fbGameRequestCompleted(result.getRequestRecipients().size());
+                            }
+                        }
+
+                        @Override
+                        public void onCancel() {
+                        }
+
+                        @Override
+                        public void onError(FacebookException exception) {
+                            String exception_str = "";
+
+                            if (exception != null) {
+                                exception_str = exception.toString();
+                            }
+
+                            Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
+                        }
+                    };
+
                     if (AccessToken.getCurrentAccessToken() != null && !AccessToken.getCurrentAccessToken().isExpired()) {
                         gameRequestDialog = new GameRequestDialog(f_activity);
 
-                        gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
-                            @Override
-                            public void onSuccess(GameRequestDialog.Result result) {
-                                if (result != null && result.getRequestRecipients() != null) {
-                                    fbGameRequestCompleted(result.getRequestRecipients().size());
-                                }
-                            }
-
-                            @Override
-                            public void onCancel() {
-                            }
-
-                            @Override
-                            public void onError(FacebookException exception) {
-                                String exception_str = "";
-
-                                if (exception != null) {
-                                    exception_str = exception.toString();
-                                }
-
-                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
-                            }
-                        });
-
+                        gameRequestDialog.registerCallback(callbackManager, game_request_callback);
                         gameRequestDialog.show(new GameRequestContent.Builder().setFilters(GameRequestContent.Filters.APP_NON_USERS)
                                                                                .setTitle(f_title)
                                                                                .setMessage(f_message)
@@ -342,36 +343,15 @@ public class SakuraActivity extends QtActivity
                         login_manager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                             @Override
                             public void onSuccess(LoginResult loginResult) {
-                                gameRequestDialog = new GameRequestDialog(f_activity);
+                                if (callbackManager != null) {
+                                    gameRequestDialog = new GameRequestDialog(f_activity);
 
-                                gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
-                                    @Override
-                                    public void onSuccess(GameRequestDialog.Result result) {
-                                        if (result != null && result.getRequestRecipients() != null) {
-                                            fbGameRequestCompleted(result.getRequestRecipients().size());
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancel() {
-                                    }
-
-                                    @Override
-                                    public void onError(FacebookException exception) {
-                                        String exception_str = "";
-
-                                        if (exception != null) {
-                                            exception_str = exception.toString();
-                                        }
-
-                                        Log.w("SakuraActivity", "showFBGameRequest() : " + exception_str);
-                                    }
-                                });
-
-                                gameRequestDialog.show(new GameRequestContent.Builder().setFilters(GameRequestContent.Filters.APP_NON_USERS)
-                                                                                       .setTitle(f_title)
-                                                                                       .setMessage(f_message)
-                                                                                       .build());
+                                    gameRequestDialog.registerCallback(callbackManager, game_request_callback);
+                                    gameRequestDialog.show(new GameRequestContent.Builder().setFilters(GameRequestContent.Filters.APP_NON_USERS)
+                                                                                           .setTitle(f_title)
+                                                                                           .setMessage(f_message)
+                                                                                           .build());
+                                }
                             }
 
                             @Override
