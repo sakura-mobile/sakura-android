@@ -7,6 +7,7 @@
 
 #include "androidgw.h"
 #include "admobhelper.h"
+#include "fbhelper.h"
 #include "uihelper.h"
 #include "sharehelper.h"
 #include "uuidcreator.h"
@@ -23,16 +24,15 @@ int main(int argc, char *argv[])
 
     AndroidGW   *android_gw   = new AndroidGW(&app);
     AdMobHelper *admob_helper = new AdMobHelper(&app);
+    FBHelper    *fb_helper    = new FBHelper(&app);
 
-    QObject::connect(android_gw, &AndroidGW::setBannerViewHeight, admob_helper, &AdMobHelper::setBannerViewHeight);
+    QObject::connect(android_gw, &AndroidGW::setBannerViewHeight,        admob_helper, &AdMobHelper::setBannerViewHeight);
+    QObject::connect(android_gw, &AndroidGW::notifyGameRequestCompleted, fb_helper,    &FBHelper::notifyGameRequestCompleted);
 
     QQmlApplicationEngine engine;
 
-    /*
-    engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), new FBHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("StoreHelper"), new StoreHelper(&app));
-    */
     engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), admob_helper);
+    engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), fb_helper);
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), new UIHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), new ShareHelper(&app));
     engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), new UuidCreator(&app));

@@ -15,6 +15,8 @@ public:
 signals:
     void setBannerViewHeight(int height);
 
+    void notifyGameRequestCompleted(int recipients_count);
+
 private:
     static AndroidGW *Instance;
 };

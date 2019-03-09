@@ -5,6 +5,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += src/main.cpp \
     src/admobhelper.cpp \
+    src/fbhelper.cpp \
     src/androidgw.cpp \
     src/gifcreator.cpp \
     src/sharehelper.cpp \
@@ -13,6 +14,7 @@ SOURCES += src/main.cpp \
 
 HEADERS += \
     src/admobhelper.h \
+    src/fbhelper.h \
     src/androidgw.h \
     src/gif.h \
     src/gifcreator.h \

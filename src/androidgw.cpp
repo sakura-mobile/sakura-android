@@ -18,3 +18,8 @@ extern "C" JNIEXPORT void JNICALL Java_com_derevenetz_oleg_sakura_SakuraActivity
 {
     emit AndroidGW::instance()->setBannerViewHeight(height);
 }
+
+extern "C" JNIEXPORT void JNICALL Java_com_derevenetz_oleg_sakura_SakuraActivity_fbGameRequestCompleted(JNIEnv *, jclass, jint recipients_count)
+{
+    emit AndroidGW::instance()->notifyGameRequestCompleted(recipients_count);
+}

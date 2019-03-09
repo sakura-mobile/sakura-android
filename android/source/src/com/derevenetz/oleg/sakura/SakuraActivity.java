@@ -1,13 +1,16 @@
 package com.derevenetz.oleg.sakura;
 
 import java.io.File;
+import java.util.Arrays;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.FileProvider;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +25,26 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.share.model.GameRequestContent;
+import com.facebook.share.widget.GameRequestDialog;
+
 public class SakuraActivity extends QtActivity
 {
-    private AdView         bannerView   = null;
-    private InterstitialAd interstitial = null;
+    private AdView            bannerView        = null;
+    private InterstitialAd    interstitial      = null;
+    private CallbackManager   callbackManager   = null;
+    private GameRequestDialog gameRequestDialog = null;
 
     private static native void bannerViewHeightUpdated(int height);
+
+    private static native void fbGameRequestCompleted(int recipients_count);
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -260,5 +277,122 @@ public class SakuraActivity extends QtActivity
                 }
             }
         });
+    }
+
+    public void initFB()
+    {
+        final Context f_app_context = this.getApplicationContext();
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run()
+            {
+                FacebookSdk.sdkInitialize(f_app_context);
+
+                callbackManager = CallbackManager.Factory.create();
+            }
+        });
+    }
+
+    public void showFBGameRequest(String title, String message)
+    {
+        final String   f_title    = title;
+        final String   f_message  = message;
+        final Activity f_activity = this;
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run()
+            {
+                if (callbackManager != null) {
+                    if (AccessToken.getCurrentAccessToken() != null && !AccessToken.getCurrentAccessToken().isExpired()) {
+                        gameRequestDialog = new GameRequestDialog(f_activity);
+
+                        gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
+                            @Override
+                            public void onSuccess(GameRequestDialog.Result result) {
+                                fbGameRequestCompleted(result.getRequestRecipients().size());
+                            }
+
+                            @Override
+                            public void onCancel() {
+                            }
+
+                            @Override
+                            public void onError(FacebookException exception) {
+                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                            }
+                        });
+
+                        gameRequestDialog.show(new GameRequestContent.Builder().setFilters(GameRequestContent.Filters.APP_NON_USERS)
+                                                                               .setTitle(f_title)
+                                                                               .setMessage(f_message)
+                                                                               .build());
+                    } else {
+                        LoginManager login_manager = LoginManager.getInstance();
+
+                        login_manager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                            @Override
+                            public void onSuccess(LoginResult loginResult) {
+                                gameRequestDialog = new GameRequestDialog(f_activity);
+
+                                gameRequestDialog.registerCallback(callbackManager, new FacebookCallback<GameRequestDialog.Result>() {
+                                    @Override
+                                    public void onSuccess(GameRequestDialog.Result result) {
+                                        fbGameRequestCompleted(result.getRequestRecipients().size());
+                                    }
+
+                                    @Override
+                                    public void onCancel() {
+                                    }
+
+                                    @Override
+                                    public void onError(FacebookException exception) {
+                                        Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                                    }
+                                });
+
+                                gameRequestDialog.show(new GameRequestContent.Builder().setFilters(GameRequestContent.Filters.APP_NON_USERS)
+                                                                                       .setTitle(f_title)
+                                                                                       .setMessage(f_message)
+                                                                                       .build());
+                            }
+
+                            @Override
+                            public void onCancel() {
+                            }
+
+                            @Override
+                            public void onError(FacebookException exception) {
+                                Log.w("SakuraActivity", "showFBGameRequest() : " + exception.toString());
+                            }
+                        });
+
+                        login_manager.logInWithReadPermissions(f_activity, Arrays.asList("public_profile"));
+                    }
+                }
+            }
+        });
+    }
+
+    public void logoutFB()
+    {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run()
+            {
+                LoginManager.getInstance().logOut();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (callbackManager != null) {
+            callbackManager.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
