@@ -388,6 +388,8 @@ Item {
                 onClicked: {
                     textAreaCard.focus = false;
 
+                    cardPage.forceActiveFocus();
+
                     captureImage();
                 }
             }
@@ -404,6 +406,8 @@ Item {
                 anchors.fill: parent
                 onClicked: {
                     textAreaCard.focus = false;
+
+                    cardPage.forceActiveFocus();
 
                     captureGIFTimer.start();
                 }
