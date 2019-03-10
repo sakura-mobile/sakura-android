@@ -74,7 +74,7 @@
         </provider>
 
         <!-- AdMob App ID -->
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2455088855015693~7279538773"/>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2455088855015693~9310066316"/>
 
         <!-- Facebook App ID -->
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
