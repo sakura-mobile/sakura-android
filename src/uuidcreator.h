@@ -2,6 +2,7 @@
 #define UUIDCREATOR_H
 
 #include <QtCore/QObject>
+#include <QtCore/QString>
 
 class UuidCreator : public QObject
 {
