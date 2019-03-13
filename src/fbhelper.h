@@ -10,9 +10,9 @@ class FBHelper : public QObject
 
 public:
     explicit FBHelper(QObject *parent = nullptr);
-    virtual ~FBHelper();
+    ~FBHelper() override = default;
 
-    Q_INVOKABLE void showGameRequest(QString title, QString message);
+    Q_INVOKABLE void showGameRequest(const QString &title, const QString &message);
     Q_INVOKABLE void logout();
 
 public slots:

@@ -12,11 +12,11 @@ class ShareHelper : public QObject
 
 public:
     explicit ShareHelper(QObject *parent = nullptr);
-    virtual ~ShareHelper();
+    ~ShareHelper() override = default;
 
     QString imageFilePath() const;
 
-    Q_INVOKABLE void shareImage(QString image_path);
+    Q_INVOKABLE void shareImage(const QString &image_path);
 };
 
 #endif // SHAREHELPER_H

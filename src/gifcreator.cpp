@@ -9,10 +9,6 @@ GIFCreator::GIFCreator(QObject *parent) : QObject(parent)
 {
 }
 
-GIFCreator::~GIFCreator()
-{
-}
-
 QString GIFCreator::imageFilePathMask() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
@@ -40,7 +36,7 @@ bool GIFCreator::createGIF(int frames_count, int frame_delay)
     QImage first_image(imageFilePathMask().arg(0));
 
     if (!first_image.isNull()) {
-        GifWriter gif_writer;
+        GifWriter gif_writer = {};
 
         if (GifBegin(&gif_writer, gifFilePath().toUtf8(), static_cast<uint32_t>(first_image.width()),
                                                           static_cast<uint32_t>(first_image.height()),

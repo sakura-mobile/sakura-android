@@ -9,10 +9,6 @@ ShareHelper::ShareHelper(QObject *parent) : QObject(parent)
 {
 }
 
-ShareHelper::~ShareHelper()
-{
-}
-
 QString ShareHelper::imageFilePath() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
@@ -24,7 +20,7 @@ QString ShareHelper::imageFilePath() const
     return QDir(tmp_dir).filePath("image.jpg");
 }
 
-void ShareHelper::shareImage(QString image_path)
+void ShareHelper::shareImage(const QString &image_path)
 {
     QAndroidJniObject j_image_file = QAndroidJniObject::fromString(image_path);
 

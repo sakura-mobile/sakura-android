@@ -13,7 +13,7 @@ class GIFCreator : public QObject
 
 public:
     explicit GIFCreator(QObject *parent = nullptr);
-    virtual ~GIFCreator();
+    ~GIFCreator() override = default;
 
     QString imageFilePathMask() const;
     QString gifFilePath() const;

@@ -19,12 +19,12 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     if (translator.load(QString(":/tr/sakura_%1").arg(QLocale::system().name()))) {
-        app.installTranslator(&translator);
+        QGuiApplication::installTranslator(&translator);
     }
 
-    AndroidGW   *android_gw   = new AndroidGW(&app);
-    AdMobHelper *admob_helper = new AdMobHelper(&app);
-    FBHelper    *fb_helper    = new FBHelper(&app);
+    auto android_gw   = new AndroidGW(&app);
+    auto admob_helper = new AdMobHelper(&app);
+    auto fb_helper    = new FBHelper(&app);
 
     QObject::connect(android_gw, &AndroidGW::setBannerViewHeight,        admob_helper, &AdMobHelper::setBannerViewHeight);
     QObject::connect(android_gw, &AndroidGW::notifyGameRequestCompleted, fb_helper,    &FBHelper::notifyGameRequestCompleted);
@@ -45,5 +45,5 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    return app.exec();
+    return QGuiApplication::exec();
 }

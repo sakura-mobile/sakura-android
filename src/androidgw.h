@@ -9,6 +9,7 @@ class AndroidGW : public QObject
 
 public:
     explicit AndroidGW(QObject *parent = nullptr);
+    ~AndroidGW() override = default;
 
     static AndroidGW *instance();
 

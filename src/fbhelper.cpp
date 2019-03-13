@@ -8,11 +8,7 @@ FBHelper::FBHelper(QObject *parent) : QObject(parent)
     QtAndroid::androidActivity().callMethod<void>("initFB");
 }
 
-FBHelper::~FBHelper()
-{
-}
-
-void FBHelper::showGameRequest(QString title, QString message)
+void FBHelper::showGameRequest(const QString &title, const QString &message)
 {
     QAndroidJniObject j_title   = QAndroidJniObject::fromString(title);
     QAndroidJniObject j_message = QAndroidJniObject::fromString(message);
