@@ -782,7 +782,6 @@ Item {
                                        && relaxGamePage.StackView.status === StackView.Active
 
         onPlaybackEnabledChanged: {
-
             if (Number(mainWindow.getSetting("SettingsMusic", 1)) === 0)
                 return
 
@@ -812,6 +811,7 @@ Item {
         function playAudio() {
             if (Number(mainWindow.getSetting("SettingsSounds", 1)) === 0)
                 return
+
             if (playbackEnabled) {
                 play()
             }
@@ -832,6 +832,7 @@ Item {
         function playAudio() {
             if (Number(mainWindow.getSetting("SettingsSounds", 1)) === 0)
                 return
+
             if (playbackEnabled) {
                 play()
             }
@@ -852,6 +853,7 @@ Item {
         function playAudio() {
             if (Number(mainWindow.getSetting("SettingsSounds", 1)) === 0)
                 return
+
             if (playbackEnabled) {
                 play()
             }
