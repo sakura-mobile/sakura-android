@@ -1,3 +1,6 @@
+TEMPLATE = app
+TARGET = sakura
+
 QT += quick quickcontrols2 sql multimedia purchasing
 CONFIG += c++11
 
@@ -97,6 +100,3 @@ android {
 CONFIG(release, debug|release) {
     CONFIG += qtquickcompiler
 }
-
-# Default rules for deployment.
-include(deployment.pri)
