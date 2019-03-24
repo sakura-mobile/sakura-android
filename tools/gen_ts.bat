@@ -1,4 +1,4 @@
-PATH=%PATH%;C:\Qt\5.12.1\mingw73_64\bin;C:\Qt\Tools\mingw730_64\bin
+PATH=%PATH%;C:\Qt\5.12.2\mingw73_64\bin;C:\Qt\Tools\mingw730_64\bin
 
 lupdate ..\sakura.pro -ts ..\translations\sakura_ru.src.ts
 lupdate ..\qml        -ts ..\translations\sakura_ru.qml.ts
