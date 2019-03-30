@@ -10,16 +10,13 @@
     <array name="bundled_libs">
         <!-- %%INSERT_EXTRA_LIBS%% -->
     </array>
-
-     <array name="qt_libs">
-         <!-- %%INSERT_QT_LIBS%% -->
-     </array>
-
+    <array name="qt_libs">
+        <!-- %%INSERT_QT_LIBS%% -->
+    </array>
     <array name="bundled_in_lib">
         <!-- %%INSERT_BUNDLED_IN_LIB%% -->
     </array>
     <array name="bundled_in_assets">
         <!-- %%INSERT_BUNDLED_IN_ASSETS%% -->
     </array>
-
 </resources>
