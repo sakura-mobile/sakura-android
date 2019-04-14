@@ -401,146 +401,126 @@ Item {
             }
         }
 
-        Flickable {
-            id: backgroundFlickable
-            boundsBehavior: Flickable.StopAtBounds
+        PinchArea {
+            id: pinchAreaZoom
             anchors.centerIn: parent
             width: parent.width
             height: width - UtilScript.pt(32)
             clip: true
 
-            property real initialContentWidth: 0.0
-            property real initialContentHeight: 0.0
-
-            function initialResize(grid_width, grid_height) {
-                if (grid_width > 0.0 && grid_height > 0.0) {
-                    var scale = 1.0
-
-                    if (grid_width > grid_height) {
-                        scale = (width / grid_width)
-                    } else {
-                        scale = (height / grid_height)
-                    }
-
-                    if (scale < 0.25) {
-                        scale = 0.25
-                    }
-                    if (scale > 3.0) {
-                        scale = 3.0
-                    }
-
-                    resizeContent(initialContentWidth * scale,
-                                  initialContentHeight * scale,
-                                  Qt.point(contentWidth / 2, contentHeight / 2))
-
-                    contentX = (contentWidth - width) / 2
-                    contentY = (contentHeight - height) / 2
-
-                    returnToBounds()
-                }
-            }
-
-            PinchArea {
-                id: pinchAreaZoom
+            Flickable {
+                id: backgroundFlickable
                 anchors.fill: parent
+                leftMargin: width  > contentWidth  ? (width  - contentWidth)  / 2 : 0
+                topMargin: height > contentHeight ? (height - contentHeight) / 2 : 0
 
-                Rectangle {
-                    width: Math.max(gridMapSingleGame.width,
-                                    backgroundFlickable.width) * 2
-                    height: Math.max(gridMapSingleGame.height,
-                                     backgroundFlickable.height) * 2
-                    scale: backgroundFlickable.initialContentWidth > 0.0
-                           && backgroundFlickable.contentWidth
-                           > 0.0 ? backgroundFlickable.contentWidth
-                                   / backgroundFlickable.initialContentWidth : 1.0
+                property real initialContentWidth: 0.0
+                property real initialContentHeight: 0.0
+
+                function initialResize(grid_width, grid_height) {
+                    if (grid_width > 0.0 && grid_height > 0.0) {
+                        var scale = 1.0
+
+                        if (grid_width > grid_height) {
+                            scale = (width / grid_width)
+                        } else {
+                            scale = (height / grid_height)
+                        }
+
+                        if (scale < 0.25) {
+                            scale = 0.25
+                        }
+                        if (scale > 3.0) {
+                            scale = 3.0
+                        }
+
+                        resizeContent(initialContentWidth * scale,
+                                      initialContentHeight * scale,
+                                      Qt.point(contentWidth / 2, contentHeight / 2))
+
+                        contentX = (contentWidth - width) / 2
+                        contentY = (contentHeight - height) / 2
+
+                        returnToBounds()
+                    }
+                }
+
+                Grid {
+                    id: gridMapSingleGame
+                    scale: backgroundFlickable.initialContentWidth > 0.0 &&
+                           backgroundFlickable.contentWidth        > 0.0 ?
+                           backgroundFlickable.contentWidth / backgroundFlickable.initialContentWidth : 1.0
                     transformOrigin: Item.TopLeft
-                    color: "transparent"
+                    spacing: UtilScript.pt(1)
 
                     onWidthChanged: {
                         backgroundFlickable.initialContentWidth = width
 
-                        backgroundFlickable.initialResize(
-                                    gridMapSingleGame.width,
-                                    gridMapSingleGame.height)
+                        backgroundFlickable.initialResize(width, height)
                     }
 
                     onHeightChanged: {
                         backgroundFlickable.initialContentHeight = height
 
-                        backgroundFlickable.initialResize(
-                                    gridMapSingleGame.width,
-                                    gridMapSingleGame.height)
-                    }
-
-                    Grid {
-                        id: gridMapSingleGame
-                        anchors.centerIn: parent
-                        spacing: 1
-
-                        onWidthChanged: {
-                            backgroundFlickable.initialResize(
-                                        gridMapSingleGame.width,
-                                        gridMapSingleGame.height)
-                        }
-
-                        onHeightChanged: {
-                            backgroundFlickable.initialResize(
-                                        gridMapSingleGame.width,
-                                        gridMapSingleGame.height)
-                        }
-                    }
-
-                    MouseArea {
-                        id: mouseAreaRectBranch
-                        anchors.fill: parent
-                        propagateComposedEvents: true
-
-                        onPressed: {
-                            if ((new Date()).getTime() - lastPressTime < 250 &&
-                                Math.abs(mouse.x - lastMouseX) * scale < UtilScript.pt(16) &&
-                                Math.abs(mouse.y - lastMouseY) * scale < UtilScript.pt(16)) {
-                                backgroundFlickable.initialResize(gridMapSingleGame.width, gridMapSingleGame.height);
-                            } else {
-                                lastMouseX    = mouse.x
-                                lastMouseY    = mouse.y
-                                lastPressTime = (new Date()).getTime()
-                            }
-
-                            mouse.accepted = false
-                        }
+                        backgroundFlickable.initialResize(width, height)
                     }
                 }
 
-                onPinchStarted: {
-                    backgroundFlickable.interactive = false
-                }
-
-                onPinchUpdated: {
-                    backgroundFlickable.contentX += pinch.previousCenter.x - pinch.center.x
-                    backgroundFlickable.contentY += pinch.previousCenter.y - pinch.center.y
-
-                    var scale = 1.0 + pinch.scale - pinch.previousScale
-
-                    if (backgroundFlickable.contentWidth * scale
-                            / backgroundFlickable.initialContentWidth >= 0.25
-                            && backgroundFlickable.contentWidth * scale
-                            / backgroundFlickable.initialContentWidth <= 3.0) {
-                        backgroundFlickable.resizeContent(
-                                    backgroundFlickable.contentWidth * scale,
-                                    backgroundFlickable.contentHeight * scale,
-                                    pinch.center)
-                    }
-                }
-
-                onPinchFinished: {
-                    backgroundFlickable.interactive = true
-                    backgroundFlickable.returnToBounds()
+                Component.onCompleted: {
+                    contentWidth = width
+                    contentHeight = height
                 }
             }
 
-            Component.onCompleted: {
-                contentWidth = width
-                contentHeight = height
+            onPinchStarted: {
+                backgroundFlickable.interactive = false
+            }
+
+            onPinchUpdated: {
+                var pinch_prev_center = mapToItem(backgroundFlickable.contentItem, pinch.previousCenter.x, pinch.previousCenter.y);
+                var pinch_center      = mapToItem(backgroundFlickable.contentItem, pinch.center.x, pinch.center.y);
+                var pinch_prev_scale  = pinch.previousScale;
+                var pinch_scale       = pinch.scale;
+
+                if (backgroundFlickable.initialContentWidth > 0.0) {
+                    backgroundFlickable.contentX += pinch_prev_center.x - pinch_center.x;
+                    backgroundFlickable.contentY += pinch_prev_center.y - pinch_center.y;
+
+                    var scale  = 1.0 + pinch_scale - pinch_prev_scale;
+
+                    if (backgroundFlickable.contentWidth * scale / backgroundFlickable.initialContentWidth >= 0.25 &&
+                        backgroundFlickable.contentWidth * scale / backgroundFlickable.initialContentWidth <= 4.0) {
+                        backgroundFlickable.resizeContent(backgroundFlickable.contentWidth * scale, backgroundFlickable.contentHeight * scale, pinch_center);
+                    }
+                }
+            }
+
+            onPinchFinished: {
+                backgroundFlickable.interactive = true
+                backgroundFlickable.returnToBounds()
+            }
+        }
+
+        MouseArea {
+            id: mouseAreaRectBranch
+            anchors.centerIn: parent
+            width: parent.width
+            height: width - UtilScript.pt(32)
+            z: 1
+            propagateComposedEvents: true
+
+            onPressed: {
+                if ((new Date()).getTime() - lastPressTime < 250 &&
+                    Math.abs(mouse.x - lastMouseX) * scale < UtilScript.pt(16) &&
+                    Math.abs(mouse.y - lastMouseY) * scale < UtilScript.pt(16)) {
+                    backgroundFlickable.initialResize(gridMapSingleGame.width, gridMapSingleGame.height);
+                } else {
+                    lastMouseX    = mouse.x
+                    lastMouseY    = mouse.y
+                    lastPressTime = (new Date()).getTime()
+                }
+
+                mouse.accepted = false
             }
         }
 
