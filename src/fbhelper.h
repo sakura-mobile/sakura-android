@@ -10,7 +10,14 @@ class FBHelper : public QObject
 
 public:
     explicit FBHelper(QObject *parent = nullptr);
-    ~FBHelper() override = default;
+
+    FBHelper(const FBHelper&) = delete;
+    FBHelper(const FBHelper&&) noexcept = delete;
+
+    FBHelper& operator=(const FBHelper&) = delete;
+    FBHelper& operator=(const FBHelper&&) noexcept = delete;
+
+    ~FBHelper() noexcept override = default;
 
     Q_INVOKABLE void showGameRequest(const QString &title, const QString &message);
     Q_INVOKABLE void logout();

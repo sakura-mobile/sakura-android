@@ -13,7 +13,14 @@ class GIFCreator : public QObject
 
 public:
     explicit GIFCreator(QObject *parent = nullptr);
-    ~GIFCreator() override = default;
+
+    GIFCreator(const GIFCreator&) = delete;
+    GIFCreator(const GIFCreator&&) noexcept = delete;
+
+    GIFCreator& operator=(const GIFCreator&) = delete;
+    GIFCreator& operator=(const GIFCreator&&) noexcept = delete;
+
+    ~GIFCreator() noexcept override = default;
 
     QString imageFilePathMask() const;
     QString gifFilePath() const;

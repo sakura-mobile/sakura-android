@@ -10,7 +10,14 @@ class UuidCreator : public QObject
 
 public:
     explicit UuidCreator(QObject *parent = nullptr);
-    ~UuidCreator() override = default;
+
+    UuidCreator(const UuidCreator&) = delete;
+    UuidCreator(const UuidCreator&&) noexcept = delete;
+
+    UuidCreator& operator=(const UuidCreator&) = delete;
+    UuidCreator& operator=(const UuidCreator&&) noexcept = delete;
+
+    ~UuidCreator() noexcept override = default;
 
     Q_INVOKABLE QString createUuid();
 };

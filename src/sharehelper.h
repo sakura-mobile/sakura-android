@@ -12,7 +12,14 @@ class ShareHelper : public QObject
 
 public:
     explicit ShareHelper(QObject *parent = nullptr);
-    ~ShareHelper() override = default;
+
+    ShareHelper(const ShareHelper&) = delete;
+    ShareHelper(const ShareHelper&&) noexcept = delete;
+
+    ShareHelper& operator=(const ShareHelper&) = delete;
+    ShareHelper& operator=(const ShareHelper&&) noexcept = delete;
+
+    ~ShareHelper() noexcept override = default;
 
     QString imageFilePath() const;
 
