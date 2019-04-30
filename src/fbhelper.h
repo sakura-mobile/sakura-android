@@ -12,10 +12,10 @@ public:
     explicit FBHelper(QObject *parent = nullptr);
 
     FBHelper(const FBHelper&) = delete;
-    FBHelper(const FBHelper&&) noexcept = delete;
+    FBHelper(FBHelper&&) noexcept = delete;
 
     FBHelper& operator=(const FBHelper&) = delete;
-    FBHelper& operator=(const FBHelper&&) noexcept = delete;
+    FBHelper& operator=(FBHelper&&) noexcept = delete;
 
     ~FBHelper() noexcept override = default;
 

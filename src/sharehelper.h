@@ -14,10 +14,10 @@ public:
     explicit ShareHelper(QObject *parent = nullptr);
 
     ShareHelper(const ShareHelper&) = delete;
-    ShareHelper(const ShareHelper&&) noexcept = delete;
+    ShareHelper(ShareHelper&&) noexcept = delete;
 
     ShareHelper& operator=(const ShareHelper&) = delete;
-    ShareHelper& operator=(const ShareHelper&&) noexcept = delete;
+    ShareHelper& operator=(ShareHelper&&) noexcept = delete;
 
     ~ShareHelper() noexcept override = default;
 

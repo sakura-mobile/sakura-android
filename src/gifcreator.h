@@ -15,10 +15,10 @@ public:
     explicit GIFCreator(QObject *parent = nullptr);
 
     GIFCreator(const GIFCreator&) = delete;
-    GIFCreator(const GIFCreator&&) noexcept = delete;
+    GIFCreator(GIFCreator&&) noexcept = delete;
 
     GIFCreator& operator=(const GIFCreator&) = delete;
-    GIFCreator& operator=(const GIFCreator&&) noexcept = delete;
+    GIFCreator& operator=(GIFCreator&&) noexcept = delete;
 
     ~GIFCreator() noexcept override = default;
 

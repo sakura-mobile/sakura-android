@@ -12,10 +12,10 @@ public:
     explicit UuidCreator(QObject *parent = nullptr);
 
     UuidCreator(const UuidCreator&) = delete;
-    UuidCreator(const UuidCreator&&) noexcept = delete;
+    UuidCreator(UuidCreator&&) noexcept = delete;
 
     UuidCreator& operator=(const UuidCreator&) = delete;
-    UuidCreator& operator=(const UuidCreator&&) noexcept = delete;
+    UuidCreator& operator=(UuidCreator&&) noexcept = delete;
 
     ~UuidCreator() noexcept override = default;
 
