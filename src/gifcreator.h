@@ -11,16 +11,18 @@ class GIFCreator : public QObject
     Q_PROPERTY(QString imageFilePathMask READ imageFilePathMask)
     Q_PROPERTY(QString gifFilePath       READ gifFilePath)
 
-public:
+private:
     explicit GIFCreator(QObject *parent = nullptr);
+    ~GIFCreator() noexcept override = default;
 
+public:
     GIFCreator(const GIFCreator&) = delete;
     GIFCreator(GIFCreator&&) noexcept = delete;
 
     GIFCreator& operator=(const GIFCreator&) = delete;
     GIFCreator& operator=(GIFCreator&&) noexcept = delete;
 
-    ~GIFCreator() noexcept override = default;
+    static GIFCreator &GetInstance();
 
     QString imageFilePathMask() const;
     QString gifFilePath() const;

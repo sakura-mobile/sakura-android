@@ -6,6 +6,13 @@ UuidCreator::UuidCreator(QObject *parent) : QObject(parent)
 {
 }
 
+UuidCreator &UuidCreator::GetInstance()
+{
+    static UuidCreator instance;
+
+    return instance;
+}
+
 QString UuidCreator::createUuid()
 {
     return QUuid::createUuid().toString();

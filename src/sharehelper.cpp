@@ -9,6 +9,13 @@ ShareHelper::ShareHelper(QObject *parent) : QObject(parent)
 {
 }
 
+ShareHelper &ShareHelper::GetInstance()
+{
+    static ShareHelper instance;
+
+    return instance;
+}
+
 QString ShareHelper::imageFilePath() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);

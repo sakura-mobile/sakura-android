@@ -9,6 +9,13 @@ GIFCreator::GIFCreator(QObject *parent) : QObject(parent)
 {
 }
 
+GIFCreator &GIFCreator::GetInstance()
+{
+    static GIFCreator instance;
+
+    return instance;
+}
+
 QString GIFCreator::imageFilePathMask() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);

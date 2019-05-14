@@ -23,21 +23,17 @@ int main(int argc, char *argv[])
         QGuiApplication::installTranslator(&translator);
     }
 
-    auto android_gw   = new AndroidGW(&app);
-    auto admob_helper = new AdMobHelper(&app);
-    auto fb_helper    = new FBHelper(&app);
-
-    QObject::connect(android_gw, &AndroidGW::setBannerViewHeight,        admob_helper, &AdMobHelper::setBannerViewHeight);
-    QObject::connect(android_gw, &AndroidGW::notifyGameRequestCompleted, fb_helper,    &FBHelper::notifyGameRequestCompleted);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::setBannerViewHeight,        &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::notifyGameRequestCompleted, &FBHelper::GetInstance(),    &FBHelper::notifyGameRequestCompleted);
 
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), admob_helper);
-    engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), fb_helper);
-    engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), new UIHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), new ShareHelper(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), new UuidCreator(&app));
-    engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), new GIFCreator(&app));
+    engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), &AdMobHelper::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), &FBHelper::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), &UuidCreator::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), &GIFCreator::GetInstance());
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 

@@ -8,16 +8,18 @@ class UuidCreator : public QObject
 {
     Q_OBJECT
 
-public:
+private:
     explicit UuidCreator(QObject *parent = nullptr);
+    ~UuidCreator() noexcept override = default;
 
+public:
     UuidCreator(const UuidCreator&) = delete;
     UuidCreator(UuidCreator&&) noexcept = delete;
 
     UuidCreator& operator=(const UuidCreator&) = delete;
     UuidCreator& operator=(UuidCreator&&) noexcept = delete;
 
-    ~UuidCreator() noexcept override = default;
+    static UuidCreator &GetInstance();
 
     Q_INVOKABLE QString createUuid();
 };
