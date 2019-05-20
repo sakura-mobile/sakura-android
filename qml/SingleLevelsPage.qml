@@ -386,7 +386,6 @@ Item {
                         font.pointSize: 15
                         color: "white"
                         maximumLength: 10
-                        inputMethodHints: Qt.ImhNoPredictiveText
                         font.family: "Helvetica"
                         horizontalAlignment: TextInput.AlignHCenter
 

@@ -302,7 +302,6 @@ Item {
                         color: "black"
                         font.family: "Helvetica"
                         wrapMode: TextEdit.Wrap
-                        inputMethodHints: Qt.ImhNoPredictiveText
                         verticalAlignment: TextEdit.AlignVCenter
                         horizontalAlignment: TextEdit.AlignHCenter
                         onCursorRectangleChanged: flick.ensureVisible(
