@@ -13,11 +13,11 @@ private:
     ~UuidCreator() noexcept override = default;
 
 public:
-    UuidCreator(const UuidCreator&) = delete;
-    UuidCreator(UuidCreator&&) noexcept = delete;
+    UuidCreator(const UuidCreator &) = delete;
+    UuidCreator(UuidCreator &&) noexcept = delete;
 
-    UuidCreator &operator=(const UuidCreator&) = delete;
-    UuidCreator &operator=(UuidCreator&&) noexcept = delete;
+    UuidCreator &operator=(const UuidCreator &) = delete;
+    UuidCreator &operator=(UuidCreator &&) noexcept = delete;
 
     static UuidCreator &GetInstance();
 

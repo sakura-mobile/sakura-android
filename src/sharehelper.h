@@ -15,11 +15,11 @@ private:
     ~ShareHelper() noexcept override = default;
 
 public:
-    ShareHelper(const ShareHelper&) = delete;
-    ShareHelper(ShareHelper&&) noexcept = delete;
+    ShareHelper(const ShareHelper &) = delete;
+    ShareHelper(ShareHelper &&) noexcept = delete;
 
-    ShareHelper &operator=(const ShareHelper&) = delete;
-    ShareHelper &operator=(ShareHelper&&) noexcept = delete;
+    ShareHelper &operator=(const ShareHelper &) = delete;
+    ShareHelper &operator=(ShareHelper &&) noexcept = delete;
 
     static ShareHelper &GetInstance();
 

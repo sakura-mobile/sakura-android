@@ -13,11 +13,11 @@ private:
     ~FBHelper() noexcept override = default;
 
 public:
-    FBHelper(const FBHelper&) = delete;
-    FBHelper(FBHelper&&) noexcept = delete;
+    FBHelper(const FBHelper &) = delete;
+    FBHelper(FBHelper &&) noexcept = delete;
 
-    FBHelper &operator=(const FBHelper&) = delete;
-    FBHelper &operator=(FBHelper&&) noexcept = delete;
+    FBHelper &operator=(const FBHelper &) = delete;
+    FBHelper &operator=(FBHelper &&) noexcept = delete;
 
     static FBHelper &GetInstance();
 
