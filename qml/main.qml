@@ -14,12 +14,14 @@ Window {
     onDisableAdsChanged: {
         setSetting("DisableAds", disableAds ? "true" : "false");
 
-        if (mainStackView.depth > 0 && mainStackView.currentItem.hasOwnProperty("bannerViewHeight")) {
+        if (mainStackView.depth > 0 && typeof mainStackView.currentItem.bannerViewHeight === "number") {
             if (disableAds) {
                 AdMobHelper.hideBannerView();
             } else {
                 AdMobHelper.showBannerView();
             }
+        } else {
+            AdMobHelper.hideBannerView();
         }
     }
 
@@ -80,21 +82,13 @@ Window {
 
                     if (item !== null) {
                         item.focus = false;
-
-                        if (item.hasOwnProperty("pageActive")) {
-                            item.pageActive = false;
-                        }
                     }
                 }
 
                 if (depth > 0) {
                     currentItem.forceActiveFocus();
 
-                    if (currentItem.hasOwnProperty("pageActive")) {
-                        currentItem.pageActive = true;
-                    }
-
-                    if (currentItem.hasOwnProperty("bannerViewHeight")) {
+                    if (typeof currentItem.bannerViewHeight === "number") {
                         if (mainWindow.disableAds) {
                             AdMobHelper.hideBannerView();
                         } else {
@@ -103,6 +97,8 @@ Window {
                     } else {
                         AdMobHelper.hideBannerView();
                     }
+                } else {
+                    AdMobHelper.hideBannerView();
                 }
             }
         }
