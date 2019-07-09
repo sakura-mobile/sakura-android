@@ -51,7 +51,8 @@ bool GIFCreator::createGIF(int frames_count, int frame_delay)
             for (int frame = 0; frame < frames_count; frame++) {
                 QImage image(imageFilePathMask().arg(frame));
 
-                if (!image.isNull()) {
+                if (!image.isNull() && image.width()  == first_image.width() &&
+                                       image.height() == first_image.height()) {
                     if (!GifWriteFrame(&gif_writer,
                                        image.convertToFormat(QImage::Format_Indexed8).
                                              convertToFormat(QImage::Format_RGBA8888).constBits(),
