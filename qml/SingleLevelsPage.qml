@@ -433,6 +433,10 @@ Item {
                         id: mouseAreaImageOkName
                         anchors.fill: parent
                         onClicked: {
+                            textInputName.focus = false;
+
+                            singleLevelsPage.forceActiveFocus();
+
                             mainWindow.setSetting("nameUser",
                                                   textInputName.text)
                             textName.text = textInputName.text
