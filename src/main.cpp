@@ -12,8 +12,8 @@
 #include "fbhelper.h"
 #include "uihelper.h"
 #include "sharehelper.h"
-#include "uuidcreator.h"
 #include "gifcreator.h"
+#include "uuidcreator.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), &FBHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
-    engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), &UuidCreator::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), &GIFCreator::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), &UuidCreator::GetInstance());
 
     QQuickStyle::setStyle("Default");
 
