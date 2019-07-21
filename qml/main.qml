@@ -3,7 +3,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.5
 import QtQuick.LocalStorage 2.12
 
-Window {
+ApplicationWindow {
     id:         mainWindow
     title:      qsTr("Sakura")
     visibility: Window.FullScreen
