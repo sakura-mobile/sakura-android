@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
+    <name>AdMobConsentDialog</name>
+    <message>
+        <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
+        <translation>Manteniamo questa app gratuita mostrando annunci. La rete pubblicitaria &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;raccoglierà dati e utilizzerà un identificatore univoco sul dispositivo&lt;/a&gt; per mostrarti annunci. &lt;b&gt;Acconsenti a utilizzare i tuoi dati per personalizzare gli annunci per te?&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Yes, show me relevant ads</source>
+        <translation>Sì, mostrami annunci pertinenti</translation>
+    </message>
+    <message>
+        <source>No, show me ads that are less relevant</source>
+        <translation>No, mostrami annunci meno pertinenti</translation>
+    </message>
+</context>
+<context>
     <name>CampaignPage</name>
     <message>
         <source>STEP:</source>
@@ -50,18 +65,6 @@
         <source>SETTINGS</source>
         <translation>IMPOSTAZIONI</translation>
     </message>
-    <message>
-        <source>Sakura Puzzle</source>
-        <translation>Puzzle di Sakura</translation>
-    </message>
-    <message>
-        <source>Help me to solve a puzzle and enjoy the fanciful pictures of blooming flowers!</source>
-        <translation>Aiutami a risolvere un puzzle e goditi le immagini fantasiose dei fiori che sbocciano!</translation>
-    </message>
-    <message>
-        <source>Thank you! New gifts for Facebook invitations will be available tomorrow.</source>
-        <translation>Grazie! Nuovi regali per gli inviti di Facebook saranno disponibili domani.</translation>
-    </message>
 </context>
 <context>
     <name>RatingsListPage</name>
@@ -98,6 +101,10 @@
     <message>
         <source>SOUNDS</source>
         <translation>SUONI</translation>
+    </message>
+    <message>
+        <source>AD PRIVACY SETTINGS</source>
+        <translation>PRIVACY DEGLI ANNUNCI</translation>
     </message>
 </context>
 <context>

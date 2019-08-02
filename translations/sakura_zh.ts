@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>AdMobConsentDialog</name>
+    <message>
+        <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
+        <translation>我们通过展示广告免费提供此应用。广告网络将&lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;收集数据并使用您设备上的唯一标识符&lt;/a&gt;向您展示广告。 &lt;b&gt;您是否允许使用您的数据为您量身定制广告？&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Yes, show me relevant ads</source>
+        <translation>是的，向我展示相关广告</translation>
+    </message>
+    <message>
+        <source>No, show me ads that are less relevant</source>
+        <translation>不，向我展示不太相关的广告</translation>
+    </message>
+</context>
+<context>
     <name>CampaignPage</name>
     <message>
         <source>STEP:</source>
@@ -50,18 +65,6 @@
         <source>SETTINGS</source>
         <translation>设置</translation>
     </message>
-    <message>
-        <source>Sakura Puzzle</source>
-        <translation>樱花益智</translation>
-    </message>
-    <message>
-        <source>Help me to solve a puzzle and enjoy the fanciful pictures of blooming flowers!</source>
-        <translation>帮助我解决一个难题，并享受盛开的鲜花的幻想照片！</translation>
-    </message>
-    <message>
-        <source>Thank you! New gifts for Facebook invitations will be available tomorrow.</source>
-        <translation>谢谢！ Facebook邀请函的新礼物将于明天上市。</translation>
-    </message>
 </context>
 <context>
     <name>RatingsListPage</name>
@@ -98,6 +101,10 @@
     <message>
         <source>SOUNDS</source>
         <translation>游戏声</translation>
+    </message>
+    <message>
+        <source>AD PRIVACY SETTINGS</source>
+        <translation>广告隐私设置</translation>
     </message>
 </context>
 <context>

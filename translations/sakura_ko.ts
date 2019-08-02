@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>AdMobConsentDialog</name>
+    <message>
+        <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
+        <translation>우리는 광고를 게재하여이 응용 프로그램을 무료로 유지합니다. 광고 네트워크는 &lt;a ​​href=&quot;https://policies.google.com/technologies/ads&quot;&gt;데이터를 수집하고 기기에서 고유 식별자를 사용&lt;/a&gt; 하여 광고를 게재합니다. &lt;b&gt;데이터를 사용하여 광고를 맞춤 설정할 수 있습니까?&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Yes, show me relevant ads</source>
+        <translation>예, 관련 광고 표시</translation>
+    </message>
+    <message>
+        <source>No, show me ads that are less relevant</source>
+        <translation>아니요, 관련성이 낮은 광고를 게재하십시오</translation>
+    </message>
+</context>
+<context>
     <name>CampaignPage</name>
     <message>
         <source>STEP:</source>
@@ -50,18 +65,6 @@
         <source>SETTINGS</source>
         <translation>구성</translation>
     </message>
-    <message>
-        <source>Sakura Puzzle</source>
-        <translation>사쿠라 퍼즐</translation>
-    </message>
-    <message>
-        <source>Help me to solve a puzzle and enjoy the fanciful pictures of blooming flowers!</source>
-        <translation>퍼즐을 풀고 피는 꽃의 환상적인 그림을 즐기도록 도와주세요!</translation>
-    </message>
-    <message>
-        <source>Thank you! New gifts for Facebook invitations will be available tomorrow.</source>
-        <translation>고맙습니다! 내일 Facebook 초대장을위한 새로운 선물을 사용할 수 있습니다.</translation>
-    </message>
 </context>
 <context>
     <name>RatingsListPage</name>
@@ -98,6 +101,10 @@
     <message>
         <source>SOUNDS</source>
         <translation>게임 사운드</translation>
+    </message>
+    <message>
+        <source>AD PRIVACY SETTINGS</source>
+        <translation>광고 개인 정보 설정</translation>
     </message>
 </context>
 <context>

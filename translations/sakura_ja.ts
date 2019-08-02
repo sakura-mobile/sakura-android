@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>AdMobConsentDialog</name>
+    <message>
+        <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
+        <translation>このアプリは広告を表示することで無料にしています。広告ネットワークは、&lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;データを収集し、デバイス上で一意の識別子を使用&lt;/a&gt;して広告を表示します。 &lt;b&gt;データを使用して広告をカスタマイズできますか&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Yes, show me relevant ads</source>
+        <translation>はい、関連する広告を表示します</translation>
+    </message>
+    <message>
+        <source>No, show me ads that are less relevant</source>
+        <translation>いいえ、関連性の低い広告を表示します</translation>
+    </message>
+</context>
+<context>
     <name>CampaignPage</name>
     <message>
         <source>STEP:</source>
@@ -50,18 +65,6 @@
         <source>SETTINGS</source>
         <translation>設定</translation>
     </message>
-    <message>
-        <source>Sakura Puzzle</source>
-        <translation>さくらパズル</translation>
-    </message>
-    <message>
-        <source>Help me to solve a puzzle and enjoy the fanciful pictures of blooming flowers!</source>
-        <translation>パズルを解いて咲く花の幻想的な写真を楽しんでください！</translation>
-    </message>
-    <message>
-        <source>Thank you! New gifts for Facebook invitations will be available tomorrow.</source>
-        <translation>ありがとうございました！ 明日、Facebookの招待状のための新しい贈り物が利用可能になります。</translation>
-    </message>
 </context>
 <context>
     <name>RatingsListPage</name>
@@ -98,6 +101,10 @@
     <message>
         <source>SOUNDS</source>
         <translation>ゲームサウンド</translation>
+    </message>
+    <message>
+        <source>AD PRIVACY SETTINGS</source>
+        <translation>広告のプライバシー設定</translation>
     </message>
 </context>
 <context>
