@@ -75,10 +75,11 @@
 
         <!-- AdMob App ID -->
         <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2455088855015693~9310066316"/>
+        <!-- Delay app measurement until AdMob initialization -->
+        <meta-data android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT" android:value="true"/>
 
         <!-- Facebook App ID -->
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-
         <!-- Facebook Settings -->
         <meta-data android:name="com.facebook.sdk.AutoInitEnabled" android:value="true"/>
         <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="true"/>

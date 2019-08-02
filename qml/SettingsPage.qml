@@ -48,7 +48,6 @@ Item {
                 Image {
                     id: settingsMusic
                     source: "qrc:/resources/images/rectangle-hi.png"
-
                     width: UtilScript.pt(300)
                     height: UtilScript.pt(75)
 
@@ -93,7 +92,6 @@ Item {
                 Image {
                     id: settingsSounds
                     source: "qrc:/resources/images/rectangle-hi.png"
-
                     width: UtilScript.pt(300)
                     height: UtilScript.pt(75)
 
@@ -131,6 +129,42 @@ Item {
                                 imageCheckSounds.source = "qrc:/resources/images/button_on.png"
                                 mainWindow.setSetting("SettingsSounds", 1)
                             }
+                        }
+                    }
+                }
+
+                Image {
+                    id: settingsAdPrivacy
+                    source: "qrc:/resources/images/rectangle-hi.png"
+                    width: UtilScript.pt(300)
+                    height: UtilScript.pt(75)
+                    visible: !mainWindow.disableAds
+
+                    Text {
+                        anchors.fill: parent
+                        anchors.topMargin: UtilScript.pt(8)
+                        anchors.bottomMargin: UtilScript.pt(8)
+                        anchors.leftMargin: UtilScript.pt(20)
+                        anchors.rightMargin: UtilScript.pt(20)
+                        text: qsTr("AD PRIVACY SETTINGS")
+                        font.pointSize: 20
+                        font.family: "Helvetica"
+                        font.bold: true
+                        color: "white"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        wrapMode: Text.NoWrap
+                        fontSizeMode: Text.Fit
+                        minimumPointSize: 8
+                    }
+
+                    MouseArea {
+                        id: mouseAreaSettingsAdPrivacy
+                        anchors.fill: parent
+                        z: 1
+
+                        onClicked: {
+                            mainWindow.showAdMobConsentDialog();
                         }
                     }
                 }
