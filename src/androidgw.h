@@ -22,8 +22,6 @@ public:
 
 signals:
     void setBannerViewHeight(int height);
-
-    void notifyGameRequestCompleted(int recipients_count);
 };
 
 #endif // ANDROIDGW_H

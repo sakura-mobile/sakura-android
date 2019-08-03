@@ -21,7 +21,6 @@ apply plugin: 'com.android.application'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.android.gms:play-services-ads:17.2.0'
-    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
 }
 
 android {

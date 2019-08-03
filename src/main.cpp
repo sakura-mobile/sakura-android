@@ -9,7 +9,6 @@
 
 #include "androidgw.h"
 #include "admobhelper.h"
-#include "fbhelper.h"
 #include "uihelper.h"
 #include "sharehelper.h"
 #include "gifcreator.h"
@@ -24,13 +23,11 @@ int main(int argc, char *argv[])
         QGuiApplication::installTranslator(&translator);
     }
 
-    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::setBannerViewHeight,        &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
-    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::notifyGameRequestCompleted, &FBHelper::GetInstance(),    &FBHelper::notifyGameRequestCompleted);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::setBannerViewHeight, &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
 
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), &AdMobHelper::GetInstance());
-    engine.rootContext()->setContextProperty(QStringLiteral("FBHelper"), &FBHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), &GIFCreator::GetInstance());

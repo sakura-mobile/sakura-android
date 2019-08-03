@@ -19,8 +19,3 @@ extern "C" JNIEXPORT void JNICALL JAVA_NATIVE_METHOD_NAME(SakuraActivity, banner
 {
     emit AndroidGW::GetInstance().setBannerViewHeight(height);
 }
-
-extern "C" JNIEXPORT void JNICALL JAVA_NATIVE_METHOD_NAME(SakuraActivity, fbGameRequestCompleted)(JNIEnv *, jclass, jint recipients_count)
-{
-    emit AndroidGW::GetInstance().notifyGameRequestCompleted(recipients_count);
-}
