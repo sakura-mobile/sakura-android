@@ -27,9 +27,11 @@ import com.google.android.gms.ads.MobileAds;
 
 public class SakuraActivity extends QtActivity
 {
-    private boolean        showPersonalizedAds = false;
-    private AdView         bannerView          = null;
-    private InterstitialAd interstitial        = null;
+    private static final long AD_RELOAD_ON_FAILURE_DELAY = 60000;
+
+    private boolean           showPersonalizedAds        = false;
+    private AdView            bannerView                 = null;
+    private InterstitialAd    interstitial               = null;
 
     private static native void bannerViewHeightUpdated(int height);
 
@@ -159,7 +161,7 @@ public class SakuraActivity extends QtActivity
                                         }
                                     }
                                 }
-                            }, 60000);
+                            }, AD_RELOAD_ON_FAILURE_DELAY);
                         }
                     }
                 });
