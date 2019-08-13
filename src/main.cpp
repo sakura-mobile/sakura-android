@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         QGuiApplication::installTranslator(&translator);
     }
 
-    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::setBannerViewHeight, &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::bannerViewHeightChanged, &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
 
     QQmlApplicationEngine engine;
 
