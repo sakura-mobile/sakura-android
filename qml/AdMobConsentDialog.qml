@@ -45,64 +45,76 @@ Dialog {
                 }
             }
 
-            Image {
+            Rectangle {
                 width:            UtilScript.pt(280)
                 height:           UtilScript.pt(56)
-                source:           "qrc:/resources/images/button.png"
+                color:            "transparent"
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
-                Text {
-                    anchors.fill:        parent
-                    anchors.margins:     UtilScript.pt(8)
-                    text:                qsTr("Yes, show me relevant ads")
-                    color:               "white"
-                    font.pointSize:      16
-                    font.family:         "Helvetica"
-                    font.bold:           true
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment:   Text.AlignVCenter
-                    wrapMode:            Text.NoWrap
-                    fontSizeMode:        Text.Fit
-                    minimumPointSize:    8
-                }
-
-                MouseArea {
+                Image {
                     anchors.fill: parent
+                    source:       "qrc:/resources/images/button.png"
+                    fillMode:     Image.PreserveAspectFit
 
-                    onClicked: {
-                        adMobConsentDialog.personalizedAdsSelected();
-                        adMobConsentDialog.close();
+                    Text {
+                        anchors.fill:        parent
+                        anchors.margins:     UtilScript.pt(8)
+                        text:                qsTr("Yes, show me relevant ads")
+                        color:               "white"
+                        font.pointSize:      16
+                        font.family:         "Helvetica"
+                        font.bold:           true
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment:   Text.AlignVCenter
+                        wrapMode:            Text.NoWrap
+                        fontSizeMode:        Text.Fit
+                        minimumPointSize:    8
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+
+                        onClicked: {
+                            adMobConsentDialog.personalizedAdsSelected();
+                            adMobConsentDialog.close();
+                        }
                     }
                 }
             }
 
-            Image {
+            Rectangle {
                 width:            UtilScript.pt(280)
                 height:           UtilScript.pt(56)
-                source:           "qrc:/resources/images/button.png"
+                color:            "transparent"
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
-                Text {
-                    anchors.fill:        parent
-                    anchors.margins:     UtilScript.pt(8)
-                    text:                qsTr("No, show me ads that are less relevant")
-                    color:               "white"
-                    font.pointSize:      16
-                    font.family:         "Helvetica"
-                    font.bold:           true
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment:   Text.AlignVCenter
-                    wrapMode:            Text.NoWrap
-                    fontSizeMode:        Text.Fit
-                    minimumPointSize:    8
-                }
-
-                MouseArea {
+                Image {
                     anchors.fill: parent
+                    source:       "qrc:/resources/images/button.png"
+                    fillMode:     Image.PreserveAspectFit
 
-                    onClicked: {
-                        adMobConsentDialog.nonPersonalizedAdsSelected();
-                        adMobConsentDialog.close();
+                    Text {
+                        anchors.fill:        parent
+                        anchors.margins:     UtilScript.pt(8)
+                        text:                qsTr("No, show me ads that are less relevant")
+                        color:               "white"
+                        font.pointSize:      16
+                        font.family:         "Helvetica"
+                        font.bold:           true
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment:   Text.AlignVCenter
+                        wrapMode:            Text.NoWrap
+                        fontSizeMode:        Text.Fit
+                        minimumPointSize:    8
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+
+                        onClicked: {
+                            adMobConsentDialog.nonPersonalizedAdsSelected();
+                            adMobConsentDialog.close();
+                        }
                     }
                 }
             }
