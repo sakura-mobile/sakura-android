@@ -86,10 +86,6 @@ ApplicationWindow {
         }
     }
 
-    function showAdMobConsentDialog() {
-        adMobConsentDialog.open();
-    }
-
     StackView {
         id:           mainStackView
         anchors.fill: parent
