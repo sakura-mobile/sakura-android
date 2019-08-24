@@ -15,7 +15,7 @@ Dialog {
         implicitWidth:  UtilScript.pt(300)
         implicitHeight: UtilScript.pt(300)
         color:          "white"
-        border.width:   UtilScript.pt(1)
+        border.width:   UtilScript.pt(2)
         border.color:   "#eb6dc0"
 
         ColumnLayout {
