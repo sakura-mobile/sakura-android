@@ -39,8 +39,9 @@ int main(int argc, char *argv[])
 
     QtAndroid::hideSplashScreen();
 
-    if (engine.rootObjects().isEmpty())
+    if (engine.rootObjects().isEmpty()) {
         return -1;
-
-    return QGuiApplication::exec();
+    } else {
+        return QGuiApplication::exec();
+    }
 }
