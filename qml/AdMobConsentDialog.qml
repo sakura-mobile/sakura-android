@@ -13,12 +13,17 @@ Popup {
     signal personalizedAdsSelected()
     signal nonPersonalizedAdsSelected()
 
+    background: Rectangle {
+        color:        "white"
+        radius:       UtilScript.pt(8)
+        border.width: UtilScript.pt(2)
+        border.color: "#eb6dc0"
+    }
+
     contentItem: Rectangle {
         implicitWidth:  UtilScript.pt(300)
         implicitHeight: UtilScript.pt(300)
-        color:          "white"
-        border.width:   UtilScript.pt(2)
-        border.color:   "#eb6dc0"
+        color:          "transparent"
 
         ColumnLayout {
             anchors.fill:         parent
