@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
 import androidx.core.content.FileProvider;
@@ -233,16 +234,6 @@ public class SakuraActivity extends QtActivity
                         {
                             if (bannerView != null) {
                                 bannerView.setVisibility(View.VISIBLE);
-
-                                bannerView.post(new Runnable() {
-                                    @Override
-                                    public void run()
-                                    {
-                                        if (bannerView != null) {
-                                            bannerViewHeightUpdated(bannerView.getHeight());
-                                        }
-                                    }
-                                });
                             }
                         }
 
@@ -251,16 +242,22 @@ public class SakuraActivity extends QtActivity
                         {
                             if (bannerView != null) {
                                 bannerView.setVisibility(View.VISIBLE);
+                            }
+                        }
+                    });
 
-                                bannerView.post(new Runnable() {
-                                    @Override
-                                    public void run()
-                                    {
-                                        if (bannerView != null) {
-                                            bannerViewHeightUpdated(bannerView.getHeight());
-                                        }
-                                    }
-                                });
+                    bannerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                        @Override
+                        public void onGlobalLayout()
+                        {
+                            if (bannerView != null) {
+                                int height = bannerView.getHeight();
+
+                                if (height > 0) {
+                                    bannerViewHeightUpdated(height);
+                                } else {
+                                    bannerViewHeightUpdated(0);
+                                }
                             }
                         }
                     });
