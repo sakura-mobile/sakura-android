@@ -21,7 +21,7 @@ public:
     static AndroidGW &GetInstance();
 
 signals:
-    void bannerViewHeightChanged(int bannerViewHeight);
+    void bannerViewHeightUpdated(int bannerViewHeight);
 };
 
 #endif // ANDROIDGW_H
