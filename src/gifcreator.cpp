@@ -20,22 +20,22 @@ QString GIFCreator::imageFilePathMask() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 
-    if (tmp_dir != "") {
+    if (tmp_dir != QStringLiteral("")) {
         QDir().mkpath(tmp_dir);
     }
 
-    return QDir(tmp_dir).filePath("image_%1.jpg");
+    return QDir(tmp_dir).filePath(QStringLiteral("image_%1.jpg"));
 }
 
 QString GIFCreator::gifFilePath() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 
-    if (tmp_dir != "") {
+    if (tmp_dir != QStringLiteral("")) {
         QDir().mkpath(tmp_dir);
     }
 
-    return QDir(tmp_dir).filePath("image.gif");
+    return QDir(tmp_dir).filePath(QStringLiteral("image.gif"));
 }
 
 bool GIFCreator::createGIF(int frames_count, int frame_delay)

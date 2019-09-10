@@ -20,11 +20,11 @@ QString ShareHelper::imageFilePath() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 
-    if (tmp_dir != "") {
+    if (tmp_dir != QStringLiteral("")) {
         QDir().mkpath(tmp_dir);
     }
 
-    return QDir(tmp_dir).filePath("image.jpg");
+    return QDir(tmp_dir).filePath(QStringLiteral("image.jpg"));
 }
 
 void ShareHelper::shareImage(const QString &image_path)
