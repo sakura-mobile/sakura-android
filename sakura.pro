@@ -47,6 +47,10 @@ QML_DESIGNER_IMPORT_PATH =
 android {
     QT += androidextras
 
+    CONFIG(release, debug|release) {
+        CONFIG += qtquickcompiler
+    }
+
     OTHER_FILES += \
         android/source/AndroidManifest.xml \
         android/source/build.gradle \
@@ -103,13 +107,10 @@ android {
             $$PWD/android/source/libssl/armeabi-v7a/libcrypto.so \
             $$PWD/android/source/libssl/armeabi-v7a/libssl.so
     }
+
     contains(ANDROID_TARGET_ARCH,arm64-v8a) {
         ANDROID_EXTRA_LIBS = \
             $$PWD/android/source/libssl/arm64-v8a/libcrypto.so \
             $$PWD/android/source/libssl/arm64-v8a/libssl.so
     }
-}
-
-CONFIG(release, debug|release) {
-    CONFIG += qtquickcompiler
 }
