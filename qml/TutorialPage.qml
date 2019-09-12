@@ -420,6 +420,7 @@ Item {
             Text {
                 id: textPinchMap
                 anchors.fill: parent
+                anchors.topMargin: UtilScript.pt(33)
                 anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: true
@@ -439,6 +440,7 @@ Item {
             Text {
                 id: textFlickMap
                 anchors.fill: parent
+                anchors.topMargin: UtilScript.pt(33)
                 anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
@@ -457,6 +459,7 @@ Item {
             Text {
                 id: textDoubleTapBranch
                 anchors.fill: parent
+                anchors.topMargin: UtilScript.pt(33)
                 anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
@@ -475,6 +478,7 @@ Item {
             Text {
                 id: textDisassembleBranch
                 anchors.fill: parent
+                anchors.topMargin: UtilScript.pt(33)
                 anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
@@ -493,6 +497,7 @@ Item {
             Text {
                 id: textPressedBranch
                 anchors.fill: parent
+                anchors.topMargin: UtilScript.pt(33)
                 anchors.margins: UtilScript.pt(4)
                 z: 15
                 visible: false
