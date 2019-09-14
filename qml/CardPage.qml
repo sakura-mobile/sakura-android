@@ -306,18 +306,6 @@ Item {
                         horizontalAlignment: TextEdit.AlignHCenter
                         onCursorRectangleChanged: flick.ensureVisible(
                                                       cursorRectangle)
-
-                        Keys.onPressed: {
-                            if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                                event.accepted = true;
-                            }
-                        }
-
-                        Keys.onReleased: {
-                            if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                                event.accepted = true;
-                            }
-                        }
                     }
                 }
 
