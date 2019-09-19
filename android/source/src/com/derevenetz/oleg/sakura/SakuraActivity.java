@@ -219,7 +219,7 @@ public class SakuraActivity extends QtActivity
 
                     FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
                                                                                    FrameLayout.LayoutParams.WRAP_CONTENT,
-                                                                                   Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
+                                                                                   Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
 
                     bannerView = new AdView(f_context);
 
