@@ -33,7 +33,7 @@ Item {
             height: Math.min(
                         buttonsColumn.height,
                         parent.height - (backButton.height
-                                         + backButton.anchors.bottomMargin) * 2 - UtilScript.pt(8))
+                                         + backButton.anchors.bottomMargin) * 2 - UtilScript.dp(8))
             contentWidth: buttonsColumn.width
             contentHeight: buttonsColumn.height
             clip: true
@@ -48,13 +48,13 @@ Item {
                 Image {
                     id: settingsMusic
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: UtilScript.pt(300)
-                    height: UtilScript.pt(75)
+                    width: UtilScript.dp(300)
+                    height: UtilScript.dp(75)
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: UtilScript.pt(20)
+                        anchors.leftMargin: UtilScript.dp(20)
                         text: qsTr("MUSIC")
                         font.pointSize: 20
                         font.family: "Helvetica"
@@ -66,9 +66,9 @@ Item {
                         id: imageCheckMusic
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: UtilScript.pt(40)
-                        width: UtilScript.pt(30)
-                        height: UtilScript.pt(30)
+                        anchors.rightMargin: UtilScript.dp(40)
+                        width: UtilScript.dp(30)
+                        height: UtilScript.dp(30)
                     }
 
                     MouseArea {
@@ -92,13 +92,13 @@ Item {
                 Image {
                     id: settingsSounds
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: UtilScript.pt(300)
-                    height: UtilScript.pt(75)
+                    width: UtilScript.dp(300)
+                    height: UtilScript.dp(75)
 
                     Text {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: UtilScript.pt(20)
+                        anchors.leftMargin: UtilScript.dp(20)
                         text: qsTr("SOUNDS")
                         font.pointSize: 20
                         font.family: "Helvetica"
@@ -110,9 +110,9 @@ Item {
                         id: imageCheckSounds
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
-                        anchors.rightMargin: UtilScript.pt(40)
-                        width: UtilScript.pt(30)
-                        height: UtilScript.pt(30)
+                        anchors.rightMargin: UtilScript.dp(40)
+                        width: UtilScript.dp(30)
+                        height: UtilScript.dp(30)
                     }
 
                     MouseArea {
@@ -136,16 +136,16 @@ Item {
                 Image {
                     id: settingsAdPrivacy
                     source: "qrc:/resources/images/rectangle-hi.png"
-                    width: UtilScript.pt(300)
-                    height: UtilScript.pt(75)
+                    width: UtilScript.dp(300)
+                    height: UtilScript.dp(75)
                     visible: !mainWindow.disableAds
 
                     Text {
                         anchors.fill: parent
-                        anchors.topMargin: UtilScript.pt(8)
-                        anchors.bottomMargin: UtilScript.pt(8)
-                        anchors.leftMargin: UtilScript.pt(20)
-                        anchors.rightMargin: UtilScript.pt(20)
+                        anchors.topMargin: UtilScript.dp(8)
+                        anchors.bottomMargin: UtilScript.dp(8)
+                        anchors.leftMargin: UtilScript.dp(20)
+                        anchors.rightMargin: UtilScript.dp(20)
                         text: qsTr("AD PRIVACY SETTINGS")
                         font.pointSize: 20
                         font.family: "Helvetica"
@@ -175,11 +175,11 @@ Item {
             id: backButton
             source: "qrc:/resources/images/back.png"
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: UtilScript.pt(16)
+            anchors.bottomMargin: UtilScript.dp(16)
             anchors.left: parent.left
-            anchors.leftMargin: UtilScript.pt(15)
-            height: UtilScript.pt(40)
-            width: UtilScript.pt(40)
+            anchors.leftMargin: UtilScript.dp(15)
+            height: UtilScript.dp(40)
+            width: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaBackAwardsButton

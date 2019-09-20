@@ -33,15 +33,15 @@ Item {
             id: imageLanternTime
             source: "qrc:/resources/images/tape.png"
             anchors.horizontalCenter: parent.horizontalCenter
-            width: UtilScript.pt(300)
-            height: UtilScript.pt(100)
+            width: UtilScript.dp(300)
+            height: UtilScript.dp(100)
             y: imageLanternTime.height * -1
 
             Column {
-                spacing: UtilScript.pt(1)
+                spacing: UtilScript.dp(1)
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: UtilScript.pt(40)
+                anchors.bottomMargin: UtilScript.dp(40)
 
                 Text {
                     id: textTimeLantern
@@ -55,7 +55,7 @@ Item {
 
                 Row {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    spacing: UtilScript.pt(3)
+                    spacing: UtilScript.dp(3)
 
                     Text {
                         id: textHours
@@ -92,7 +92,7 @@ Item {
                 target: imageLanternTime
                 properties: "y"
                 easing.type: Easing.OutBack
-                to: UtilScript.pt(16)
+                to: UtilScript.dp(16)
             }
 
             PropertyAnimation {
@@ -119,7 +119,7 @@ Item {
                 width: parent.width
                 height: parent.height
                 anchors.fill: parent
-                anchors.margins: UtilScript.pt(15)
+                anchors.margins: UtilScript.dp(15)
                 color: "transparent"
                 clip: true
 
@@ -144,7 +144,7 @@ Item {
 
                         Row {
                             anchors.fill: parent
-                            spacing: UtilScript.pt(5)
+                            spacing: UtilScript.dp(5)
 
                             Rectangle {
                                 width: rectangleScores.width * 0.1
@@ -250,7 +250,7 @@ Item {
                     header: Rectangle {
                         color: "transparent"
                         width: scoreListView.width
-                        height: UtilScript.pt(15)
+                        height: UtilScript.dp(15)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -276,11 +276,11 @@ Item {
             id: backAwardsButton
             source: "qrc:/resources/images/back.png"
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: UtilScript.pt(16)
+            anchors.bottomMargin: UtilScript.dp(16)
             anchors.left: parent.left
-            anchors.leftMargin: UtilScript.pt(15)
-            height: UtilScript.pt(60)
-            width: UtilScript.pt(60)
+            anchors.leftMargin: UtilScript.dp(15)
+            height: UtilScript.dp(60)
+            width: UtilScript.dp(60)
 
             MouseArea {
                 id: mouseAreaBackAwardsButton
@@ -294,14 +294,14 @@ Item {
         Row {
             anchors.bottom: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottomMargin: UtilScript.pt(16)
-            spacing: UtilScript.pt(10)
+            anchors.bottomMargin: UtilScript.dp(16)
+            spacing: UtilScript.dp(10)
 
             Image {
                 id: tournamentRatingButton
                 source: "qrc:/resources/images/button_tournament_rating_off.png"
-                height: UtilScript.pt(60)
-                width: UtilScript.pt(60)
+                height: UtilScript.dp(60)
+                width: UtilScript.dp(60)
 
                 MouseArea {
                     id: mouseAreaTournamentRatingButton
@@ -325,8 +325,8 @@ Item {
             Image {
                 id: userRatingButton
                 source: "qrc:/resources/images/button_user_ratings_on.png"
-                height: UtilScript.pt(60)
-                width: UtilScript.pt(60)
+                height: UtilScript.dp(60)
+                width: UtilScript.dp(60)
 
                 MouseArea {
                     id: mouseAreaUserRatingButton

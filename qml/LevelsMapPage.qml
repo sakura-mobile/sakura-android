@@ -29,19 +29,19 @@ Item {
             id: gridMap
             anchors.centerIn: parent
             columns: 5
-            spacing: UtilScript.pt(10)
+            spacing: UtilScript.dp(10)
         }
     }
 
     Image {
         id: backButton
         source: "qrc:/resources/images/back.png"
-        width: UtilScript.pt(50)
-        height: UtilScript.pt(50)
+        width: UtilScript.dp(50)
+        height: UtilScript.dp(50)
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.leftMargin: UtilScript.pt(15)
-        anchors.bottomMargin: UtilScript.pt(16)
+        anchors.leftMargin: UtilScript.dp(15)
+        anchors.bottomMargin: UtilScript.dp(16)
         MouseArea {
             id: mouseAreaBackButton
             anchors.fill: parent
@@ -99,8 +99,8 @@ Item {
                 }
             }
             object.color = "transparent"
-            object.width = UtilScript.pt(50)
-            object.height = UtilScript.pt(50)
+            object.width = UtilScript.dp(50)
+            object.height = UtilScript.dp(50)
             object.currentCampaign = currentCampaign
             object.currentLocation = currentLocation
             object.currentLevel = keyLevel

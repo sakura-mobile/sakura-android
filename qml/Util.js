@@ -1,4 +1,4 @@
-function pt(size) {
+function dp(size) {
     var screen_dpi = UIHelper.getScreenDPI();
 
     if (screen_dpi >= 640) {

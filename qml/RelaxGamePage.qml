@@ -124,19 +124,19 @@ Item {
             Image {
                 id: imageLanternStep
                 source: "qrc:/resources/images/lantern_step.png"
-                width: UtilScript.pt(70)
-                height: UtilScript.pt(161)
+                width: UtilScript.dp(70)
+                height: UtilScript.dp(161)
                 y: imageLanternStep.height * -1
 
                 Column {
                     spacing: 1
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.bottom: parent.bottom
-                    anchors.bottomMargin: UtilScript.pt(30)
+                    anchors.bottomMargin: UtilScript.dp(30)
 
                     Rectangle {
-                        height: UtilScript.pt(12)
-                        width: UtilScript.pt(50)
+                        height: UtilScript.dp(12)
+                        width: UtilScript.dp(50)
                         color: "transparent"
 
                         Text {
@@ -155,8 +155,8 @@ Item {
                     }
 
                     Rectangle {
-                        height: UtilScript.pt(18)
-                        width: UtilScript.pt(50)
+                        height: UtilScript.dp(18)
+                        width: UtilScript.dp(50)
                         color: "transparent"
 
                         Text {
@@ -175,8 +175,8 @@ Item {
                     }
                     Rectangle {
                         id: rectStepStopLantern
-                        height: UtilScript.pt(20)
-                        width: UtilScript.pt(50)
+                        height: UtilScript.dp(20)
+                        width: UtilScript.dp(50)
                         color: "transparent"
                         visible: false
 
@@ -204,7 +204,7 @@ Item {
                     target: imageLanternStep
                     properties: "y"
                     easing.type: Easing.OutBack
-                    to: UtilScript.pt(35) * -1
+                    to: UtilScript.dp(35) * -1
                 }
 
                 PropertyAnimation {
@@ -227,7 +227,7 @@ Item {
             id: pinchAreaZoom
             anchors.centerIn: parent
             width: parent.width
-            height: width - UtilScript.pt(32)
+            height: width - UtilScript.dp(32)
             clip: true
 
             Flickable {
@@ -273,7 +273,7 @@ Item {
                            backgroundFlickable.contentWidth        > 0.0 ?
                            backgroundFlickable.contentWidth / backgroundFlickable.initialContentWidth : 1.0
                     transformOrigin: Item.TopLeft
-                    spacing: UtilScript.pt(1)
+                    spacing: UtilScript.dp(1)
 
                     onWidthChanged: {
                         backgroundFlickable.initialContentWidth = width
@@ -327,14 +327,14 @@ Item {
             id: mouseAreaRectBranch
             anchors.centerIn: parent
             width: parent.width
-            height: width - UtilScript.pt(32)
+            height: width - UtilScript.dp(32)
             z: 1
             propagateComposedEvents: true
 
             onPressed: {
                 if ((new Date()).getTime() - lastPressTime < 250 &&
-                    Math.abs(mouse.x - lastMouseX) * scale < UtilScript.pt(16) &&
-                    Math.abs(mouse.y - lastMouseY) * scale < UtilScript.pt(16)) {
+                    Math.abs(mouse.x - lastMouseX) * scale < UtilScript.dp(16) &&
+                    Math.abs(mouse.y - lastMouseY) * scale < UtilScript.dp(16)) {
                     backgroundFlickable.initialResize(gridMapRelax.width, gridMapRelax.height);
                 } else {
                     lastMouseX    = mouse.x
@@ -349,16 +349,16 @@ Item {
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: Math.max(relaxGamePage.bannerViewHeight + UtilScript.pt(8),
-                                           UtilScript.pt(20))
-            spacing: UtilScript.pt(60)
+            anchors.bottomMargin: Math.max(relaxGamePage.bannerViewHeight + UtilScript.dp(8),
+                                           UtilScript.dp(20))
+            spacing: UtilScript.dp(60)
 
             Image {
                 id: backButton
                 anchors.bottom: parent.bottom
                 source: "qrc:/resources/images/back.png"
-                width: UtilScript.pt(50)
-                height: UtilScript.pt(50)
+                width: UtilScript.dp(50)
+                height: UtilScript.dp(50)
 
                 MouseArea {
                     id: mouseAreaBackButton
@@ -371,16 +371,16 @@ Item {
 
             Column {
                 Rectangle {
-                    width: UtilScript.pt(50)
-                    height: UtilScript.pt(20)
+                    width: UtilScript.dp(50)
+                    height: UtilScript.dp(20)
                     color: "transparent"
                     Rectangle {
                         anchors.centerIn: parent
-                        width: UtilScript.pt(50)
-                        height: UtilScript.pt(20)
+                        width: UtilScript.dp(50)
+                        height: UtilScript.dp(20)
                         color: "black"
                         opacity: 0.3
-                        radius:  UtilScript.pt(10)
+                        radius:  UtilScript.dp(10)
                     }
                     Text {
                         id: textCountQuickTipButton
@@ -400,8 +400,8 @@ Item {
                 Image {
                     id: quickTipButton
                     source: "qrc:/resources/images/button_quick_tip.png"
-                    width: UtilScript.pt(50)
-                    height: UtilScript.pt(50)
+                    width: UtilScript.dp(50)
+                    height: UtilScript.dp(50)
 
                     MouseArea {
                         id: mouseAreaQuickTipButton
@@ -425,8 +425,8 @@ Item {
                 id: refreshButton
                 anchors.bottom: parent.bottom
                 source: "qrc:/resources/images/refresh.png"
-                width: UtilScript.pt(50)
-                height: UtilScript.pt(50)
+                width: UtilScript.dp(50)
+                height: UtilScript.dp(50)
 
                 MouseArea {
                     id: mouseAreaRefreshButton
@@ -442,8 +442,8 @@ Item {
             id: rectCompletedGame
             anchors.horizontalCenter: parent.horizontalCenter
             y: imageBackgroundMainMap.height
-            width: UtilScript.pt(300)
-            height: UtilScript.pt(200)
+            width: UtilScript.dp(300)
+            height: UtilScript.dp(200)
             color: "transparent"
             Image {
                 id: backgroundCompletedGame
@@ -456,15 +456,15 @@ Item {
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
                     //anchors.bottomMargin: 30
-                    anchors.topMargin: UtilScript.pt(20)
+                    anchors.topMargin: UtilScript.dp(20)
                     z: 15
-                    height: UtilScript.pt(50)
-                    spacing: UtilScript.pt(15)
+                    height: UtilScript.dp(50)
+                    spacing: UtilScript.dp(15)
 
                     Image {
                         id: imageRepeatGame
-                        width: UtilScript.pt(50)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(50)
+                        height: UtilScript.dp(50)
                         source: "qrc:/resources/images/button_repeat_game.png"
                         MouseArea {
                             id: mouseAreaPlayRepeatGame
@@ -476,8 +476,8 @@ Item {
                     }
                     Image {
                         id: imageSearchLevel
-                        width: UtilScript.pt(50)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(50)
+                        height: UtilScript.dp(50)
                         source: "qrc:/resources/images/button_search_levels.png"
                         MouseArea {
                             id: mouseAreaSearchLevel
@@ -490,8 +490,8 @@ Item {
                     }
                     Image {
                         id: imageShare
-                        width: UtilScript.pt(50)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(50)
+                        height: UtilScript.dp(50)
                         source: "qrc:/resources/images/button_share.png"
                         MouseArea {
                             id: mouseAreaImageShare
@@ -529,18 +529,18 @@ Item {
                             id: imageShareTooltip
                             anchors.bottom: imageShare.top
                             anchors.horizontalCenter: parent.horizontalCenter
-                            width: UtilScript.pt(200)
-                            height: UtilScript.pt(70)
+                            width: UtilScript.dp(200)
+                            height: UtilScript.dp(70)
                             visible: false
                             source: "qrc:/resources/images/tooltip.png"
 
                             Text {
                                 id: textTooltipShare
                                 anchors.fill: parent
-                                anchors.topMargin: UtilScript.pt(8)
-                                anchors.bottomMargin: UtilScript.pt(16)
-                                anchors.leftMargin: UtilScript.pt(12)
-                                anchors.rightMargin: UtilScript.pt(12)
+                                anchors.topMargin: UtilScript.dp(8)
+                                anchors.bottomMargin: UtilScript.dp(16)
+                                anchors.leftMargin: UtilScript.dp(12)
+                                anchors.rightMargin: UtilScript.dp(12)
                                 z: 15
                                 visible: true
                                 text: qsTr("Create postcard and share with friends")
@@ -558,8 +558,8 @@ Item {
                     }
                     Image {
                         id: imagePlayGame
-                        width: UtilScript.pt(50)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(50)
+                        height: UtilScript.dp(50)
                         source: "qrc:/resources/images/button_play_game.png"
 
                         MouseArea {
@@ -591,26 +591,26 @@ Item {
                     anchors.bottom: parent.bottom
                     anchors.horizontalCenter: parent.horizontalCenter
                     //anchors.topMargin: 20
-                    anchors.bottomMargin: UtilScript.pt(30)
+                    anchors.bottomMargin: UtilScript.dp(30)
                     z: 15
-                    spacing: UtilScript.pt(5)
+                    spacing: UtilScript.dp(5)
 
                     Image {
                         id: firstStarImage
-                        width: UtilScript.pt(70)
-                        height: UtilScript.pt(70)
+                        width: UtilScript.dp(70)
+                        height: UtilScript.dp(70)
                         source: "qrc:/resources/images/star_disable.png"
                     }
                     Image {
                         id: secondStarImage
-                        width: UtilScript.pt(70)
-                        height: UtilScript.pt(70)
+                        width: UtilScript.dp(70)
+                        height: UtilScript.dp(70)
                         source: "qrc:/resources/images/star_disable.png"
                     }
                     Image {
                         id: thirdStarImage
-                        width: UtilScript.pt(70)
-                        height: UtilScript.pt(70)
+                        width: UtilScript.dp(70)
+                        height: UtilScript.dp(70)
                         source: "qrc:/resources/images/star_disable.png"
                     }
                 }
@@ -625,7 +625,7 @@ Item {
                 properties: "y"
                 easing.type: Easing.InQuad
                 to: imageBackgroundMainMap.height - rectCompletedGame.height - Math.max(
-                        relaxGamePage.bannerViewHeight + UtilScript.pt(8), UtilScript.pt(20))
+                        relaxGamePage.bannerViewHeight + UtilScript.dp(8), UtilScript.dp(20))
                 onStopped: {
 
                     if (Number(mainWindow.getSetting("ShareTooltip",
@@ -661,8 +661,8 @@ Item {
             id: rectNotAvailableLevels
             y: rectNotAvailableLevels.height * -1
             anchors.horizontalCenter: imageBackgroundMainMap.horizontalCenter
-            width: UtilScript.pt(300)
-            height: UtilScript.pt(200)
+            width: UtilScript.dp(300)
+            height: UtilScript.dp(200)
             color: "transparent"
             Image {
                 id: backgroundRectNotAvailableLevels
@@ -676,7 +676,7 @@ Item {
                     anchors.bottom: imageOkNotAvailableLevels.top
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.margins: UtilScript.pt(16)
+                    anchors.margins: UtilScript.dp(16)
                     text: qsTr("Congratulations, you completed all available levels! Stay tuned for updates with new levels, challenges and more.")
                     font.pointSize: 16
                     font.bold: true
@@ -691,10 +691,10 @@ Item {
 
                 Image {
                     id: imageOkNotAvailableLevels
-                    width: UtilScript.pt(50)
-                    height: UtilScript.pt(50)
+                    width: UtilScript.dp(50)
+                    height: UtilScript.dp(50)
                     anchors.bottom: parent.bottom
-                    anchors.bottomMargin: UtilScript.pt(16)
+                    anchors.bottomMargin: UtilScript.dp(16)
                     anchors.horizontalCenter: parent.horizontalCenter
                     source: "qrc:/resources/images/button_ok.png"
                     MouseArea {

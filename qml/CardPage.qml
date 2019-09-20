@@ -269,7 +269,7 @@ Item {
                 id: backgroundTextCard
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: imageBackgroundMainMap.height
-                width: parent.width - UtilScript.pt(100)
+                width: parent.width - UtilScript.dp(100)
                 height: sourceSize.height * (width / sourceSize.width)
                 source: "qrc:/resources/images/background_card.png"
                 fillMode: Image.PreserveAspectFit
@@ -277,7 +277,7 @@ Item {
                 Flickable {
                     id: flick
                     anchors.fill: parent
-                    anchors.margins: UtilScript.pt(15)
+                    anchors.margins: UtilScript.dp(15)
                     contentWidth: textAreaCard.paintedWidth
                     contentHeight: textAreaCard.paintedHeight
                     clip: true
@@ -316,7 +316,7 @@ Item {
                     target: backgroundTextCard
                     properties: "y"
                     easing.type: Easing.InQuad
-                    to: imageBackgroundMainMap.height - backgroundTextCard.height - UtilScript.pt(15)
+                    to: imageBackgroundMainMap.height - backgroundTextCard.height - UtilScript.dp(15)
                     onStopped: {
                         textAreaCard.forceActiveFocus();
                     }
@@ -355,16 +355,16 @@ Item {
     Column {
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.topMargin: UtilScript.pt(40)
-        anchors.leftMargin: UtilScript.pt(10)
+        anchors.topMargin: UtilScript.dp(40)
+        anchors.leftMargin: UtilScript.dp(10)
         z: 1
-        spacing: UtilScript.pt(15)
+        spacing: UtilScript.dp(15)
 
         Image {
             id: backButton
             source: "qrc:/resources/images/back.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
             z: 1
             MouseArea {
                 id: mouseAreaBackButton
@@ -378,8 +378,8 @@ Item {
         Image {
             id: imageButton
             source: "qrc:/resources/images/button_image.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaTextButtonImage
@@ -397,8 +397,8 @@ Item {
         Image {
             id: gifButton
             source: "qrc:/resources/images/button_gif.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaTextButtonGif
@@ -417,16 +417,16 @@ Item {
     Column {
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.topMargin: UtilScript.pt(40)
-        anchors.rightMargin: UtilScript.pt(10)
+        anchors.topMargin: UtilScript.dp(40)
+        anchors.rightMargin: UtilScript.dp(10)
         z: 1
-        spacing: UtilScript.pt(15)
+        spacing: UtilScript.dp(15)
 
         Image {
             id: petalsButton
             source: "qrc:/resources/images/button_petals.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaPetalsButton
@@ -440,8 +440,8 @@ Item {
         Image {
             id: rectButton
             source: "qrc:/resources/images/button_rect.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaRectButton
@@ -454,8 +454,8 @@ Item {
         Image {
             id: textEnableButton
             source: "qrc:/resources/images/button_text_enable.png"
-            width: UtilScript.pt(40)
-            height: UtilScript.pt(40)
+            width: UtilScript.dp(40)
+            height: UtilScript.dp(40)
 
             MouseArea {
                 id: mouseAreaTextButtonEnable

@@ -24,18 +24,18 @@ Item {
 
                 Column {
                     anchors.centerIn: parent
-                    spacing: UtilScript.pt(10)
+                    spacing: UtilScript.dp(10)
 
                     Image {
                         id: buttonTutorial
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("TUTORIAL")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"
@@ -62,13 +62,13 @@ Item {
                     Image {
                         id: buttonCampaign
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("CAMPAIGN")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"
@@ -98,13 +98,13 @@ Item {
                     Image {
                         id: buttonTournament
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("TOURNAMENT")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"
@@ -131,13 +131,13 @@ Item {
                     Image {
                         id: buttonRelax
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("RELAX")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"
@@ -164,13 +164,13 @@ Item {
                     Image {
                         id: buttonStore
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("STORE")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"
@@ -190,13 +190,13 @@ Item {
                     Image {
                         id: buttonSettings
                         source: "qrc:/resources/images/button.png"
-                        width: UtilScript.pt(240)
-                        height: UtilScript.pt(50)
+                        width: UtilScript.dp(240)
+                        height: UtilScript.dp(50)
 
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.pt(10)
+                            anchors.bottomMargin: UtilScript.dp(10)
                             text: qsTr("SETTINGS")
                             font.pointSize: 24
                             font.family: "ChalkboardSE"

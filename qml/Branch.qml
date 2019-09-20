@@ -4,8 +4,8 @@ import "Util.js" as UtilScript
 
 Rectangle {
     id: imageBranch
-    width: UtilScript.pt(30)
-    height: UtilScript.pt(30)
+    width: UtilScript.dp(30)
+    height: UtilScript.dp(30)
     property int posI: 0
     property int posJ: 0
     property int posLeft: 0

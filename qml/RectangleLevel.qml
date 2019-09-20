@@ -36,32 +36,32 @@ Rectangle {
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         z: 15
-        height: UtilScript.pt(10)
-        spacing: UtilScript.pt(1)
+        height: UtilScript.dp(10)
+        spacing: UtilScript.dp(1)
 
         Image {
             id: firstStarImage
-            width: UtilScript.pt(10)
-            height: UtilScript.pt(10)
+            width: UtilScript.dp(10)
+            height: UtilScript.dp(10)
             source: "qrc:/resources/images/star.png"
         }
         Image {
             id: secondStarImage
-            width: UtilScript.pt(10)
-            height: UtilScript.pt(10)
+            width: UtilScript.dp(10)
+            height: UtilScript.dp(10)
             source: "qrc:/resources/images/star.png"
         }
         Image {
             id: thirdStarImage
-            width: UtilScript.pt(10)
-            height: UtilScript.pt(10)
+            width: UtilScript.dp(10)
+            height: UtilScript.dp(10)
             source: "qrc:/resources/images/star.png"
         }
     }
     Image {
         id: lanternImage
-        width: UtilScript.pt(50)
-        height: UtilScript.pt(50)
+        width: UtilScript.dp(50)
+        height: UtilScript.dp(50)
         anchors.top: buttonImageRow.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         source: rectangleLevel.sourceImgLantern
@@ -70,7 +70,7 @@ Rectangle {
             id: textName
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: UtilScript.pt(5)
+            anchors.bottomMargin: UtilScript.dp(5)
             text: (currentLevel + 1).toString()
             font.pointSize: 18
             font.bold: true

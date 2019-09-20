@@ -53,12 +53,12 @@ Item {
     Image {
         id: backButton
         source: "qrc:/resources/images/back.png"
-        width: UtilScript.pt(60)
-        height: UtilScript.pt(60)
+        width: UtilScript.dp(60)
+        height: UtilScript.dp(60)
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.leftMargin: UtilScript.pt(15)
-        anchors.bottomMargin: UtilScript.pt(16)
+        anchors.leftMargin: UtilScript.dp(15)
+        anchors.bottomMargin: UtilScript.dp(16)
         z: 1
         MouseArea {
             id: mouseAreaBackButton
@@ -74,10 +74,10 @@ Item {
         source: "qrc:/resources/images/button_play_last_location.png"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        width: UtilScript.pt(60)
-        height: UtilScript.pt(60)
+        width: UtilScript.dp(60)
+        height: UtilScript.dp(60)
         z: 1
-        anchors.bottomMargin: UtilScript.pt(16)
+        anchors.bottomMargin: UtilScript.dp(16)
 
         MouseArea {
             id: mouseAreaPlayLastLocationButton
