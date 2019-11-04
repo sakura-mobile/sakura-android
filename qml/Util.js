@@ -1,5 +1,5 @@
 function dp(size) {
-    var screen_dpi = UIHelper.getScreenDPI();
+    var screen_dpi = UIHelper.getScreenDpi();
 
     if (screen_dpi >= 640) {
         return Math.floor(size * 4);

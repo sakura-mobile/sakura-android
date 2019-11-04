@@ -70,7 +70,7 @@ public class SakuraActivity extends QtActivity
         super.onDestroy();
     }
 
-    public int getScreenDPI()
+    public int getScreenDpi()
     {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
