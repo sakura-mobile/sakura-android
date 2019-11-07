@@ -549,7 +549,7 @@ Item {
         property bool playbackEnabled: true
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
 
         function playAudio() {
@@ -570,7 +570,7 @@ Item {
         property bool playbackEnabled: true
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
 
         function playAudio() {

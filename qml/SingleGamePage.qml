@@ -901,7 +901,7 @@ Item {
                                                        })
                                 }
                             } else {
-                                console.log(component.errorString())
+                                console.error(component.errorString())
                             }
                             mainWindow.showInterstitial()
                         }
@@ -1014,7 +1014,7 @@ Item {
         }
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
     }
 
@@ -1026,7 +1026,7 @@ Item {
         property bool playbackEnabled: true
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
 
         function playAudio() {
@@ -1047,7 +1047,7 @@ Item {
         property bool playbackEnabled: true
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
 
         function playAudio() {
@@ -1068,7 +1068,7 @@ Item {
         property bool playbackEnabled: true
 
         onError: {
-            console.log(errorString)
+            console.error(errorString)
         }
 
         function playAudio() {
@@ -1710,7 +1710,7 @@ Item {
             if (xhr.readyState != 4)
                 return
             if (xhr.status != 200) {
-                console.log(xhr.status + ': ' + xhr.statusText)
+                console.error(xhr.status + ': ' + xhr.statusText)
             } else {
                 var res = JSON.parse(xhr.responseText)
                 if (res["result"] === "success") {
@@ -1725,7 +1725,7 @@ Item {
                         // TODO: StoreHelper.requestReview()
                     }
                 } else {
-                    console.log(res)
+                    console.warn(res)
                 }
             }
         }

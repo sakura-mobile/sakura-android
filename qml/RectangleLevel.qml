@@ -94,11 +94,11 @@ Rectangle {
                                                "currentCampaign": currentCampaign
                                            })
                     } else {
-                        console.log(component.errorString())
+                        console.error(component.errorString())
                     }
                 } else {
                     //relax page
-                    console.log("relax")
+                    console.debug("relax")
                     component = Qt.createComponent("RelaxGamePage.qml")
 
                     if (component.status === Component.Ready) {
@@ -108,7 +108,7 @@ Rectangle {
                                                "currentCampaign": currentCampaign
                                            })
                     } else {
-                        console.log(component.errorString())
+                        console.error(component.errorString())
                     }
                 }
             }

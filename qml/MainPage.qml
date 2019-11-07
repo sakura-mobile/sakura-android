@@ -53,7 +53,7 @@ Item {
                                 if (component.status === Component.Ready) {
                                     mainStackView.push(component)
                                 } else {
-                                    console.log(component.errorString())
+                                    console.error(component.errorString())
                                 }
                             }
                         }
@@ -89,7 +89,7 @@ Item {
                                                            "currentLocation": mainWindow.getSetting("maxLevelLocation", 0)
                                                        })
                                 } else {
-                                    console.log(component.errorString())
+                                    console.error(component.errorString())
                                 }
                             }
                         }
@@ -122,7 +122,7 @@ Item {
                                 if (component.status === Component.Ready) {
                                     mainStackView.push(component)
                                 } else {
-                                    console.log(component.errorString())
+                                    console.error(component.errorString())
                                 }
                             }
                         }
@@ -155,7 +155,7 @@ Item {
                                 if (component.status === Component.Ready) {
                                     mainStackView.push(component)
                                 } else {
-                                    console.log(component.errorString())
+                                    console.error(component.errorString())
                                 }
                             }
                         }
@@ -214,7 +214,7 @@ Item {
                                 if (component.status === Component.Ready) {
                                     mainStackView.push(component)
                                 } else {
-                                    console.log(component.errorString())
+                                    console.error(component.errorString())
                                 }
                             }
                         }

@@ -192,7 +192,7 @@ Item {
     }
 
     Component.onCompleted: {
-        console.log("SettingsSounds :: " + Number(mainWindow.getSetting(
+        console.debug("SettingsSounds :: " + Number(mainWindow.getSetting(
                                                       "SettingsSounds", 1)))
 
         if (Number(mainWindow.getSetting("SettingsMusic", 1)) === 1) {

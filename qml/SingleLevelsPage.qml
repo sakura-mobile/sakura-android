@@ -48,7 +48,7 @@ Item {
                                                    "currentLevel": currentLevel
                                                })
                         } else {
-                            console.log(component.errorString())
+                            console.error(component.errorString())
                         }
                     }
                 }
@@ -590,9 +590,9 @@ Item {
             if (xhr.readyState != 4)
                 return
             if (xhr.status != 200) {
-                console.log(xhr.status + ': ' + xhr.statusText)
+                console.error(xhr.status + ': ' + xhr.statusText)
             } else {
-                console.log(xhr.responseText)
+                console.debug(xhr.responseText)
                 var res = JSON.parse(xhr.responseText)
 
                 if (res["result"] === "success") {
@@ -653,7 +653,7 @@ Item {
                                               now.getTime())
                     }
                 } else {
-                    console.log(res)
+                    console.warn(res)
                 }
             }
         }
@@ -667,7 +667,7 @@ Item {
                                    "currentLevel": currentLevel
                                })
         } else {
-            console.log(component.errorString())
+            console.error(component.errorString())
         }
     }
 

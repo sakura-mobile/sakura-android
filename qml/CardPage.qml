@@ -489,7 +489,7 @@ Item {
                     if (GIFCreator.createGIF(framesCount, interval / 10)) {
                         ShareHelper.shareImage(GIFCreator.gifFilePath)
                     } else {
-                        console.log("createGIF() failed")
+                        console.error("createGIF() failed")
                     }
                 }
 
@@ -509,12 +509,12 @@ Item {
                             stop()
                         }
                     } else {
-                        console.log("saveToFile() failed for frame %1".arg(frame_number))
+                        console.error("saveToFile() failed for frame %1".arg(frame_number))
 
                         stop()
                     }
                 })) {
-                    console.log("grabToImage() failed for frame %1".arg(frame_number))
+                    console.error("grabToImage() failed for frame %1".arg(frame_number))
 
                     stop()
                 }
@@ -544,12 +544,12 @@ Item {
             if (result.saveToFile(ShareHelper.imageFilePath)) {
                 ShareHelper.shareImage(ShareHelper.imageFilePath)
             } else {
-                console.log("saveToFile() failed")
+                console.error("saveToFile() failed")
             }
 
             waitRectangle.visible = false
         })) {
-            console.log("grabToImage() failed")
+            console.error("grabToImage() failed")
 
             waitRectangle.visible = false
         }
