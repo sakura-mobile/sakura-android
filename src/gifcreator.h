@@ -1,6 +1,7 @@
 #ifndef GIFCREATOR_H
 #define GIFCREATOR_H
 
+#include <QtCore/QtGlobal>
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
@@ -28,6 +29,9 @@ public:
     QString gifFilePath() const;
 
     Q_INVOKABLE bool createGIF(int frames_count, int frame_delay);
+
+private:
+    static constexpr qreal GIF_MPIX_LIMIT = 0.5;
 };
 
 #endif // GIFCREATOR_H

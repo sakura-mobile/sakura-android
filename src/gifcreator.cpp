@@ -1,6 +1,9 @@
+#include <QtCore/QtMath>
+#include <QtCore/QSize>
 #include <QtCore/QDir>
 #include <QtCore/QStandardPaths>
 #include <QtGui/QImage>
+#include <QtGui/QImageReader>
 
 #include "gif.h"
 #include "gifcreator.h"
@@ -40,37 +43,59 @@ QString GIFCreator::gifFilePath() const
 
 bool GIFCreator::createGIF(int frames_count, int frame_delay)
 {
-    QImage first_image(imageFilePathMask().arg(0));
+    QImageReader first_reader(imageFilePathMask().arg(0));
 
-    if (!first_image.isNull()) {
-        GifWriter gif_writer = {};
+    if (first_reader.canRead()) {
+        QSize size = first_reader.size();
 
-        if (GifBegin(&gif_writer, gifFilePath().toUtf8(), static_cast<uint32_t>(first_image.width()),
-                                                          static_cast<uint32_t>(first_image.height()),
-                                                          static_cast<uint32_t>(frame_delay))) {
-            for (int frame = 0; frame < frames_count; frame++) {
-                QImage image(imageFilePathMask().arg(frame));
+        if (!size.isEmpty()) {
+            if (size.width() * size.height() > GIF_MPIX_LIMIT * 1000000.0) {
+                qreal scale = qSqrt((size.width() * size.height()) / (GIF_MPIX_LIMIT * 1000000.0));
 
-                if (!image.isNull() && image.width()  == first_image.width() &&
-                                       image.height() == first_image.height()) {
-                    if (!GifWriteFrame(&gif_writer,
-                                       image.convertToFormat(QImage::Format_Indexed8).
-                                             convertToFormat(QImage::Format_RGBA8888).constBits(),
-                                       static_cast<uint32_t>(image.width()),
-                                       static_cast<uint32_t>(image.height()),
-                                       static_cast<uint32_t>(frame_delay))) {
+                size.setWidth(qFloor(size.width()   / scale));
+                size.setHeight(qFloor(size.height() / scale));
+            }
+
+            GifWriter gif_writer = {};
+
+            if (GifBegin(&gif_writer, gifFilePath().toUtf8(), static_cast<uint32_t>(size.width()),
+                                                              static_cast<uint32_t>(size.height()),
+                                                              static_cast<uint32_t>(frame_delay))) {
+                for (int frame = 0; frame < frames_count; frame++) {
+                    QImageReader reader(imageFilePathMask().arg(frame));
+
+                    if (reader.canRead()) {
+                        reader.setScaledSize(size);
+
+                        QImage image = reader.read();
+
+                        if (!image.isNull()) {
+                            if (!GifWriteFrame(&gif_writer,
+                                               image.convertToFormat(QImage::Format_Indexed8).
+                                                     convertToFormat(QImage::Format_RGBA8888).constBits(),
+                                               static_cast<uint32_t>(image.width()),
+                                               static_cast<uint32_t>(image.height()),
+                                               static_cast<uint32_t>(frame_delay))) {
+                                GifEnd(&gif_writer);
+
+                                return false;
+                            }
+                        } else {
+                            GifEnd(&gif_writer);
+
+                            return false;
+                        }
+                    } else {
                         GifEnd(&gif_writer);
 
                         return false;
                     }
-                } else {
-                    GifEnd(&gif_writer);
-
-                    return false;
                 }
-            }
 
-            return GifEnd(&gif_writer);
+                return GifEnd(&gif_writer);
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
