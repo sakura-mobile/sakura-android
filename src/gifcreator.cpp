@@ -56,26 +56,32 @@ bool GIFCreator::createGIF(int frames_count, int frame_delay)
                 size.setHeight(qFloor(size.height() / scale));
             }
 
-            GifWriter gif_writer = {};
+            if (!size.isEmpty()) {
+                GifWriter gif_writer = {};
 
-            if (GifBegin(&gif_writer, gifFilePath().toUtf8(), static_cast<uint32_t>(size.width()),
-                                                              static_cast<uint32_t>(size.height()),
-                                                              static_cast<uint32_t>(frame_delay))) {
-                for (int frame = 0; frame < frames_count; frame++) {
-                    QImageReader reader(imageFilePathMask().arg(frame));
+                if (GifBegin(&gif_writer, gifFilePath().toUtf8(), static_cast<uint32_t>(size.width()),
+                                                                  static_cast<uint32_t>(size.height()),
+                                                                  static_cast<uint32_t>(frame_delay))) {
+                    for (int frame = 0; frame < frames_count; frame++) {
+                        QImageReader reader(imageFilePathMask().arg(frame));
 
-                    if (reader.canRead()) {
-                        reader.setScaledSize(size);
+                        if (reader.canRead()) {
+                            reader.setScaledSize(size);
 
-                        QImage image = reader.read();
+                            QImage image = reader.read();
 
-                        if (!image.isNull()) {
-                            if (!GifWriteFrame(&gif_writer,
-                                               image.convertToFormat(QImage::Format_Indexed8).
-                                                     convertToFormat(QImage::Format_RGBA8888).constBits(),
-                                               static_cast<uint32_t>(image.width()),
-                                               static_cast<uint32_t>(image.height()),
-                                               static_cast<uint32_t>(frame_delay))) {
+                            if (!image.isNull() && image.size() == size) {
+                                if (!GifWriteFrame(&gif_writer,
+                                                   image.convertToFormat(QImage::Format_Indexed8).
+                                                         convertToFormat(QImage::Format_RGBA8888).constBits(),
+                                                   static_cast<uint32_t>(image.width()),
+                                                   static_cast<uint32_t>(image.height()),
+                                                   static_cast<uint32_t>(frame_delay))) {
+                                    GifEnd(&gif_writer);
+
+                                    return false;
+                                }
+                            } else {
                                 GifEnd(&gif_writer);
 
                                 return false;
@@ -85,14 +91,12 @@ bool GIFCreator::createGIF(int frames_count, int frame_delay)
 
                             return false;
                         }
-                    } else {
-                        GifEnd(&gif_writer);
-
-                        return false;
                     }
-                }
 
-                return GifEnd(&gif_writer);
+                    return GifEnd(&gif_writer);
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
