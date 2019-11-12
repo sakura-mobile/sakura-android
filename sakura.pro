@@ -6,10 +6,11 @@ CONFIG += c++11
 
 DEFINES += QT_DEPRECATED_WARNINGS QT_NO_CAST_FROM_ASCII QT_NO_CAST_TO_ASCII
 
-SOURCES += src/main.cpp \
+SOURCES += \
     src/admobhelper.cpp \
     src/androidgw.cpp \
     src/gifcreator.cpp \
+    src/main.cpp \
     src/sharehelper.cpp \
     src/uihelper.cpp \
     src/uuidcreator.cpp
@@ -29,14 +30,14 @@ RESOURCES += \
     translations.qrc
 
 TRANSLATIONS += \
-    translations/sakura_ru.ts \
     translations/sakura_de.ts \
+    translations/sakura_es.ts \
     translations/sakura_fr.ts \
     translations/sakura_it.ts \
-    translations/sakura_es.ts \
-    translations/sakura_zh.ts \
     translations/sakura_ja.ts \
-    translations/sakura_ko.ts
+    translations/sakura_ko.ts \
+    translations/sakura_ru.ts \
+    translations/sakura_zh.ts
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
