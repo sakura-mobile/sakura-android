@@ -7,11 +7,11 @@
 #include <QtQuickControls2/QQuickStyle>
 #include <QtAndroidExtras/QtAndroid>
 
-#include "androidgw.h"
 #include "admobhelper.h"
-#include "uihelper.h"
-#include "sharehelper.h"
+#include "androidgw.h"
 #include "gifcreator.h"
+#include "sharehelper.h"
+#include "uihelper.h"
 #include "uuidcreator.h"
 
 int main(int argc, char *argv[])
@@ -28,9 +28,9 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), &AdMobHelper::GetInstance());
-    engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
-    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), &GIFCreator::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
+    engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), &UuidCreator::GetInstance());
 
     QQuickStyle::setStyle(QStringLiteral("Default"));
