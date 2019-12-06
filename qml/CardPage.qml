@@ -707,7 +707,7 @@ Item {
                     listGameBranchCard[i][j] = object
                 } else {
                     component = Qt.createQmlObject(
-                                'import QtQuick 2.9; Rectangle {color: "transparent"; width: 30; height: 20}',
+                                'import QtQuick 2.12; Rectangle {color: "transparent"; width: 30; height: 20}',
                                 gridMapCard)
                     arrRectTrasparent[arrRectTrasparent.length] = component
                 }

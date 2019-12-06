@@ -1948,7 +1948,7 @@ Item {
                 } else {
 
                     component = Qt.createQmlObject(
-                                'import QtQuick 2.9; Rectangle {color: "transparent"; width: 30; height: 20}',
+                                'import QtQuick 2.12; Rectangle {color: "transparent"; width: 30; height: 20}',
                                 gridMapCampaign)
                     arrRectTrasparent[arrRectTrasparent.length] = component
                 }
