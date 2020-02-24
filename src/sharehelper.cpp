@@ -27,7 +27,7 @@ QString ShareHelper::imageFilePath() const
     return QDir(tmp_dir).filePath(QStringLiteral("image.jpg"));
 }
 
-void ShareHelper::shareImage(const QString &image_path)
+void ShareHelper::shareImage(const QString &image_path) const
 {
     QAndroidJniObject j_image_path = QAndroidJniObject::fromString(image_path);
 

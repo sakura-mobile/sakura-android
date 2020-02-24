@@ -20,7 +20,7 @@ public:
 
     static UIHelper &GetInstance();
 
-    Q_INVOKABLE int getScreenDpi();
+    Q_INVOKABLE int getScreenDpi() const;
 };
 
 #endif // UIHELPER_H

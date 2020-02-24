@@ -41,7 +41,7 @@ QString GIFCreator::gifFilePath() const
     return QDir(tmp_dir).filePath(QStringLiteral("image.gif"));
 }
 
-bool GIFCreator::createGIF(int frames_count, int frame_delay)
+bool GIFCreator::createGIF(int frames_count, int frame_delay) const
 {
     QImageReader first_reader(imageFilePathMask().arg(0));
 

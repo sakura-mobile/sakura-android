@@ -28,7 +28,7 @@ public:
     QString imageFilePathMask() const;
     QString gifFilePath() const;
 
-    Q_INVOKABLE bool createGIF(int frames_count, int frame_delay);
+    Q_INVOKABLE bool createGIF(int frames_count, int frame_delay) const;
 
 private:
     static constexpr qreal GIF_MPIX_LIMIT = 0.5;

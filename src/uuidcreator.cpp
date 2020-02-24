@@ -13,7 +13,7 @@ UuidCreator &UuidCreator::GetInstance()
     return instance;
 }
 
-QString UuidCreator::createUuid()
+QString UuidCreator::createUuid() const
 {
     return QUuid::createUuid().toString();
 }

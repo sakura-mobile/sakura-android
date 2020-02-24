@@ -25,7 +25,7 @@ public:
 
     QString imageFilePath() const;
 
-    Q_INVOKABLE void shareImage(const QString &image_path);
+    Q_INVOKABLE void shareImage(const QString &image_path) const;
 };
 
 #endif // SHAREHELPER_H

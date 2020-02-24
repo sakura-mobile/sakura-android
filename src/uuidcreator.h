@@ -21,7 +21,7 @@ public:
 
     static UuidCreator &GetInstance();
 
-    Q_INVOKABLE QString createUuid();
+    Q_INVOKABLE QString createUuid() const;
 };
 
 #endif // UUIDCREATOR_H
