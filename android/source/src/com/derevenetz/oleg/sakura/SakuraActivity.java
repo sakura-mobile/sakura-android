@@ -77,13 +77,13 @@ public class SakuraActivity extends QtActivity
         return metrics.densityDpi;
     }
 
-    public void shareImage(String image_file)
+    public void shareImage(String image_path)
     {
         try {
             Intent intent = new Intent(Intent.ACTION_SEND);
 
             intent.setType("image/*");
-            intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".provider", new File(image_file)));
+            intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".provider", new File(image_path)));
 
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.share_image_chooser_title)));
         } catch (Exception ex) {

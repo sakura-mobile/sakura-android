@@ -29,7 +29,7 @@ QString ShareHelper::imageFilePath() const
 
 void ShareHelper::shareImage(const QString &image_path)
 {
-    QAndroidJniObject j_image_file = QAndroidJniObject::fromString(image_path);
+    QAndroidJniObject j_image_path = QAndroidJniObject::fromString(image_path);
 
-    QtAndroid::androidActivity().callMethod<void>("shareImage", "(Ljava/lang/String;)V", j_image_file.object<jstring>());
+    QtAndroid::androidActivity().callMethod<void>("shareImage", "(Ljava/lang/String;)V", j_image_path.object<jstring>());
 }
