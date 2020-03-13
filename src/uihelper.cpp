@@ -3,7 +3,8 @@
 
 #include "uihelper.h"
 
-UIHelper::UIHelper(QObject *parent) : QObject(parent)
+UIHelper::UIHelper(QObject *parent) :
+    QObject(parent)
 {
 }
 

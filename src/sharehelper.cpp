@@ -5,7 +5,8 @@
 
 #include "sharehelper.h"
 
-ShareHelper::ShareHelper(QObject *parent) : QObject(parent)
+ShareHelper::ShareHelper(QObject *parent) :
+    QObject(parent)
 {
 }
 

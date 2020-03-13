@@ -8,7 +8,8 @@
 #include "gif.h"
 #include "gifcreator.h"
 
-GIFCreator::GIFCreator(QObject *parent) : QObject(parent)
+GIFCreator::GIFCreator(QObject *parent) :
+    QObject(parent)
 {
 }
 

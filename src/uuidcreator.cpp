@@ -2,7 +2,8 @@
 
 #include "uuidcreator.h"
 
-UuidCreator::UuidCreator(QObject *parent) : QObject(parent)
+UuidCreator::UuidCreator(QObject *parent) :
+    QObject(parent)
 {
 }
 
