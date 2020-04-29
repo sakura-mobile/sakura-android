@@ -6,6 +6,7 @@
 #include <QtGui/QImageReader>
 
 #include "gif.h"
+
 #include "gifcreator.h"
 
 GIFCreator::GIFCreator(QObject *parent) :
