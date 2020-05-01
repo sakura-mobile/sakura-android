@@ -50,8 +50,8 @@ Popup {
             }
 
             Rectangle {
-                width:            UtilScript.dp(280)
-                height:           UtilScript.dp(56)
+                implicitWidth:    UtilScript.dp(280)
+                implicitHeight:   UtilScript.dp(56)
                 color:            "transparent"
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
@@ -87,8 +87,8 @@ Popup {
             }
 
             Rectangle {
-                width:            UtilScript.dp(280)
-                height:           UtilScript.dp(56)
+                implicitWidth:    UtilScript.dp(280)
+                implicitHeight:   UtilScript.dp(56)
                 color:            "transparent"
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
