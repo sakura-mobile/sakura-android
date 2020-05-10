@@ -196,7 +196,7 @@ public class SakuraActivity extends QtActivity
             @Override
             public void run()
             {
-                View view = getWindow().getDecorView().getRootView();
+                View view = getWindow().getDecorView().findViewById(android.R.id.content);
 
                 if (view instanceof ViewGroup) {
                     ViewGroup view_group = (ViewGroup)view;
@@ -281,7 +281,7 @@ public class SakuraActivity extends QtActivity
             @Override
             public void run()
             {
-                View view = getWindow().getDecorView().getRootView();
+                View view = getWindow().getDecorView().findViewById(android.R.id.content);
 
                 if (view instanceof ViewGroup) {
                     ViewGroup view_group = (ViewGroup)view;
