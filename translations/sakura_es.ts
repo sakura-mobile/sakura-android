@@ -4,17 +4,17 @@
 <context>
     <name>AdMobConsentDialog</name>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="30"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="34"/>
         <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
         <translation>Mantenemos esta aplicación gratuita mostrando anuncios. La red publicitaria &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;recopilar datos y utilizará un identificador único&lt;/a&gt; en su dispositivo para mostrarle anuncios. &lt;b&gt;¿Permites usar tus datos para personalizar anuncios para ti?&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="62"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="66"/>
         <source>Yes, show me relevant ads</source>
         <translation>Sí, muéstrame anuncios relevantes</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="99"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="103"/>
         <source>No, show me ads that are less relevant</source>
         <translation>No, muéstrame anuncios que sean menos relevantes</translation>
     </message>
@@ -203,27 +203,27 @@
         <translation>¡Excelente!</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="426"/>
+        <location filename="../qml/TutorialPage.qml" line="427"/>
         <source>Try to resize playground area with pinch gesture</source>
         <translation>Intenta cambiar el tamaño del área de juego con un gesto de pellizco</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="445"/>
+        <location filename="../qml/TutorialPage.qml" line="447"/>
         <source>Try to move playground area with your finger</source>
         <translation>Intenta mover el área de juego con tu dedo</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="463"/>
+        <location filename="../qml/TutorialPage.qml" line="466"/>
         <source>Double tap on playground area to restore its default position</source>
         <translation>Doble toque en el área de juegos para restaurar su posición predeterminada</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="481"/>
+        <location filename="../qml/TutorialPage.qml" line="485"/>
         <source>Disassembling puzzle...</source>
         <translation>Desmontando rompecabezas...</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="499"/>
+        <location filename="../qml/TutorialPage.qml" line="504"/>
         <source>Tap on highlighted fragments to solve the puzzle</source>
         <translation>Toque los fragmentos resaltados para resolver el rompecabezas</translation>
     </message>

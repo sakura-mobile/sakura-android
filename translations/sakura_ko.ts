@@ -4,17 +4,17 @@
 <context>
     <name>AdMobConsentDialog</name>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="30"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="34"/>
         <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
         <translation>우리는 광고를 게재하여이 응용 프로그램을 무료로 유지합니다. 광고 네트워크는 &lt;a ​​href=&quot;https://policies.google.com/technologies/ads&quot;&gt;데이터를 수집하고 기기에서 고유 식별자를 사용&lt;/a&gt; 하여 광고를 게재합니다. &lt;b&gt;데이터를 사용하여 광고를 맞춤 설정할 수 있습니까?&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="62"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="66"/>
         <source>Yes, show me relevant ads</source>
         <translation>예, 관련 광고 표시</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="99"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="103"/>
         <source>No, show me ads that are less relevant</source>
         <translation>아니요, 관련성이 낮은 광고를 게재하십시오</translation>
     </message>
@@ -203,27 +203,27 @@
         <translation>우수한!</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="426"/>
+        <location filename="../qml/TutorialPage.qml" line="427"/>
         <source>Try to resize playground area with pinch gesture</source>
         <translation>핀치 제스처로 놀이터 영역의 크기를 조정 해보십시오</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="445"/>
+        <location filename="../qml/TutorialPage.qml" line="447"/>
         <source>Try to move playground area with your finger</source>
         <translation>손가락으로 놀이터를 움직여보십시오</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="463"/>
+        <location filename="../qml/TutorialPage.qml" line="466"/>
         <source>Double tap on playground area to restore its default position</source>
         <translation>놀이터 영역을 두 번 탭하면 기본 위치로 돌아갑니다</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="481"/>
+        <location filename="../qml/TutorialPage.qml" line="485"/>
         <source>Disassembling puzzle...</source>
         <translation>퍼즐 분해...</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="499"/>
+        <location filename="../qml/TutorialPage.qml" line="504"/>
         <source>Tap on highlighted fragments to solve the puzzle</source>
         <translation>강조 표시된 조각을 탭하여 퍼즐을 해결하십시오</translation>
     </message>

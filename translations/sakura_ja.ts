@@ -4,17 +4,17 @@
 <context>
     <name>AdMobConsentDialog</name>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="30"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="34"/>
         <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
         <translation>このアプリは広告を表示することで無料にしています。広告ネットワークは、&lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;データを収集し、デバイス上で一意の識別子を使用&lt;/a&gt;して広告を表示します。 &lt;b&gt;データを使用して広告をカスタマイズできますか&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="62"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="66"/>
         <source>Yes, show me relevant ads</source>
         <translation>はい、関連する広告を表示します</translation>
     </message>
     <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="99"/>
+        <location filename="../qml/AdMobConsentDialog.qml" line="103"/>
         <source>No, show me ads that are less relevant</source>
         <translation>いいえ、関連性の低い広告を表示します</translation>
     </message>
@@ -203,27 +203,27 @@
         <translation>スゲー！</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="426"/>
+        <location filename="../qml/TutorialPage.qml" line="427"/>
         <source>Try to resize playground area with pinch gesture</source>
         <translation>ピンチジェスチャーでプレイエリアのサイズを変更しましょう</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="445"/>
+        <location filename="../qml/TutorialPage.qml" line="447"/>
         <source>Try to move playground area with your finger</source>
         <translation>あなたの指で遊び場を移動しましょう</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="463"/>
+        <location filename="../qml/TutorialPage.qml" line="466"/>
         <source>Double tap on playground area to restore its default position</source>
         <translation>遊び場をダブルタップしてデフォルト位置に戻しましょう</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="481"/>
+        <location filename="../qml/TutorialPage.qml" line="485"/>
         <source>Disassembling puzzle...</source>
         <translation>パズルを分解する...</translation>
     </message>
     <message>
-        <location filename="../qml/TutorialPage.qml" line="499"/>
+        <location filename="../qml/TutorialPage.qml" line="504"/>
         <source>Tap on highlighted fragments to solve the puzzle</source>
         <translation>ハイライトされた断片をタップしてパズルを解きましょう</translation>
     </message>
