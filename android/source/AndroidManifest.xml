@@ -4,7 +4,7 @@
           android:versionName="1.0.8"
           android:versionCode="24"
           android:installLocation="auto">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28"/>
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
     <supports-screens android:anyDensity="true"
                       android:largeScreens="true"
                       android:normalScreens="true"
