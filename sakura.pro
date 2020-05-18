@@ -98,6 +98,7 @@ android {
         android/source/res/values-ko/strings.xml \
         android/source/res/values-ru/strings.xml \
         android/source/res/values-zh/strings.xml \
+        android/source/res/xml/backup_content.xml \
         android/source/res/xml/provider_paths.xml \
         android/source/src/com/derevenetz/oleg/sakura/SakuraActivity.java
 
