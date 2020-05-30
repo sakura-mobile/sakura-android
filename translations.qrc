@@ -1,12 +1,12 @@
 <RCC>
     <qresource prefix="/tr">
-        <file alias="sakura_ru.qm">translations/sakura_ru.qm</file>
         <file alias="sakura_de.qm">translations/sakura_de.qm</file>
+        <file alias="sakura_es.qm">translations/sakura_es.qm</file>
         <file alias="sakura_fr.qm">translations/sakura_fr.qm</file>
         <file alias="sakura_it.qm">translations/sakura_it.qm</file>
-        <file alias="sakura_es.qm">translations/sakura_es.qm</file>
-        <file alias="sakura_zh.qm">translations/sakura_zh.qm</file>
         <file alias="sakura_ja.qm">translations/sakura_ja.qm</file>
         <file alias="sakura_ko.qm">translations/sakura_ko.qm</file>
+        <file alias="sakura_ru.qm">translations/sakura_ru.qm</file>
+        <file alias="sakura_zh.qm">translations/sakura_zh.qm</file>
     </qresource>
 </RCC>
