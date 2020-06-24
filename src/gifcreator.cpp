@@ -1,4 +1,5 @@
 #include <QtCore/QtMath>
+#include <QtCore/QLatin1String>
 #include <QtCore/QSize>
 #include <QtCore/QDir>
 #include <QtCore/QStandardPaths>
@@ -25,7 +26,7 @@ QString GIFCreator::imageFilePathMask() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 
-    if (tmp_dir != QStringLiteral("")) {
+    if (tmp_dir != QLatin1String("")) {
         QDir().mkpath(tmp_dir);
     }
 
@@ -36,7 +37,7 @@ QString GIFCreator::gifFilePath() const
 {
     QString tmp_dir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 
-    if (tmp_dir != QStringLiteral("")) {
+    if (tmp_dir != QLatin1String("")) {
         QDir().mkpath(tmp_dir);
     }
 
