@@ -6,7 +6,8 @@ CONFIG += c++17 resources_big
 
 DEFINES += QT_DEPRECATED_WARNINGS QT_NO_CAST_FROM_ASCII QT_NO_CAST_TO_ASCII
 
-INCLUDEPATH += 3rdparty
+INCLUDEPATH += \
+    3rdparty/gif-h
 
 SOURCES += \
     src/admobhelper.cpp \

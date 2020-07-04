@@ -6,7 +6,7 @@
 #include <QtGui/QImage>
 #include <QtGui/QImageReader>
 
-#include <gif-h/gif.h>
+#include <gif.h>
 
 #include "gifcreator.h"
 
