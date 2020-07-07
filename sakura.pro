@@ -61,6 +61,7 @@ android {
         android/source/gradle.properties \
         android/source/gradlew \
         android/source/gradlew.bat \
+        android/source/3rdparty/openssl/LICENSE \
         android/source/3rdparty/openssl/arm64-v8a/libcrypto_1_1.so \
         android/source/3rdparty/openssl/arm64-v8a/libssl_1_1.so \
         android/source/3rdparty/openssl/armeabi-v7a/libcrypto_1_1.so \
