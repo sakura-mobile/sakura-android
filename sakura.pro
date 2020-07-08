@@ -61,11 +61,6 @@ android {
         android/source/gradle.properties \
         android/source/gradlew \
         android/source/gradlew.bat \
-        android/source/3rdparty/openssl/LICENSE \
-        android/source/3rdparty/openssl/arm64-v8a/libcrypto_1_1.so \
-        android/source/3rdparty/openssl/arm64-v8a/libssl_1_1.so \
-        android/source/3rdparty/openssl/armeabi-v7a/libcrypto_1_1.so \
-        android/source/3rdparty/openssl/armeabi-v7a/libssl_1_1.so \
         android/source/gradle/wrapper/gradle-wrapper.jar \
         android/source/gradle/wrapper/gradle-wrapper.properties \
         android/source/res/drawable/splash_qt.xml \
@@ -111,13 +106,13 @@ android {
 
     contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
         ANDROID_EXTRA_LIBS = \
-            $$PWD/android/source/3rdparty/openssl/armeabi-v7a/libcrypto_1_1.so \
-            $$PWD/android/source/3rdparty/openssl/armeabi-v7a/libssl_1_1.so
+            $$PWD/android/3rdparty/openssl/armeabi-v7a/libcrypto_1_1.so \
+            $$PWD/android/3rdparty/openssl/armeabi-v7a/libssl_1_1.so
     }
 
     contains(ANDROID_TARGET_ARCH,arm64-v8a) {
         ANDROID_EXTRA_LIBS = \
-            $$PWD/android/source/3rdparty/openssl/arm64-v8a/libcrypto_1_1.so \
-            $$PWD/android/source/3rdparty/openssl/arm64-v8a/libssl_1_1.so
+            $$PWD/android/3rdparty/openssl/arm64-v8a/libcrypto_1_1.so \
+            $$PWD/android/3rdparty/openssl/arm64-v8a/libssl_1_1.so
     }
 }
