@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     }
 
     QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::bannerViewHeightUpdated, &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::shareImageCompleted,     &ShareHelper::GetInstance(), &ShareHelper::handleImageSharingCompletion);
 
     QQmlApplicationEngine engine;
 

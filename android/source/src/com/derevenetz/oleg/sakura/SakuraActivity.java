@@ -30,6 +30,8 @@ import com.google.android.gms.ads.RequestConfiguration;
 
 public class SakuraActivity extends QtActivity
 {
+    private static final int  REQUEST_CODE_SHARE_IMAGE   = 1001;
+
     private static final long AD_RELOAD_ON_FAILURE_DELAY = 60000;
 
     private boolean           showPersonalizedAds        = false;
@@ -37,6 +39,8 @@ public class SakuraActivity extends QtActivity
     private InterstitialAd    interstitial               = null;
 
     private static native void bannerViewHeightUpdated(int height);
+
+    private static native void shareImageCompleted();
 
     @Override
     public void onResume()
@@ -85,7 +89,7 @@ public class SakuraActivity extends QtActivity
             intent.setType("image/*");
             intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".provider", new File(image_path)));
 
-            startActivity(Intent.createChooser(intent, getResources().getString(R.string.share_image_chooser_title)));
+            startActivityForResult(Intent.createChooser(intent, getResources().getString(R.string.share_image_chooser_title)), REQUEST_CODE_SHARE_IMAGE);
         } catch (Exception ex) {
             Log.e("SakuraActivity", "shareImage() : " + ex.toString());
         }
@@ -311,5 +315,15 @@ public class SakuraActivity extends QtActivity
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_SHARE_IMAGE) {
+            shareImageCompleted();
+        }
     }
 }

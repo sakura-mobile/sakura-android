@@ -35,3 +35,8 @@ void ShareHelper::shareImage(const QString &image_path) const
 
     QtAndroid::androidActivity().callMethod<void>("shareImage", "(Ljava/lang/String;)V", j_image_path.object<jstring>());
 }
+
+void ShareHelper::handleImageSharingCompletion()
+{
+    emit shareImageCompleted();
+}

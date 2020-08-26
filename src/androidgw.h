@@ -22,6 +22,7 @@ public:
 
 signals:
     void bannerViewHeightUpdated(int bannerViewHeight);
+    void shareImageCompleted();
 };
 
 #endif // ANDROIDGW_H
