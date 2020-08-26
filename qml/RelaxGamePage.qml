@@ -634,7 +634,7 @@ Item {
                         timerTooltipShare.start()
                     }
                     if (Math.random() < 0.10) {
-                        // TODO: StoreHelper.requestReview()
+                        GPlayHelper.requestReview()
                     }
                 }
             }

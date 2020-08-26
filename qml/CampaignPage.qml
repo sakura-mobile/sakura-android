@@ -954,7 +954,7 @@ Item {
                 onStopped: {
                     if (!textFailedGame.visible) {
                         if (Math.random() < 0.10) {
-                            // TODO: StoreHelper.requestReview()
+                            GPlayHelper.requestReview()
                         }
 
                         if (Number(mainWindow.getSetting("ShareTooltip",

@@ -1722,7 +1722,7 @@ Item {
                     }
 
                     if (Math.random() < 0.10) {
-                        // TODO: StoreHelper.requestReview()
+                        GPlayHelper.requestReview()
                     }
                 } else {
                     console.warn(res)

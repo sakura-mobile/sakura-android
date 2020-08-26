@@ -2,6 +2,7 @@ package com.derevenetz.oleg.sakura;
 
 import java.io.File;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,12 @@ import android.widget.FrameLayout;
 import androidx.core.content.FileProvider;
 
 import org.qtproject.qt5.android.bindings.QtActivity;
+
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.OnCompleteListener;
+import com.google.android.play.core.tasks.Task;
 
 import com.google.ads.mediation.admob.AdMobAdapter;
 
@@ -92,6 +99,35 @@ public class SakuraActivity extends QtActivity
             startActivityForResult(Intent.createChooser(intent, getResources().getString(R.string.share_image_chooser_title)), REQUEST_CODE_SHARE_IMAGE);
         } catch (Exception ex) {
             Log.e("SakuraActivity", "shareImage() : " + ex.toString());
+        }
+    }
+
+    public void requestReview()
+    {
+        final Activity f_activity = this;
+
+        try {
+            final ReviewManager f_manager = ReviewManagerFactory.create(this);
+
+            f_manager.requestReviewFlow().addOnCompleteListener(new OnCompleteListener<ReviewInfo>() {
+                @Override
+                public void onComplete(Task<ReviewInfo> task) {
+                    if (task.isSuccessful()) {
+                        f_manager.launchReviewFlow(f_activity, task.getResult()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(Task<Void> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.e("SakuraActivity", "requestReview() : launchReviewFlow() failed");
+                                }
+                            }
+                        });
+                    } else {
+                        Log.e("SakuraActivity", "requestReview() : requestReviewFlow() failed");
+                    }
+                }
+            });
+        } catch (Exception ex) {
+            Log.e("SakuraActivity", "requestReview() : " + ex.toString());
         }
     }
 
