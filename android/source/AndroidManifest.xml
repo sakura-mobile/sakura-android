@@ -2,7 +2,7 @@
 <manifest package="com.derevenetz.oleg.sakura"
           xmlns:android="http://schemas.android.com/apk/res/android"
           android:versionName="1.1.2"
-          android:versionCode="30"
+          android:versionCode="32"
           android:installLocation="auto">
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
     <supports-screens android:anyDensity="true"
