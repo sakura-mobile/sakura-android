@@ -95,7 +95,7 @@ android {
         android/source/res/values/colors.xml \
         android/source/res/values/libs.xml \
         android/source/res/values/strings.xml \
-        android/source/res/values/themes.xml \
+        android/source/res/values/styles.xml \
         android/source/res/values-de/strings.xml \
         android/source/res/values-es/strings.xml \
         android/source/res/values-fr/strings.xml \
