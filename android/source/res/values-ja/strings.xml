@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">さくらパズル</string>
+    <string name="share_image_clip_data_label">画像</string>
     <string name="share_image_chooser_title">経由で共有</string>
 </resources>
