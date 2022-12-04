@@ -16,11 +16,6 @@ AndroidGW &AndroidGW::GetInstance()
     return instance;
 }
 
-extern "C" JNIEXPORT void JNICALL JAVA_NATIVE_METHOD_NAME(SakuraActivity, bannerViewHeightUpdated)(JNIEnv *, jclass, jint height)
-{
-    emit AndroidGW::GetInstance().bannerViewHeightUpdated(height);
-}
-
 extern "C" JNIEXPORT void JNICALL JAVA_NATIVE_METHOD_NAME(SakuraActivity, shareImageCompleted)(JNIEnv *, jclass)
 {
     emit AndroidGW::GetInstance().shareImageCompleted();

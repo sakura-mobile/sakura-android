@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = sakura
 
-QT += quick quickcontrols2 sql multimedia purchasing
+QT += quick quickcontrols2 sql multimedia
 CONFIG += c++17 resources_big
 
 DEFINES += QT_DEPRECATED_WARNINGS QT_NO_CAST_FROM_ASCII QT_NO_CAST_TO_ASCII
@@ -10,10 +10,8 @@ INCLUDEPATH += \
     3rdparty/gif-h
 
 SOURCES += \
-    src/admobhelper.cpp \
     src/androidgw.cpp \
     src/gifcreator.cpp \
-    src/gplayhelper.cpp \
     src/main.cpp \
     src/sharehelper.cpp \
     src/uihelper.cpp \
@@ -21,10 +19,8 @@ SOURCES += \
 
 HEADERS += \
     3rdparty/gif-h/gif.h \
-    src/admobhelper.h \
     src/androidgw.h \
     src/gifcreator.h \
-    src/gplayhelper.h \
     src/sharehelper.h \
     src/uihelper.h \
     src/uuidcreator.h

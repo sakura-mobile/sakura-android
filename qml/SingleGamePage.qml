@@ -32,7 +32,6 @@ Item {
 
     property int countAnimationRotationBranch: 0
 
-    property int bannerViewHeight: AdMobHelper.bannerViewHeight
     property bool isPushStore: false
     property bool isTimerGameRunning: false
     property bool isTimerBlockTimeGame: false
@@ -527,8 +526,7 @@ Item {
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: Math.max(singleGamePage.bannerViewHeight + UtilScript.dp(8),
-                                           UtilScript.dp(20))
+            anchors.bottomMargin: UtilScript.dp(20)
             spacing: UtilScript.dp(15)
             Image {
                 id: backButton
@@ -868,7 +866,6 @@ Item {
                         anchors.fill: parent
                         onClicked: {
                             mainStackView.pop()
-                            mainWindow.showInterstitial()
                         }
                     }
                 }
@@ -903,7 +900,6 @@ Item {
                             } else {
                                 console.error(component.errorString())
                             }
-                            mainWindow.showInterstitial()
                         }
                     }
                 }
@@ -918,8 +914,7 @@ Item {
             target: rectCompletedGame
             properties: "y"
             easing.type: Easing.InQuad
-            to: imageBackgroundMainLevel.height - rectCompletedGame.height - Math.max(
-                    singleGamePage.bannerViewHeight + UtilScript.dp(8), UtilScript.dp(20))
+            to: imageBackgroundMainLevel.height - rectCompletedGame.height - UtilScript.dp(20)
         }
         PropertyAnimation {
             id: animationRectCompletedGameDown
@@ -1719,10 +1714,6 @@ Item {
                         textAwardPlace.text = res["place"]
                         singleGamePage.countPetals = singleGamePage.countPetalsMax
                         singleGamePage.emitRatePetals = singleGamePage.emitRatePetalsMax
-                    }
-
-                    if (Math.random() < 0.10) {
-                        GPlayHelper.requestReview()
                     }
                 } else {
                     console.warn(res)

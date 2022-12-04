@@ -9,22 +9,6 @@ ApplicationWindow {
     visibility: Window.FullScreen
     visible:    true
 
-    property bool disableAds:     false
-
-    property string adMobConsent: ""
-
-    onDisableAdsChanged: {
-        setSetting("DisableAds", disableAds ? "true" : "false");
-
-        updateFeatures();
-    }
-
-    onAdMobConsentChanged: {
-        setSetting("AdMobConsent", adMobConsent);
-
-        updateFeatures();
-    }
-
     function addScore(text, score, difficulty) {
         var db = LocalStorage.openDatabaseSync("SakuraDB", "1.0", "SakuraDB", 1000000);
 
@@ -62,30 +46,6 @@ ApplicationWindow {
         return value;
     }
 
-    function updateFeatures() {
-        if (!disableAds && (adMobConsent === "PERSONALIZED" || adMobConsent === "NON_PERSONALIZED")) {
-            AdMobHelper.setPersonalization(adMobConsent === "PERSONALIZED");
-
-            AdMobHelper.initAds();
-        }
-
-        if (mainStackView.depth > 0 && typeof mainStackView.currentItem.bannerViewHeight === "number") {
-            if (disableAds) {
-                AdMobHelper.hideBannerView();
-            } else {
-                AdMobHelper.showBannerView();
-            }
-        } else {
-            AdMobHelper.hideBannerView();
-        }
-    }
-
-    function showInterstitial() {
-        if (!disableAds) {
-            AdMobHelper.showInterstitial();
-        }
-    }
-
     StackView {
         id:           mainStackView
         anchors.fill: parent
@@ -101,18 +61,6 @@ ApplicationWindow {
 
             if (depth > 0) {
                 currentItem.forceActiveFocus();
-
-                if (typeof currentItem.bannerViewHeight === "number") {
-                    if (mainWindow.disableAds) {
-                        AdMobHelper.hideBannerView();
-                    } else {
-                        AdMobHelper.showBannerView();
-                    }
-                } else {
-                    AdMobHelper.hideBannerView();
-                }
-            } else {
-                AdMobHelper.hideBannerView();
             }
         }
     }
@@ -121,38 +69,13 @@ ApplicationWindow {
         id: mainPage
     }
 
-    StorePage {
-        id: storePage
-    }
-
     MultiPointTouchArea {
         anchors.fill: parent
         z:            1
         enabled:      mainStackView.busy
     }
 
-    AdMobConsentDialog {
-        id: adMobConsentDialog
-
-        onPersonalizedAdsSelected: {
-            mainWindow.adMobConsent = "PERSONALIZED";
-        }
-
-        onNonPersonalizedAdsSelected: {
-            mainWindow.adMobConsent = "NON_PERSONALIZED";
-        }
-    }
-
     Component.onCompleted: {
-        disableAds   = (getSetting("DisableAds",   "false") === "true");
-        adMobConsent =  getSetting("AdMobConsent", "");
-
-        updateFeatures();
-
         mainStackView.push(mainPage);
-
-        if (!disableAds && adMobConsent !== "PERSONALIZED" && adMobConsent !== "NON_PERSONALIZED") {
-            adMobConsentDialog.open();
-        }
     }
 }

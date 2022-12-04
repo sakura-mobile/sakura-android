@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/AdMobConsentDialog.qml</file>
         <file>qml/Branch.qml</file>
         <file>qml/ButtonLocation.qml</file>
         <file>qml/CampaignPage.qml</file>
@@ -16,7 +15,6 @@
         <file>qml/SettingsPage.qml</file>
         <file>qml/SingleGamePage.qml</file>
         <file>qml/SingleLevelsPage.qml</file>
-        <file>qml/StorePage.qml</file>
         <file>qml/TutorialPage.qml</file>
         <file>qml/Util.js</file>
         <file>qml/main.qml</file>

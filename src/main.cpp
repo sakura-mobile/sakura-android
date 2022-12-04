@@ -7,10 +7,8 @@
 #include <QtQuickControls2/QQuickStyle>
 #include <QtAndroidExtras/QtAndroid>
 
-#include "admobhelper.h"
 #include "androidgw.h"
 #include "gifcreator.h"
-#include "gplayhelper.h"
 #include "sharehelper.h"
 #include "uihelper.h"
 #include "uuidcreator.h"
@@ -24,14 +22,11 @@ int main(int argc, char *argv[])
         QGuiApplication::installTranslator(&translator);
     }
 
-    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::bannerViewHeightUpdated, &AdMobHelper::GetInstance(), &AdMobHelper::setBannerViewHeight);
-    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::shareImageCompleted,     &ShareHelper::GetInstance(), &ShareHelper::handleImageSharingCompletion);
+    QObject::connect(&AndroidGW::GetInstance(), &AndroidGW::shareImageCompleted, &ShareHelper::GetInstance(), &ShareHelper::handleImageSharingCompletion);
 
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextProperty(QStringLiteral("AdMobHelper"), &AdMobHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("GIFCreator"), &GIFCreator::GetInstance());
-    engine.rootContext()->setContextProperty(QStringLiteral("GPlayHelper"), &GPlayHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("ShareHelper"), &ShareHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("UIHelper"), &UIHelper::GetInstance());
     engine.rootContext()->setContextProperty(QStringLiteral("UuidCreator"), &UuidCreator::GetInstance());

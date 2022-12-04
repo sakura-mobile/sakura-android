@@ -162,32 +162,6 @@ Item {
                     }
 
                     Image {
-                        id: buttonStore
-                        source: "qrc:/resources/images/button.png"
-                        width: UtilScript.dp(240)
-                        height: UtilScript.dp(50)
-
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            anchors.bottomMargin: UtilScript.dp(10)
-                            text: qsTr("STORE")
-                            font.pointSize: 24
-                            font.family: "ChalkboardSE"
-                            font.weight: Font.Black
-                            color: "white"
-                        }
-
-                        MouseArea {
-                            id: mouseAreaStore
-                            anchors.fill: parent
-                            onClicked: {
-                                mainStackView.push(storePage)
-                            }
-                        }
-                    }
-
-                    Image {
                         id: buttonSettings
                         source: "qrc:/resources/images/button.png"
                         width: UtilScript.dp(240)

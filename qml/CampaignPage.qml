@@ -39,7 +39,6 @@ Item {
 
     property int countAnimationRotationBranch: 0
 
-    property int bannerViewHeight: AdMobHelper.bannerViewHeight
     property bool endedAvailableLevels: false
     property bool isPushStore: false
     property bool isTimerGameRunning: false
@@ -455,8 +454,7 @@ Item {
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: Math.max(campaignPage.bannerViewHeight + UtilScript.dp(8),
-                                           UtilScript.dp(20))
+            anchors.bottomMargin: UtilScript.dp(20)
             spacing: UtilScript.dp(15)
 
             Image {
@@ -788,7 +786,6 @@ Item {
                             anchors.fill: parent
                             onClicked: {
                                 mainStackView.pop()
-                                mainWindow.showInterstitial()
                             }
                         }
                     }
@@ -829,7 +826,6 @@ Item {
                                 } else {
                                     console.error(component.errorString())
                                 }
-                                mainWindow.showInterstitial()
                             }
                         }
                         Image {
@@ -949,14 +945,9 @@ Item {
                 target: rectCompletedGame
                 properties: "y"
                 easing.type: Easing.InQuad
-                to: imageBackgroundMainMap.height - rectCompletedGame.height - Math.max(
-                        campaignPage.bannerViewHeight + UtilScript.dp(8), UtilScript.dp(20))
+                to: imageBackgroundMainMap.height - rectCompletedGame.height - UtilScript.dp(20)
                 onStopped: {
                     if (!textFailedGame.visible) {
-                        if (Math.random() < 0.10) {
-                            GPlayHelper.requestReview()
-                        }
-
                         if (Number(mainWindow.getSetting("ShareTooltip",
                                                          0)) === 0) {
                             imageShareTooltip.visible = true

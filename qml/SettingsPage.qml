@@ -132,42 +132,6 @@ Item {
                         }
                     }
                 }
-
-                Image {
-                    id: settingsAdPrivacy
-                    source: "qrc:/resources/images/rectangle-hi.png"
-                    width: UtilScript.dp(300)
-                    height: UtilScript.dp(75)
-                    visible: !mainWindow.disableAds
-
-                    Text {
-                        anchors.fill: parent
-                        anchors.topMargin: UtilScript.dp(8)
-                        anchors.bottomMargin: UtilScript.dp(8)
-                        anchors.leftMargin: UtilScript.dp(20)
-                        anchors.rightMargin: UtilScript.dp(20)
-                        text: qsTr("AD PRIVACY SETTINGS")
-                        font.pointSize: 20
-                        font.family: "Helvetica"
-                        font.bold: true
-                        color: "white"
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        wrapMode: Text.NoWrap
-                        fontSizeMode: Text.Fit
-                        minimumPointSize: 8
-                    }
-
-                    MouseArea {
-                        id: mouseAreaSettingsAdPrivacy
-                        anchors.fill: parent
-                        z: 1
-
-                        onClicked: {
-                            adMobConsentDialog.open();
-                        }
-                    }
-                }
             }
         }
 

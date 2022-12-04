@@ -21,7 +21,6 @@ public:
     static AndroidGW &GetInstance();
 
 signals:
-    void bannerViewHeightUpdated(int bannerViewHeight);
     void shareImageCompleted();
 };
 

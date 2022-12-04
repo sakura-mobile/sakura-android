@@ -39,7 +39,6 @@ Item {
 
     property int countAnimationRotationBranch: 0
 
-    property int bannerViewHeight: AdMobHelper.bannerViewHeight
     property bool endedAvailableLevels: false
     property bool isPushStore: false
 
@@ -349,8 +348,7 @@ Item {
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: Math.max(relaxGamePage.bannerViewHeight + UtilScript.dp(8),
-                                           UtilScript.dp(20))
+            anchors.bottomMargin: UtilScript.dp(20)
             spacing: UtilScript.dp(60)
 
             Image {
@@ -484,7 +482,6 @@ Item {
                             anchors.fill: parent
                             onClicked: {
                                 mainStackView.pop()
-                                mainWindow.showInterstitial()
                             }
                         }
                     }
@@ -521,7 +518,6 @@ Item {
                                 } else {
                                     console.error(component.errorString())
                                 }
-                                mainWindow.showInterstitial()
                             }
                         }
 
@@ -624,17 +620,12 @@ Item {
                 target: rectCompletedGame
                 properties: "y"
                 easing.type: Easing.InQuad
-                to: imageBackgroundMainMap.height - rectCompletedGame.height - Math.max(
-                        relaxGamePage.bannerViewHeight + UtilScript.dp(8), UtilScript.dp(20))
+                to: imageBackgroundMainMap.height - rectCompletedGame.height - UtilScript.dp(20)
                 onStopped: {
-
                     if (Number(mainWindow.getSetting("ShareTooltip",
                                                      0)) === 0) {
                         imageShareTooltip.visible = true
                         timerTooltipShare.start()
-                    }
-                    if (Math.random() < 0.10) {
-                        GPlayHelper.requestReview()
                     }
                 }
             }
