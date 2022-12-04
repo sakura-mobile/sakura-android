@@ -2,47 +2,29 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
-    <name>AdMobConsentDialog</name>
-    <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="34"/>
-        <source>We keep this app free by showing ads. Ad network will &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;collect data and use a unique identifier on your device&lt;/a&gt; to show you ads. &lt;b&gt;Do you allow to use your data to tailor ads for you?&lt;/b&gt;</source>
-        <translation>Wir halten diese App kostenlos, indem wir Anzeigen schalten. Das Werbenetzwerk &lt;a href=&quot;https://policies.google.com/technologies/ads&quot;&gt;sammelt Daten und verwendet eine eindeutige Kennung auf Ihrem Gerät&lt;/a&gt;, um Ihnen Anzeigen zu schalten. &lt;b&gt;Kann es Ihre Daten verwenden, um Anzeigen für Sie zuzuschneiden?&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="66"/>
-        <source>Yes, show me relevant ads</source>
-        <translation>Ja, relevante Anzeigen anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../qml/AdMobConsentDialog.qml" line="103"/>
-        <source>No, show me ads that are less relevant</source>
-        <translation>Nein, zeige mir weniger relevante Anzeigen</translation>
-    </message>
-</context>
-<context>
     <name>CampaignPage</name>
     <message>
-        <location filename="../qml/CampaignPage.qml" line="146"/>
+        <location filename="../qml/CampaignPage.qml" line="142"/>
         <source>STEP:</source>
         <translation>SCHRITT:</translation>
     </message>
     <message>
-        <location filename="../qml/CampaignPage.qml" line="247"/>
+        <location filename="../qml/CampaignPage.qml" line="243"/>
         <source>TIME:</source>
         <translation>ZEIT:</translation>
     </message>
     <message>
-        <location filename="../qml/CampaignPage.qml" line="744"/>
+        <location filename="../qml/CampaignPage.qml" line="700"/>
         <source>Game over. Do you want to play again?</source>
         <translation>Spiel ist aus. Willst du wieder spielen?</translation>
     </message>
     <message>
-        <location filename="../qml/CampaignPage.qml" line="853"/>
+        <location filename="../qml/CampaignPage.qml" line="807"/>
         <source>Create postcard and share with friends</source>
         <translation>Erstellen Sie eine Postkarte und teilen Sie sie mit Freunden</translation>
     </message>
     <message>
-        <location filename="../qml/CampaignPage.qml" line="1005"/>
+        <location filename="../qml/CampaignPage.qml" line="954"/>
         <source>Congratulations, you completed all available levels! Stay tuned for updates with new levels, challenges and more.</source>
         <translation>Herzlichen Glückwunsch, du hast alle verfügbaren Level abgeschlossen! Bleib dran für Updates mit neuen Levels, Herausforderungen und mehr.</translation>
     </message>
@@ -71,11 +53,6 @@
     </message>
     <message>
         <location filename="../qml/MainPage.qml" line="174"/>
-        <source>STORE</source>
-        <translation>GESCHÄFT</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainPage.qml" line="200"/>
         <source>SETTINGS</source>
         <translation>EINSTELLUNGEN</translation>
     </message>
@@ -96,17 +73,17 @@
 <context>
     <name>RelaxGamePage</name>
     <message>
-        <location filename="../qml/RelaxGamePage.qml" line="145"/>
+        <location filename="../qml/RelaxGamePage.qml" line="143"/>
         <source>STEP:</source>
         <translation>SCHRITT:</translation>
     </message>
     <message>
-        <location filename="../qml/RelaxGamePage.qml" line="546"/>
+        <location filename="../qml/RelaxGamePage.qml" line="537"/>
         <source>Create postcard and share with friends</source>
         <translation>Erstellen Sie eine Postkarte und teilen Sie sie mit Freunden</translation>
     </message>
     <message>
-        <location filename="../qml/RelaxGamePage.qml" line="680"/>
+        <location filename="../qml/RelaxGamePage.qml" line="666"/>
         <source>Congratulations, you completed all available levels! Stay tuned for updates with new levels, challenges and more.</source>
         <translation>Herzlichen Glückwunsch, du hast alle verfügbaren Level abgeschlossen! Bleib dran für Updates mit neuen Levels, Herausforderungen und mehr.</translation>
     </message>
@@ -123,32 +100,27 @@
         <source>SOUNDS</source>
         <translation>SOUNDS</translation>
     </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="149"/>
-        <source>AD PRIVACY SETTINGS</source>
-        <translation>AD DATENSCHUTZ EINSTELLUNGEN</translation>
-    </message>
 </context>
 <context>
     <name>SingleGamePage</name>
     <message>
-        <location filename="../qml/SingleGamePage.qml" line="138"/>
-        <location filename="../qml/SingleGamePage.qml" line="778"/>
+        <location filename="../qml/SingleGamePage.qml" line="133"/>
+        <location filename="../qml/SingleGamePage.qml" line="742"/>
         <source>SCORE:</source>
         <translation>ERGEBNIS:</translation>
     </message>
     <message>
-        <location filename="../qml/SingleGamePage.qml" line="218"/>
+        <location filename="../qml/SingleGamePage.qml" line="213"/>
         <source>STEP:</source>
         <translation>SCHRITT:</translation>
     </message>
     <message>
-        <location filename="../qml/SingleGamePage.qml" line="320"/>
+        <location filename="../qml/SingleGamePage.qml" line="315"/>
         <source>TIME:</source>
         <translation>ZEIT:</translation>
     </message>
     <message>
-        <location filename="../qml/SingleGamePage.qml" line="827"/>
+        <location filename="../qml/SingleGamePage.qml" line="791"/>
         <source>Game over. Do you want to play again?</source>
         <translation>Spiel ist aus. Willst du wieder spielen?</translation>
     </message>
@@ -169,30 +141,6 @@
         <location filename="../qml/SingleLevelsPage.qml" line="519"/>
         <source>Participate in daily tournaments and get rewards!</source>
         <translation>Nimm an täglichen Turnieren teil und erhalte Belohnungen!</translation>
-    </message>
-</context>
-<context>
-    <name>StorePage</name>
-    <message>
-        <location filename="../qml/StorePage.qml" line="26"/>
-        <location filename="../qml/StorePage.qml" line="29"/>
-        <source>BUY</source>
-        <translation>KAUFEN</translation>
-    </message>
-    <message>
-        <location filename="../qml/StorePage.qml" line="896"/>
-        <source>Remove Ads</source>
-        <translation>Anzeigen entfernen</translation>
-    </message>
-    <message>
-        <location filename="../qml/StorePage.qml" line="946"/>
-        <source>Restore purchases</source>
-        <translation>Käufe wiederherstellen</translation>
-    </message>
-    <message>
-        <location filename="../qml/StorePage.qml" line="963"/>
-        <source>OK</source>
-        <translation>OK</translation>
     </message>
 </context>
 <context>
