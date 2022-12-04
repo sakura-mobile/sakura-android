@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - rustore
 
   schedule:
   - cron: "0 11 * * 6"

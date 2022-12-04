@@ -4,10 +4,12 @@ on:
   push:
     branches:
     - master
+    - rustore
 
   pull_request:
     branches:
     - master
+    - rustore
 
   schedule:
   - cron: "0 10 * * 6"
