@@ -40,9 +40,6 @@ Item {
     property int countAnimationRotationBranch: 0
 
     property bool endedAvailableLevels: false
-    property bool isPushStore: false
-    property bool isTimerGameRunning: false
-    property bool isTimerBlockTimeGame: false
 
     Keys.onReleased: {
         if (event.key === Qt.Key_Back) {
@@ -516,19 +513,6 @@ Item {
                         onClicked: {
                             if (Number(mainWindow.getSetting(
                                            "countBlockStepLantern", 0)) <= 0) {
-                                if (countBlockStepLevel >= GenerationBranchScript.listObjectCampaigns[currentCampaign].listLocations[currentLocation].listLevels[currentLevel].countBlockStep)
-                                    return
-
-                                if (timerGame.running) {
-                                    timerGame.running = false
-                                    isTimerGameRunning = true
-                                }
-                                if (timerBlockTimeGame.running) {
-                                    timerBlockTimeGame.running = false
-                                    isTimerBlockTimeGame = true
-                                }
-                                isPushStore = true
-                                mainStackView.push(storePage)
                                 return
                             }
 
@@ -585,19 +569,6 @@ Item {
                         onClicked: {
                             if (Number(mainWindow.getSetting(
                                            "countBlockTimeLantern", 0)) <= 0) {
-                                if (countBlockTimeLevel >= GenerationBranchScript.listObjectCampaigns[currentCampaign].listLocations[currentLocation].listLevels[currentLevel].countBlockTime)
-                                    return
-
-                                if (timerGame.running) {
-                                    timerGame.running = false
-                                    isTimerGameRunning = true
-                                }
-                                if (timerBlockTimeGame.running) {
-                                    timerBlockTimeGame.running = false
-                                    isTimerBlockTimeGame = true
-                                }
-                                isPushStore = true
-                                mainStackView.push(storePage)
                                 return
                             }
 
@@ -650,19 +621,6 @@ Item {
                         onClicked: {
                             if (Number(mainWindow.getSetting("countQuickTip",
                                                              0)) <= 0) {
-                                if (countQuickTipLevel >= GenerationBranchScript.listObjectCampaigns[currentCampaign].listLocations[currentLocation].listLevels[currentLevel].countQuickTip)
-                                    return
-
-                                if (timerGame.running) {
-                                    timerGame.running = false
-                                    isTimerGameRunning = true
-                                }
-                                if (timerBlockTimeGame.running) {
-                                    timerBlockTimeGame.running = false
-                                    isTimerBlockTimeGame = true
-                                }
-                                isPushStore = true
-                                mainStackView.push(storePage)
                                 return
                             }
                             setQuickTip()
@@ -1048,25 +1006,6 @@ Item {
     }
 
     StackView.onStatusChanged: {
-        if (StackView.status === StackView.Active && isPushStore) {
-            textCountBlockStepLantern.text = Number(
-                        mainWindow.getSetting("countBlockStepLantern", 0))
-            textCountBlockTimeLantern.text = Number(
-                        mainWindow.getSetting("countBlockTimeLantern", 0))
-            textCountQuickTipButton.text = Number(mainWindow.getSetting(
-                                                      "countQuickTip", 0))
-            isPushStore = false
-            if (isTimerGameRunning) {
-                timerGame.running = true
-                isTimerGameRunning = false
-            }
-            if (isTimerBlockTimeGame) {
-                timerBlockTimeGame.running = true
-                isTimerBlockTimeGame = false
-            }
-            return
-        }
-
         if (StackView.status === StackView.Active
                 && rectCompletedGame.y === imageBackgroundMainMap.height) {
             mixMap()

@@ -40,7 +40,6 @@ Item {
     property int countAnimationRotationBranch: 0
 
     property bool endedAvailableLevels: false
-    property bool isPushStore: false
 
     Keys.onReleased: {
         if (event.key === Qt.Key_Back) {
@@ -407,10 +406,6 @@ Item {
                         onClicked: {
                             if (Number(mainWindow.getSetting("countQuickTip",
                                                              0)) <= 0) {
-                                if (countQuickTipLevel >= GenerationBranchScript.listObjectRelaxLevels[currentLevel].countQuickTip)
-                                    return
-                                isPushStore = true
-                                mainStackView.push(storePage)
                                 return
                             }
                             setQuickTip()
@@ -723,13 +718,6 @@ Item {
     }
 
     StackView.onStatusChanged: {
-        if (StackView.status === StackView.Active && isPushStore) {
-            textCountQuickTipButton.text = Number(mainWindow.getSetting(
-                                                      "countQuickTip", 0))
-            isPushStore = false
-            return
-        }
-
         if (StackView.status === StackView.Active
                 && rectCompletedGame.y === imageBackgroundMainMap.height) {
             mixMap()
