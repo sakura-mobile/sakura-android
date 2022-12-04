@@ -106,7 +106,7 @@ android {
         android/source/res/values-zh/strings.xml \
         android/source/res/xml/backup_content.xml \
         android/source/res/xml/provider_paths.xml \
-        android/source/src/com/derevenetz/oleg/sakura/SakuraActivity.java
+        android/source/src/com/derevenetz/oleg/sakura/rustore/SakuraActivity.java
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android/source
 
